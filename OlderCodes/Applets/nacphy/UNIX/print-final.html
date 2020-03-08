@@ -1,0 +1,119 @@
+
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Considerations when Printing</title></head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  9.F:<a href="print-quiz.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+  Review Quiz</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  9:<a href="print.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Printing Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  9.D:<a href="print-lprm.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  Cancelling Printing</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+
+<a Name="top"> </a>
+<img align="left" ALT="Basic" src="figs/CARGUY2.GIF" height= 75 width =120> 
+<center><h2>&#167 9.E:&nbsp;  Smart Printing</h2></center>
+<hr>
+
+<p> Not all files should be printed. Not all files can be printed.
+Files containing binary information or in a format incompatible with
+the printer cannot be printed.   Be certain that your files can
+be printed before you try to print.
+
+<p> <em>Warning</em>: For pedagogical purposes, we will suggest that
+you view an executeable, binary file. Viewing binary files can lock up
+your terminal, and printing them can lock up your printer or give you
+reams of scrap paper. If your session starts to behave strangely, exit
+<em>Netscape</em>, logout, and restart your session. Please do
+<em>Not</em> experiment with sending a binary file to your printer.
+
+<p> You may recall, that at one time we placed an executeable file
+<code>a.out</code> in the directory <code>backuphome/prog</em>. For
+you to really appreciate why you do not want to print out a binary
+file, let's get one and use <code>more</code> to view it (remember to
+use <code>q</em> to make <code>more</code> quit):
+
+<ul>
+ <code> > cd ~ </code>
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ~">
+	  <param name="command" value="send">
+	   <param name="text" value="cd ~\r\n">
+  </applet>
+
+<br>
+<code> > cp -i backuphome/a.out development/prog</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=280>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cp -i  backuphome/a.out development/prog">
+	  <param name="command" value="send">
+	   <param name="text" 
+             value="cp -i backuphome/a.out development/prog\r\n">
+  </applet>
+
+<br>
+<code> > cd development/prog </code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=145>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd development/prog">
+	  <param name="command" value="send">
+	   <param name="text" value="cd development/prog\r\n">
+  </applet>
+
+</br>
+<code> > more a.out</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=80>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="more a.out">
+	  <param name="command" value="send">
+	   <param name="text" value="more a.out\r\n">
+  </applet>
+<br>
+<code> q</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=20>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="q">
+	  <param name="command" value="send">
+	   <param name="text" value="q\r\n">
+  </applet>
+</ul>
+
+<b> Hints for Smart Printer Usage</b>
+
+<ul>
+<li> Do not print something as a
+substitute for reading it.  
+

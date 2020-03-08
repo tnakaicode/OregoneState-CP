@@ -1,0 +1,188 @@
+<html> 
+<head><title>NACSE - Unix 16.B: Compiling C</title></head> 
+<body bgcolor="FFFFFF"> 
+<hr>
+<table><tr>
+<td>
+  <a href="prog-courtesy.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="../figs/next-motif.gif">
+   16.C: Programming Courtesy</a>
+   <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>  
+<td> <a href="programming.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="../figs/up-motif.gif">
+  16: Programming</a>
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td>  
+  <a href="programming.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="../figs/previous-motif.gif">
+  16: Programming</a> 
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="../contents.html";
+    onclick="top.frames[0].location='../mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="../figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+
+<img align="left" ALT="Specialized" src="../figs/RACECAR2.GIF" height=60 
+ width=130>
+<h2><center>&#167 16.B:&nbspCompiling C Programs</center></h2>
+<hr>
+<p>
+Once you have gone through the trouble of writing a program, you 
+probably want to have it run. The most common Unix C compiler is called 
+<code>cc</code>. The most basic use of <code>cc</code> is demonstrated 
+as follows:<p>
+<br>
+<code>> cd ~/development/prog</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=160>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ~/development/prog">
+	  <param name="command" value="send">
+	   <param name="text" value="cd ~/development/prog\r\n">
+  </applet>
+<br>
+<code>> cc myprog.c</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=80>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cc myprog.c">
+	  <param name="command" value="send">
+	   <param name="text" value="cc myprog.c\r\n">
+  </applet>
+
+<p>  
+
+where <code>myprog.c</code> is the name of the program you wish to compile.  
+This command produces a file called <code>a.out</code> which is the 
+executable program.  To run it, you just type <code>a.out</code> and 
+then enter:<p>
+<code>> a.out</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="a.out">
+	  <param name="command" value="send">
+	   <param name="text" value="a.out\r\n">
+  </applet>
+
+<p>  
+
+<code>a.out</code> is not a very descriptive name.  Fortunately, it is 
+possible for the compiler to give it a new name when it is done.  This 
+is done with the <code>-o</code> flag.  You use it after the 
+compile line shown above, followed by the name you want the executable 
+program to have:
+<br>
+<code>> cc myprog.c -o it-runs</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=150>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cc myprog.c -o it-runs">
+	  <param name="command" value="send">
+	   <param name="text" value="cc myprog.c -o it-runs\r\n">
+  </applet>
+
+<p>  
+This compiles your C program into an executable called 
+<code>it-runs</code>:<p>
+<code>> it-runs</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=60>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="it-runs">
+	  <param name="command" value="send">
+	   <param name="text" value="it-runs\r\n">
+  </applet>
+
+<p>  
+Many programs use the mathematical functions found in the C math 
+library.  Unfortunately, the math library is not part of the standard 
+library that automatically gets compiled with your program, and the 
+compiler isn't smart enough to figure out when it is needed.  So, you 
+have to let the compiler know that there is another library to 
+include.  You do this by using the <code>-l</code> flag, 
+followed immediately (no spaces) by the reference name of the required 
+library.  This reference name is <code>m</code> for the math library, so
+a program which uses the math library would be compiled this way:
+
+<br>
+<code>> cc big-math.c -o the-answer -lm</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=220>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cc big-math.c -o the-answer -lm">
+	  <param name="command" value="send">
+	   <param name="text" value="cc big-math.c -o the-answer -lm\r\n">
+  </applet>
+
+<p>  
+This compiles <code>big-math.c</code> into an executable program called 
+<code>the-answer</code>, telling the compiler that it also needs to use the 
+math library. To run the program:
+<br>
+<code>> the-answer</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=90>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="the-answer">
+	  <param name="command" value="send">
+	   <param name="text" value="the-answer\r\n">
+  </applet>
+
+<p>  
+For scientific programs, LAPACK is another commonly used library. For a 
+tutorial on how to use LAPACK routines, look at the 
+<a target="Outside" href="http://nacphy.physics.orst.edu/lapack/">
+  PH 465 LAPACK tutorial</a>.
+
+<p>
+Another readily available compiler is <CODE>gcc</CODE>, which is used 
+the same way, but, is also capable of compiling <CODE>C++</CODE> programs.
+
+<p>
+<hr>
+<table><tr>
+<td>
+  <a href="prog-courtesy.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="../figs/next-motif.gif">
+   16.C: Programming Courtesy</a>
+   <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>  
+<td> <a href="programming.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="../figs/up-motif.gif">
+  16: Programming</a>
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td>  
+  <a href="programming.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="../figs/previous-motif.gif">
+  16: Programming</a> 
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="../contents.html";
+    onclick="top.frames[0].location='../mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="../figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<address>Comments and questions to
+<a href=mailto:nacse-unix@physics.orst.edu>nacse-unix@physics.orst.edu</a>.
+</address>
+</body>
+</html> 

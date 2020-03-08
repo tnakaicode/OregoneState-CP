@@ -1,0 +1,231 @@
+<html> 
+<head><title>NACSE - Unix 16.C: Programming Courtesy</title></head> 
+<body bgcolor="FFFFFF"> 
+<hr>
+<table><tr>
+<td>
+  <a href="../graphical.html#top";
+    onclick="top.frames[0].location='../mainfr.html'">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="../figs/next-motif.gif">
+   17: Graphical Tools</a>
+   <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>  
+<td> <a href="programming.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="../figs/up-motif.gif">
+  16: Programming</a>
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td>  
+  <a href="comp-f.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="../figs/previous-motif.gif">
+  Compiling Fortran</a> 
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td>  
+  <a href="comp-c.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="../figs/previous-motif.gif">
+  Compiling C</a> 
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="../contents.html";
+    onclick="top.frames[0].location='../mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="../figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+
+<img align="left" ALT="Specialized" src="../figs/RACECAR2.GIF" height=60 
+ width=130>
+<h2><center>&#167 16.C:&nbspProgramming Courtesy</center></h2>
+<hr>
+
+<p>
+When running programs on a shared machine, it is important to be aware of how
+your program consumes resources.  If your program consumes many resources, you
+must be careful not to interfere with other users.  If you are working with
+large arrays, or if your program takes more than a few minutes (i.e. about 1/2
+hour or more) you can reasonably assume that it is affecting other users.
+
+<p>
+If you need a lot of memory (greater than 32 Meg) you will want to use 
+<code>goophy</code> or <code>daphy</code> to do your work.   However, 
+<code>goophy</code> and <code>daphy</code> are primarily for class use. 
+Therefore, if you need to run a large research program on the cluster, it is
+recommended that you do so between 10 pm and 8 am.  If you run a large job on   
+<code>goophy</code> or <code>daphy</code> during the daytime, it will be
+killed.  
+
+<p>
+If your program takes a long time to run, but not a lot of memory you should
+run it on one of the fruit loop (<code>banana</code>, <code>coconut</code>, 
+<code>guava</code>, <code>graphy</code>, <code>mango</code> or 
+<code>papaya</code>) machines.  In addition, out of consideration for other 
+users, you should use <code>nice</code>.  <code>Nice</code> places your job at a lower
+priority (it can also be used to place your job at a higher priority, but you
+should not have permissions for that) than it would otherwise be at, allowing
+other programs to run ahead of it.  To use <code>nice</code> type 
+<code>nice</code> followed by <code>-15</code> (the number fifteen is a
+parameter you can read about in the <code>man</code> pages if you are curious)
+followed by the command you want <nobr><code>nice</code>ed</nobr>.  For 
+example, the to run the program <code>a.out</code> with <code>nice</code>:
+
+<br>
+<code>> nice -15 a.out</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=100>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="nice -15 a.out">
+	  <param name="command" value="send">
+	   <param name="text" value="nice -15 a.out\r\n">
+  </applet>
+
+<p>  
+While <code>nice</code> can help keep your job from interfering with other
+users, it is not a guarantee against such interference.  Because class use has
+priority over research on the cluster machines, if your job is making it 
+difficult for other users to use the cluster machines, it will be terminated.  
+If you have a very long or memory intensive job, it is suggested that you run 
+it at night, or at some other low usage time.  
+
+<p>
+To get control of your terminal window while running a long program, you should
+run it in the background.  To do this type the <code>&</code> after your
+command.  For instance:
+
+<br>
+<code>> nice -15 a.out &</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=110>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="nice -15 a.out &">
+	  <param name="command" value="send">
+	   <param name="text" value="nice -15 a.out &\r\n">
+  </applet>
+
+<p> 
+You can now log out without stopping your program.
+
+<p>
+If you decide you want control back after you have started your program you can
+use the <nobr><code>^ Z</code></nobr> (<code>ctrl-Z</code>) command to put
+your program in the background.
+
+<p>
+If you start a program without <code>nice</code> you can lower its priority
+with <code>renice</code>.  To <code>renice</code> something you need the job
+number.  To get the job number use the <code>ps</code> 
+(<code>P</code>rocess <code>S</code>tatus) command.  If you try a 
+<code>ps</code> 
+
+<br>
+<code>> ps</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=30>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="ps">
+	  <param name="command" value="send">
+	   <param name="text" value="ps\r\n">
+  </applet>
+
+<p> 
+you might get something like 
+
+<pre><code>
+  PID TTY      S           TIME COMMAND
+11093 ttyp1    S        0:01.40 -tcsh (tcsh)
+13805 ttyp1    R        0:00.02 a.out
+</code></pre>
+
+<p>
+The far right column lists the commands running under this session. The 
+<code>-tcsh</code> line is your terminal and it, or something similar will come 
+up whenever you use the <code>ps</code> command.  Sometimes the <code>ps</code> 
+command itself comes up, sometimes it does not.  Once you have found the 
+command you want to <code>renice</code> look in the far left column for the 
+process identification number (<code>PID</code>).  In the example given
+<code>a.out</code> has the process number <code>13805</code>.  To  
+<code>renice</code> this command you would type.   
+
+<br>
+<code>> renice -15 13805</code>
+
+<p>
+If you should decide you no longer want to run a job (for instance if it is
+taking too long), you can stop it.  If it is running in the foreground (your
+terminal is locked up waiting for it) you can use the 
+<nobr><code>^ c</code></nobr> (<code>ctrl-c</code>) command to stop it.  
+
+<p>
+If it is running in the background you can use the you can use the 
+<code>kill</code> command.  The  <code>kill</code> command also needs the job
+number.  To kill the example program above you would type:
+
+<br>
+<code>> kill -9 13805</code>
+
+<p>
+A <code>kill</code> may not always work on the first try.  You should use a
+<code>ps</code> after a few minutes to check that the program is no longer 
+running.  If the program is still running re-enter your <code>kill</code>
+command. 
+
+<p>
+If you remain aware of how you are modifying a program you should be able to
+estimate the time and memory requirements of your as your programs become
+larger. Be careful to consider the multiplicative properties of 
+multidimensional arrays.  If you double the number of each dimension in your 
+3-D array, you can expect your memory needs to increase by a factor of eight.  
+Your program time will also likely increase by a factor of eight or more.  If 
+you are careful and considerate about when and how you use the cluster 
+resources, we can keep the cluster working well for all users.
+
+<hr>
+<table><tr>
+<td>
+  <a href="../graphical.html#top";
+    onclick="top.frames[0].location='../mainfr.html'">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="../figs/next-motif.gif">
+   17: Graphical Tools</a>
+   <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>  
+<td> <a href="programming.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="../figs/up-motif.gif">
+  16: Programming</a>
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td>  
+  <a href="comp-f.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="../figs/previous-motif.gif">
+  Compiling Fortran</a> 
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td>  
+  <a href="comp-c.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="../figs/previous-motif.gif">
+  Compiling C</a> 
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="../contents.html";
+    onclick="top.frames[0].location='../mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="../figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<address>Comments and questions to
+<a href=mailto:nacse-unix@physics.orst.edu>nacse-unix@physics.orst.edu</a>.
+</address>
+</body>
+</html> 

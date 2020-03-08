@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Looking at File Permissions</title></head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<b>OSU Computational Physics</b> - <i>Landau Research Group (nacse)
+-</i>
+
+<hr>
+<table><tr>
+<td>
+  <a href="chmod.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.L.2: Changing File Permissions</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="control.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5.L: Controlling Access to Your Files and Directories</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>    
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 5.L.1:&nbsp; Looking at Your File Permissions</h2></center>
+
+<hr>
+
+<p> Before you get yourself into trouble by changing file permissions,
+you need to know what they are and what they do.  You start by looking at
+a long listing (ll) in your home directory:
+
+<p>
+<code>> cd ~</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ~">
+	  <param name="command" value="send">
+	   <param name="text" value="cd ~\r\n">
+  </applet>
+
+<br>
+<code>> ls -l</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=45>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="ls -l">
+	  <param name="command" value="send">
+	   <param name="text" value="ls -l\r\n">
+  </applet>
+<br>
+<code>> ll</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=25>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="ll">
+	  <param name="command" value="send">
+	   <param name="text" value="ll\r\n">
+  </applet>
+
+ <p> The result of either of these "long lists" should be something like:
+
+<pre>
+-rw-r--r--   1 melanie users       3197 May 17 14:29 Mwm
+-rw-r--r--   1 melanie users      12983 May 17 14:29 README.first
+-rwxr-xr-x   1 melanie users      28784 May 17 14:29 a.out*
+drwxr-xr-x   4 melanie users        512 May 17 14:31 development/
+-rw-r--r--   1 melanie users       1840 May 17 14:29 eqns2.ms
+-rw-r--r--   1 melanie users       3923 Jul 28 10:18 plotoutfile.ps
+drwxr-xr-x   3 melanie users        512 Aug  4 16:03 public-html/
+-rw-r--r--   1 melanie users      19917 May 17 14:29 s2
+-rw-r--r--   1 melanie users        133 Sep  1 18:02 sample.doc
+
+</pre> 
+
+Here the first column contains 10 characters (d's, r's, w's, x's, and 
+"-"'s) which are   code to indicate the file mode.  The first character 
+in the code indicates the file type.  A "-" indicates an ordinary file and a "d" a 
+directory.
+
+<p> The next nine characters (r's, w's, x's and "-"'s) are actually three 
+sets of three characters each.  An "r" indicates read permission, a "w" 
+write (change or delete) permission, and an "x" execute permission.  A "-" 
+indicates the absence of a character, and so would mean you cannot read, 
+write, or execute that file.
+
+<p>
+The first set of characters gives the permissions of the 
+"owner", the second set gives the permissions of the "group", and the third 
+set gives the permissions of "all others".  
+
+<p> For the listing we give, <em>melanie</em> is the owner as is indicated 
+in the third column.  (You should be the owner in the listing the computer 

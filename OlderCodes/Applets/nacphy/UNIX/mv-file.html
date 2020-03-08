@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Moving Files</title></head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<b>OSU Computational Physics</b> - <i>Landau Research Group (nacse)
+-</i>
+
+<hr>
+<table><tr>
+<td>
+  <a href="mv-dir.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.I: Moving Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+   <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="cp-dir.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5.G: Copying Directories</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align=left src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 5.H:&nbsp; Moving Files</h2></center>
+
+<hr>
+
+<p> The <code>mv</code> command in Unix "moves" files and directories from 
+one location (or name) to another.  Its action is similar to copying with 
+<code>cp</code> and then <em>removing the original</em> with 
+<code>rm</code>.  The "move" command <code>mv</code> is safer and more 
+precise.  It's safer because if Unix cannot create the new file, it will 
+not remove the old one.  It's more precise because it preserves the 
+original creation date of the file.
+
+<p> The syntax for the "move" <code>mv</code> command is almost identical 
+to that of the "copy" command <code>cp</code>.  Simply enter the name of 
+the file or directory you wish to move from, and <em>then</em> the name of 
+the file or directory you wish to move to:
+  
+<p>
+<code>> mv -i a.out program</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=140>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="mv -i a.out program">
+    <param name="command" value="send">
+     <param name="text" value="mv -i a.out program/prog\r\n">
+  </applet>
+
+<br> 
+<code>> mv -i a.out development/prog</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=200>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="mv -i a.out development/prog">
+    <param name="command" value="send">
+     <param name="text" value="mv -i a.out development/prog\r\n">
+  </applet>
+
+
+  <p> The first command moves the file <em>a.out</em> in your working 
+  directory to the file <em>program</em> in your working directory.  The 
+  second command moves the file <em>a.out</em> in your working directory to 
+  a file with the same name in the <em>development/prog</em> directory.  
+  <p> The interactive option <code>-i</code> is important as it may save 
+  you a lot of heartache.  It makes Unix ask your permission before it 
+  writes over an existing file.
+
+<p> Like the <code>cp</code> command, the <code>mv</code> command also 
+works for <a href="mv-dir.html#top">directories</a> (except the 
+<code>-r</code> option is not needed or permitted).  To move the 
+<em>development/backup</em> directory and its contents to the 
+<em>development/prog </em> directory, enter:
+
+<p>
+<code>> mv -i development/backup development/prog</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=300>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="mv -i development/backup development/prog">
+    <param name="command" value="send">
+     <param name="text" 
+            value="mv -i development/backup development/prog\r\n">
+  </applet>
+
+<hr>
+<table><tr>
+<td>
+  5.I:<a href="mv-dir.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.I: Moving Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="cp-dir.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5.G: Copying Directories</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+ 
+</body>
+</html>
+
+

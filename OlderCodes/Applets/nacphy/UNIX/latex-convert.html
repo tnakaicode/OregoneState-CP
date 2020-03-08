@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: LaTeX Conversion</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  23: <a target="MainDoc" href="multimedia.html#top";
+    onclick="top.frames[0].location='manage-media.html'">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   Multimedia</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  22: <a target="MainDoc" href="latex.html#top">
+  <img align="left"  align="bottom" height=25 width=27 
+   alt="Up" src="figs/up-motif.gif">
+   <em>LaTeX</em></a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  22.B:  <a target="MainDoc" href="latex-create.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  Creating <em>LaTeX</em> Documents</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 22.C: Converting <i>LaTeX</i> to <i>HTML</i></h2></center>
+<hr>
+
+<P>To convert <I>LaTeX</I> to <I>HTML,</I> you use a utility called (not
+surprisingly) <I><FONT SIZE=-1>LaTeX2HTML</FONT></I>. This utility is available
+on the Physics Cluster and can take an incredibly long time to run if you
+file is of even moderate size. If you are not working on the Physics Cluster,
+<I><FONT SIZE=-1>LaTeX2HTML</FONT> </I>can be obtained from <A HREF="http://cbl.leeds.ac.uk/nikos/tex2html/doc/latex2html/latex2html.html" target="Outside">Nikos
+Drakos </A>. </P>
+
+<P>To use <I><FONT SIZE=-1>LaTeX2HTML,</FONT></I> simply type <TT><FONT SIZE=-1>latex2html</FONT></TT>
+followed by the name of the file you wish to convert. <I><FONT SIZE=-1>LaTeX2HTML</FONT></I>
+will then create a directory for your file, convert the text format to
+<I>HTML</I> and convert what cannot be written in <I>HTML</I> to <TT>gif</TT>
+format images</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; latex2html convert.te</FONT>x </TT>
+  <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=150><PARAM name="register" value="Unix Tutorial WebTerm">
+     <PARAM name="label" value="latex2html convert.tex">
+     <PARAM name="command" value="send">
+     <PARAM name="text" value="latex2html convert.tex\r\n">
+  </APPLET></P>
+</UL>
+
+<P>At the end of a very long amount of processing, Unix will declare: </P>
+
+<UL>
+<PRE><TT><FONT SIZE=-1>Done.</FONT></TT>
+</PRE>
+</UL>
+
+<P>Now try loading your document into your Netscape browser. First, select
+&quot;New Web Browser&quot; under &quot;File&quot;; then, select &quot;Open
+File&quot; which is also under file. When the file section window comes
+up, click on the directory &quot;convert&quot; in the left hand box, then
+press the &quot;Filter&quot; button. Finally, click on &quot;convert.html&quot;
+in the right hand box and click on &quot;Ok&quot;. This will bring up the
+first page of your new document. If you are familiar with <I>HTML</I>,
+you may wish to &quot;View&quot; the &quot;Document Source&quot;. <I><FONT SIZE=-1>LaTeX2HTML</FONT></I>
+is able to convert many docuement formatting features, including numbered
+lists, headings and sections. Since there is currently no way to format
+equations in <I>HTML</I> it converts the equations to images. </P>
+
+<P><I><FONT SIZE=-1>LaTeX2HTML</FONT></I> is a useful way to create web
+documents, both for those more familiar with <I>LaTeX</I> than <I>HTML,</I>
+and for those who wish to include equations in their documents (there are
+many scientists in both categories). <I><FONT SIZE=-1>LaTeX2HTML </FONT></I>does
+not always work in the same manner as <I>LaTeX</I>. If you are writing

@@ -1,0 +1,190 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Multimedia - Programming</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  <a href="power.html#top";
+    onclick="top.frames[0].location='mainfr.html'">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   </a>24: Unix Power Tools
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td>  
+  <a href="multimedia.html#top"> 
+  <img align="left"  align="bottom" height=25 width=27 
+   alt="Up" src="figs/up-motif.gif"> 
+   23: Multimedia</a><img height=25 width=1 alt=" " src="figs/blank.xbm"> 
+</td>
+<td>  
+  <a href="media-animate.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  23.E: Animation</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img align="left" ALT="Specialized" src="figs/RACECAR2.GIF" height=60 width=130> 
+
+<center><h2>&#167 23.F:&nbsp; ; Internet Programming Tools </h2></center>
+<hr>
+
+<P>For the ultimate in interactivity and control, nothing can beat writing
+your own program. The finest control can be found with programs written
+in standard programming languages such as C and Fortran. Many popular CD
+ROM titles are done this way. This level of sophistication is usually achieved
+by teams of experts (artists, programmers, writers and content experts).
+However, by using the internet and CGI-scripts or the Java programming
+language, we can obtain some of this control without nearly the level of
+expertise or manpower. </P>
+
+<P><I>Scripts</I> are simple programs which allow basic interactivity.
+A Web page is created which includes instructions for the user to enter
+information or select from a list. The user then &quot;submits&quot; the
+information and a short program (script) is run which creates a new Web
+page based on the information the user entered. If you have used one of
+the popular search engines, you have probably used a script. Because there
+are few limits on the type of operations a script can execute, most systems
+(the OSU Physics Cluster included) keep scripts in a protected directory
+which most users are not allowed to modify. Because of this restriction,
+we will stop our discussion of CGI-scripts here. If you become interested
+in CGI-scripts, you can find instructions and examples of almost any kind
+of script you might want on the internet, and you can ask the system administrator
+to allow you limited access to the CGI area. </P>
+
+<P>Java is a programming environment designed specifically for the internet.
+It is relatively secure, so you can keep your programs in your own directory.
+Java, like C and Fortran, is a full-fledged programming language, and we
+will not make an effort to teach you how to program in it. However, a few
+quick notes about the nature of Java are in order. </P>
+
+<P>Java is object oriented. This means that Java is intended to work best
+within a specific type of structure. If you do not know object oriented
+programming and you intend to do any complex Java programs, it is worthwhile
+to learn about object oriented programming (see <I>Computational Physics
+</I>by Landau and Paez).</P>
+
+<P>Java is a secure language when run as an applet through a Web browser,
+but also exists as a stand alone language. This means that you may read
+about a specific Java command which you cannot use in your applet due to
+security restrictions. Most Java books contain a general list of applet
+security restrictions. </P>
+
+<P>Java has been loaded on the OSU Physics cluster. If you are working
+on a machine which does not have Java, you can <A HREF="http://java.sun.com/products/jdk" target="Outside">download</A>
+it from Sun. </P>
+
+<P>. For instance, We have included the program <TT><FONT SIZE=-1>GraphApplet.java</FONT></TT>
+in the <TT><FONT SIZE=-1>Java</FONT></TT> directory of your tutorial files.
+(This is one of the many sample programs which come with Java.) Change
+directories to Java and try compiling it with the &quot;java compile&quot;
+command <TT><FONT SIZE=-1>javac: </FONT></TT></P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; cd Java</FONT></TT> </P>
+
+<P><TT>&gt;<FONT SIZE=-1> javac GraphApplet.java</FONT></TT><FONT SIZE=-1>
+</FONT></P>
+</UL>
+
+<P>After some time, the Java compiler will give you a new prompt signaling
+that it is done compiling and found no errors. If you do an <I>ls</I>,
+you will find that there is a new file <TT><FONT SIZE=-1>GraphApplet.class</FONT></TT>.
+This is your compiled program. </P>
+
+<P>There are two ways to run your Java applet. For testing, you will generally
+want to use the applet viewer (certain code, for example WebTerm, which
+involves socket connections or other low-level communications features
+may not run on the applet viewer). The other method is to use your Web
+browser. For either method you will need an <FONT SIZE=-1><I>HTML</I> </FONT>file
+to start the applet. The file <TT><FONT SIZE=-1>example1.html</FONT></TT>
+has been provided for this purpose:</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; more example1.htm</FONT>l</TT> </p>
+</UL>
+
+<P>Pay particular attention to the command </P>
+
+<UL>
+<PRE><TT> 
+<FONT SIZE=-1>&lt;applet code=GraphApplet.class width=300 height=120&gt;
+&lt;/applet&gt;</FONT></TT>
+</PRE>
+</UL>
+
+<P>This tells the browser to load the <I>applet</I> <TT><FONT SIZE=-1>GraphApplet.class</FONT></TT>
+in a box of size <FONT SIZE=-1><TT>width=300 height=120</TT>.</FONT> Any
+time you wish to use a Java applet, you will need to include an <I>applet</I>
+tag like the one above in your <TT>HTML</TT>. </P>
+
+<P>If you are working on an Xstation, try running your code on the applet
+viewer. Go to your window (not WebTerm) and enter the command </P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; appletviewer example1.html</TT> </FONT></P>
+</UL>
+
+<P>A somewhat boring example. Now try opening the file with your browser.
+If you are using <I>Netscape,</I> use the &quot;Open&quot; command under
+&quot;File&quot;, then select the directory &quot;Java&quot; and press
+&quot;Filter&quot;. Then select the file <TT><FONT SIZE=-1>&quot;example1.htm</FONT></TT>l&quot;
+and press &quot;<TT><FONT SIZE=-1>OK&quot;.</FONT></TT> </P>
+
+<P>Obviously, you will want to make more exciting programs to include on
+your Web pages. For advice on how to write simple programs in Java, we
+recommend the many examples available on the Web. For information on how
+to design more complex examples, we recommend a course or book which includes
+information on object oriented program design. If you are already an expert
+C++ programmer, you may find the book <I><A HREF="http://www.ora.com/catalog/javanut2/desc.html" target="Outside">Java
+in a Nutshell</A></I> by David Flanagan a useful and affordable reference.
+</P>
+
+<P>
+<HR></P>
+
+<p> 
+<hr>
+<table><tr>
+<td>
+  <a href="power.html#top";
+    onclick="top.frames[0].location='mainfr.html'">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   </a>24: Unix Power Tools
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td>  
+  <a href="multimedia.html#top"> 
+  <img align="left"  align="bottom" height=25 width=27 
+   alt="Up" src="figs/up-motif.gif"> 
+   23: Multimedia</a><img height=25 width=1 alt=" " src="figs/blank.xbm"> 
+</td>
+<td>  
+  <a href="media-animate.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  23.E: Animation</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+ 

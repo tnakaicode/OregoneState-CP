@@ -1,0 +1,158 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Keyword Searching with  man -k</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  11: <a target="MainDoc" href="multiple.html#top";
+    onclick="top.frames[0].location='manage-multi.html'"> 
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   Clustered Workstations</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  10: <a target="MainDoc" href="help.html#top">
+  <img align="left"  align="bottom" height=25 width=27 
+   alt="Up" src="figs/up-motif.gif">
+   Getting Help</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  10.A: <a target="MainDoc" href="man.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+   Using <code>man</code></a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html#top";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width = 125>
+<center><h2>&#167 10.B:&nbsp;  Keyword Searching with  man -k</h2></center>
+<hr>
+
+<p> We admit it.  Sometimes Unix command are a bit succint. Or with ones 
+like <em>grep</em> and <em>cat</em>, not totally descriptive.  Unix 
+compenstes for this by letting you search through the keywords contained in 
+the <em>man</em> pages describing the comands; you need only provide a one 
+word description of the command's action. 
+
+<p> For example, sometimes you might 
+want to compare two files to see if they are different, without going 
+through them line by line.  So you ask about compare:
+
+<ul>
+<code>>man -k compare</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=120>
+      <param name="register" value="Unix Tutorial WebTerm">
+        <param name="label" value="man -k compare">
+          <param name="command" value="send">
+           <param name="text" value="man -k compare\r\n">
+  </applet>
+</ul>
+You should get a response  like:
+  <ul>
+<table>
+<tr><td>cmp(1) <td>- Compares two files</tr>
+<tr><td>diff(1)  <td>- Compares text files</tr>
+<tr><td>diff3(1) <td>- Compares three files</tr>
+<tr><td>dircmp(1) <td>- Compares two directories</tr>
+<tr><td>sccsdiff(1)  <td>- Compares two versions of  SCCS file</tr>
+<tr><td>sdiff(1) <td>- Compares two files, display side-by-side differences</tr>
+<tr><td>zcmp, zdiff (1)<td>- Compares compressed files</tr>
+</table>
+</ul>
+
+Now that you realize it's the <em>cmp</em> command you want, use 
+<em>man</em> to get all the dope on it:
+
+<ul>
+<code>  > man cmp</code>
+</ul>
+
+The <em>man -k</em> command is also useful to search through the list of 
+command names. For example, if you are not sure of the spelling or can't recall
+all of the name:
+
+<ul>
+<code>>man -k rmd</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=90>
+      <param name="register" value="Unix Tutorial WebTerm">
+        <param name="label" value="man -k rmd">
+          <param name="command" value="send">
+           <param name="text" value="man -k rmd\r\n">
+  </applet>
+</ul>
+You get the response:
+
+<ul>
+<table>
+ <tr> <td>rmdel(1)        <td>- Removes a delta from a SCCS file.</tr>
+ <tr> <td> rmdev(1)        <td>- Removes a device from the system.</tr>
+ <tr> <td> rmdir(1)        <td>- Removes a directory.</tr>
+ <tr> <td> rmdsmitd(1)     <td>- Removes domains  in Distributed System</tr>
+</table>
+ </ul>
+
+<p>
+If you are curious about the commands in Unix, you can consult one of the
+following references:
+<ul>
+  <li>  <a target="Outside"
+   href="http://www.nacse.org/demos/coping-with-unix/coping-with-unix/node15.html#SECTION00170000000000000000">
+   <em>A Scientist's Guide to Workstations:</em> Alphabetized List of Unix Commands</a>
+  <li>  <a target="Outside"
+    
+We suggest that  you can continue on to the next section, 
+<a target="MainDoc"href="multiple.html";
+    onclick="top.frames[0].location='manage-multi.html'">
+   Working with Clustered Workstations.</a>
+
+<hr>
+<table><tr>
+<td>
+  11: <a target="MainDoc" href="multiple.html#top";
+    onclick="top.frames[0].location='manage-multi.html'"> 
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   Clustered Workstations</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  10: <a target="MainDoc" href="help.html#top";
+    onclick="top.frames[0].location='manage-multi.html'"> 
+  <img align="left"  align="bottom" height=25 width=27 
+   alt="Up" src="figs/up-motif.gif">
+   Getting Help</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  10.B: <a target="MainDoc" href="man-k.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ <code>man -k</code></a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+ 
+</body>
+</html>

@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Changing Your File Permissions</title></head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<b>OSU Computational Physics</b> - <i>Landau Research Group (nacse)
+-</i>
+<hr>
+<table><tr>
+<td>
+  <a href="directory.quiz.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.M: Review Quiz</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="ls-permissions.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5.L.1: Looking at File Permissions</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 5.L.2:&nbsp; Changing File Permissions</h2></center>
+
+<hr>
+
+<p> Now that you know what your file permissions are, it's time to modify 
+them.  The "change mode" command <code>chmod</b></code> changes the 
+permissions of files as dictated by the command arguments.  There
+are a number of ways to state the arguments for the "change mode" command.
+
+<p> One way is to give the command followed by the permission access
+you would like to change and the name of the file to be affected:
+
+<ul> 
+
+<LI> A <code>+</code> sign adds permission.
+
+<LI >  A <code>-</code> sign removes permission. 
+
+<LI > The letter <code>u</code>  indicates users.
+
+<LI > The letter  <code>g</code>  indicates  group.
+
+<LI > The letter  <code>o</code> indicates  others.
+
+<LI> The letter <code>a</code> indicates  all of
+the above (everybody).
+</ul>
+
+For example, let's say we want to change permission
+for the file <em>area.f</em> in directory <em>development/prog</em>.
+First we get to it and check what's there:
+ 
+<p>
+<code>> cd ~/development/prog</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=160>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ~/development/prog">
+	  <param name="command" value="send">
+	   <param name="text" value="cd ~/development/prog\r\n">
+  </applet>
+
+<br> 
+<code>> ls -l</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="ls -l">
+	  <param name="command" value="send">
+	   <param name="text" value="ls -l\r\n">
+  </applet>
+
+<br>
+<pre>
+-rw-r--r--   1 melanie users         68 Mar  3 13:18 area.f
+</pre>
+
+<p> We see from listing that melanie has read and write permissions, while 
+the group and outside world have only read access.  To change a file's 
+permission access, you enter the <code>chmod</code> command with arguments 
+giving the party affected, whether you want to add ore remove permission, 
+and finally the set of users affected.  For example, change the file 
+permission of <em>area.f</em> to allow everybody to execute it, and for the 
+group to write to it, and check the result:
+
+<p>
+<code>> chmod a+x,g+w area.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=150>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="chmod a+x,g+w area.f">
+	  <param name="command" value="send">
+	   <param name="text" value="chmod a+x,g+w area.f\r\n">
+  </applet>
+
+<br>
+<code>> ls -l</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">

@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 20.B: Fortran Programming Courtesy</TITLE>
+   <META NAME="GENERATOR" CONTENT="User-Agent: Mozilla/3.01Gold (Macintosh; I; 68K)">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="C+fortran.html#top" ; onclick="top.frames[0].location='mainfr.html'">
+<IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+21: Running C and Fortran Together</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="run-fortran.html#top">
+<IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT>
+20: Running Fortran</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="comp-f.html#top">
+<IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+Compiling Fortran</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+<IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT>
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 20.B:&nbsp;Fortran Programming Courtesy</H2>
+
+<P>
+<HR></P>
+
+<P>When running programs on a shared computer, or on a cluster of computers,
+it is important to be aware of how your program consumes resources. As
+your program consumes more and more resources, you affect other users more
+and more. If you are working with large arrays which occupy a large fraction
+of the computer's <FONT SIZE=-1>RAM</FONT>, or if your program takes more
+than a few minutes to run, you probably are affecting other users. </P>
+
+<P>In the Physics Department, the machines <FONT SIZE=-1><TT>goophy,</TT>
+<TT>daphy, </TT></FONT>and <TT><FONT SIZE=-1>hermes </FONT></TT>each has
+more than 32 Meg of RAM. But be aware, <I>the highest priority for the
+departmental cluster is class use.</I> If you need to run a large research
+program on the cluster, you should give it low priority and have it run
+between 10 pm and 8 am. If you run a large job on the cluster during class
+time, the system administrators have been instructed to kill them.</P>
+
+<P>To run your program at a lower priority, use the <TT><FONT SIZE=-1>nice
+</FONT></TT>command. To use it, enter <FONT SIZE=-1><TT>nice</TT> <TT>-15
+</TT></FONT>followed by the command you want <NOBR><TT>nice</TT>ed</NOBR>.
+For example, to be nice when you run the program <TT><FONT SIZE=-1>a.out</FONT></TT>
+</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; nice -15 a.out</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=100><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="nice -15 a.out"><PARAM name="command" value="send"><PARAM name="text" value="nice -15 a.out\r\n"></APPLET></P>
+</UL>
+
+<P>Even though your job may have a lower priority, it may still interefere
+with other people's work. For example, if it is occuping too a large fraction
+of central memory for other jobs to fit it, your job must first be written
+to disk before the others can proceed. And because disk-writing is a slow
+process, this slows everone down. Likewise, if your job is doing a lot
+of I/O, this may keep others users from doing I/O or may clog up the entire
+network. </P>
+
+<P>To keep from losing control of your terminal window while running a
+long program, you should run it in <I>background</I>. To do this, enter
+a <TT>&amp;</TT> after your command: </P>
+
+<UL>
+<P><TT>&gt; <FONT SIZE=-1>nice -15 a.out &amp;</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=110><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="nice -15 a.out &"><PARAM name="command" value="send"><PARAM name="text" value="nice -15 a.out &\r\n"></APPLET></P>
+</UL>
+
+<P>You can now do other things in the same window without stopping your
+program. </P>
+
+<P>Depending on the Unix shell you are using, you may have <I>job contro</I>l
+from your keyboard. This means that if you decide you want control back
+of a command you placed in <I>background</I> (or of any other command you
+happen to be running), you can enter <TT><FONT SIZE=-1>^Z</NOBR></FONT></TT>
+(<TT><FONT SIZE=-1>ctrl-Z</FONT></TT>) to stop it. Then enter <TT><FONT SIZE=-1>fg</FONT></TT>
+to place it in <I>foreground</I>, or <TT><FONT SIZE=-1>bg</FONT></TT> to
+place it in <I>background</I>.</P>
+
+<P>If you start a program without <TT><FONT SIZE=-1>nice</FONT>,</TT> you
+can lower its priority with <TT><FONT SIZE=-1>renice</FONT></TT>. To <FONT SIZE=-1><TT>renice</TT>
+</FONT>a command, you need its <I>job number</I>. To get the <I>job number</I>
+use the <TT><FONT SIZE=-1>ps</FONT></TT> (process status) command. If you
+try <BR>
+<TT>&gt; ps</TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=30><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="ps"><PARAM name="command" value="send"><PARAM name="text" value="ps\r\n"></APPLET>,</P>
+
+<P>you might get something like </P>
+
+<UL>
+<PRE>
+<TT><FONT SIZE=-1>  PID TTY      S           TIME COMMAND
+11093 ttyp1    S        0:01.40 -tcsh (tcsh)
+13805 ttyp1    R        0:00.02 a.out</FONT></TT>
+</PRE>
+</UL>
+
+<P>The far right column lists the commands running under this session.
+The <TT><FONT SIZE=-1>-tcsh</FONT></TT> line is the shell you are interacting
+with through your terminal. Sometimes, the <FONT SIZE=-1><TT>ps</TT> </FONT>command
+itself is shown. Once you have found the command you want to <FONT SIZE=-1><TT>renice,</TT>
+</FONT>look in the leftmost column for the process identification number
+(<TT><FONT SIZE=-1>PID</FONT></TT>). In this example, <TT><FONT SIZE=-1>a.out</FONT></TT>
+has <TT><FONT SIZE=-1>PID 13805</FONT></TT>. So, to <FONT SIZE=-1><TT>renice</TT>
+<TT>a.out, </TT></FONT>enter</P>
+
+<UL>
+<P><BR>
+<FONT SIZE=-1><TT>&gt; renice -15 13805</TT> </FONT></P>
+<FONT SIZE=-1></FONT></UL>
+
+<P>If you should decide you are tired of having some job run, feel free
+to go ahead and kill it. If the job is running in the <I>foreground , </I>in
+which case the window in which you entered it is locked up while the job
+runs, you can enter the <NOBR><TT><FONT SIZE=-1>^c</NOBR></FONT></TT> (<TT><FONT SIZE=-1>ctrl-c</FONT></TT>)
+command to stop it. </P>
+
+<P>If it is running in the <I>background</I>, you can use the <FONT SIZE=-1><TT>kill</TT>
+</FONT>command (which also uses the job number) </P>
+
+<UL>
+<P><BR>
+<FONT SIZE=-1><TT>&gt; kill -9 13805</TT> </FONT></P>
+</UL>
+
+<P>A <FONT SIZE=-1><TT>kill</TT> </FONT>may not always work on the first
+try. You should use a <FONT SIZE=-1><TT>ps</TT> </FONT>after a little bit
+to check that the command is no longer executing. If the command is still
+running ,re-enter your <FONT SIZE=-1><TT>kill</TT> </FONT>command. </P>
+
+<P>It's a good idea to be aware of how much time and memory your program
+uses. Then you can estimate what will happen as you increase your program's
+scope.This is particularly true if your program contains multidimensional
+arrays, since there is a geometric increase in computational intensity
+with size. For example, if you double the dimension of a 3-D array, your
+memory use and run time increases by a factor of about eight. </P>
+
+<P>Remember, if you prefer not to have other users interfere with your
+work on a shared computer system, then get the message across by being
+courteous to others.
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="C+fortran.html#top" ; onclick="top.frames[0].location='mainfr.html'">
+<IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+21: Running C and Fortran Together</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="run-fortran.html#top">
+<IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT>
+20: Running Fortran</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="comp-f.html#top">
+<IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+Compiling Fortran</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+<IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT>
+</A></TD>
+</TR>
+</TABLE>
+ 
+</BODY>
+</HTML>

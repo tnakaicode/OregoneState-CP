@@ -1,0 +1,12 @@
+file = C:/cygwin/home/rubin/DXdata/Shock.dat
+grid = 25 x 13
+format = ascii
+interleaving = field
+majority = column
+field = field0
+structure = scalar
+type = float
+dependency = positions
+positions = regular, regular, 0, 1, 0, 1
+
+end

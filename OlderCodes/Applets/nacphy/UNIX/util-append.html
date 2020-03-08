@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 14.D: Appending with &lt;&lt;</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="util-pipe.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="util-pipe.html#top">
+14.E: Piping with <TT>|</TT></A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="util.html#top">
+14: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util-stdin-stdout.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="util-stdin-stdout.html#top">
+14.C: Redirecting I/O</A></TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 14.D:&nbsp;Appending with <TT>&gt;&gt;</TT></H2>
+
+<P>
+<HR></P>
+
+<P>On the last page we used the redirect output symbol <FONT SIZE=-1>&gt;</FONT>
+and the <TT><FONT SIZE=-1>cat </FONT></TT>command to place output into
+a designated file. We now introduce the symbol <FONT SIZE=-1>&gt;&gt;</FONT>
+which <I>appends</I> to a designated file, that is, sends the output to
+the end of a file.</P>
+
+<P>To add the file <TT><FONT SIZE=-1>README.first </FONT></TT>to <TT><FONT SIZE=-1>old.text</FONT></TT>,
+</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; cat README.first &gt;&gt; old.text</FONT></TT>
+<APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=180><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="cat README.first >> old.text"><PARAM name="command" value="send"><PARAM name="text" value="cat README.first >> old.text\r\n"></APPLET></P>
+</UL>
+
+<P>Now use <TT><FONT SIZE=-1>head</FONT></TT> to view the file. (Quiz)
+</P>
+
+<P><BR>
+<A HREF="util-head.html#top" target="MainDoc">Review the <FONT SIZE=-1><TT>head</TT>
+</FONT>command</A> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=110><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="Enter Command"><PARAM name="command" value="send"><PARAM name="text" value="head old.text\r\n"></APPLET></P>
+
+<P>The redirection symbols are versatile and powerful, and you should be
+able to find many uses for them. When you first experiment with them, you
+may want to backup your files to avoid accidental loss. </P>
+
+<P>Next we talk about <A HREF="util-pipe.html#top" target="MainDoc">piping,</A>
+which is a close cousin of redirection. 
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="util-pipe.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="util-pipe.html#top">
+14.E: Piping with <TT>|</TT></A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="util.html#top">
+14: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD>
+<UL>
+<P><A HREF="util-stdin-stdout.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="util-stdin-stdout.html#top">
+14.C: Redirecting I/O </A></P>
+</UL>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>

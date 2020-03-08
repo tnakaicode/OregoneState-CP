@@ -1,0 +1,156 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Your Home Directory</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<b>OSU Computational Physics</b> - <i>Landau Research Group (nacse)
+-</i>
+<hr>
+<table><tr>
+<td>
+  <a href="ls-options.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+  5.B: List Command Options</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="directory.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5: Managing Files and Directories</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 5.A:&nbsp; Looking Around Your Home Directory</h2></center>
+<hr>
+
+<p> When you log onto a Unix computer, the files you first see are located 
+in <a target="Outside" 
+href="http://www.nacse.org/demos/coping-with-unix/coping-with-unix/node10.html#SECTION00160000000000000000"> your home 
+directory</a>.  You can always return to your home directory by using the 
+command
+
+<ul>
+<code>> cd ~</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ~">
+	  <param name="command" value="send">
+	   <param name="text" value="cd ~\r\n">
+  </applet>
+</ul>
+ 
+While working on a Unix system, it is important to be aware of what
+directory you are in.  One way of doing this, which is discussed in
+<em>Customizing Your Account</em>, is to set your <em>.login</em> file
+to print the current directory on the command line.  Another is to use
+the <em>print working directory</em> command <em>pwd</em>.  (You may also
+think of <em>pwd</em> as "pathway of working directory.") To print the
+name of your working directory, try the command
+
+<ul>
+<code>> pwd</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="pwd">
+	  <param name="command" value="send">
+	   <param name="text" value="pwd\r\n">
+  </applet>
+</ul>
+
+Unix should   respond with something like: 
+
+
+<ul>
+<code>/disk/username/</code>
+</ul>
+
+</a> where <em>disk</em> is the name of the hard disk where your files
+are stored, and <em>userid</em> is your name.  Now let's a look around
+your home directory.  To do that, issue the <em>list</em> command
+
+<ul>
+<code>> ls</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=20>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="ls">
+	  <param name="command" value="send">
+	   <param name="text" value="ls\r\n">
+  </applet>
+</ul>
+
+The listing should look something like: 
+
+<ul><pre><code> 
+Mwm				a.out* 			eqns2.ms  		public-html/ 	sample.doc 
+README.first 	development/ 	plotoutfile.ps 	s2 
+</pre></code>
+</ul>
+
+Here the <code>*</code> after <code>a.out</code> indicates that it's an 
+executable file, the <code>/</code> after <code>public-html</code> and 
+<code>development</code> indicates that they are directories containing yet 
+more files, while the files with suffixes are plain files.  Note that the 
+<code>*</code> and <code>/</code> are <em>not</em> part of the actual names 
+of these files, and so should not be entered when typing commands.  (Note, 
+too, that if your list command does not add on these cute little suffixes, 
+we'll show you how to change that with an option or an alias.)
+
+<p> 
+<hr>
+<table><tr>
+<td>
+  <a href="ls-options.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+  5.B: List Command Options</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="directory.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5: Managing Files and Directories</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+</body>
+</html>
+

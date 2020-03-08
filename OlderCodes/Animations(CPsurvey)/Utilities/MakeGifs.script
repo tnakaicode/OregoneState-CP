@@ -1,0 +1,47 @@
+#! /bin/ksh
+
+unalias rm
+integer i=$1
+while test i -lt $2
+do
+
+ if test i -lt 10 
+  then 
+  print "set terminal pbm small color; set output\"$3t=0000$i.ppm\"; set noxtics; set noytics;
+  set size 1.0, 1.0; set yrange [0:.1];
+  plot 'run.0000$i' using 1:2 w lines, 'run.0000$i' using 1:3 w lines;
+  " >data0000$i.gnu
+  gnuplot data0000$i.gnu
+  ppmquant -map samp_colormap $3t=0000$i.ppm>$3at=0000$i.ppm
+  ppmtogif -map samp_colormap $3at=0000$i.ppm > $30000$i.gif
+  rm $3t=0000$i.ppm $3at=0000$i.ppm data0000$i.gnu
+  i=i+99
+  fi
+  
+if test i -gt 9 -a i -lt 1000
+then 
+print "set terminal pbm small color; set output\"$3t=00$i.ppm\"; set noxtics; set noytics;
+set size 1.0, 1.0; set yrange [0:.1];
+plot 'run.00$i' using 1:2 w lines, 'run.00$i' using 1:3 w lines;
+" >data00$i.gnu
+gnuplot data00$i.gnu
+ppmquant -map samp_colormap $3t=00$i.ppm>$3at=00$i.ppm
+ppmtogif -map samp_colormap $3at=00$i.ppm > $300$i.gif
+rm $3t=00$i.ppm $3at=00$i.ppm data00$i.gnu
+i=i+100
+fi
+
+if test i -gt 999 -a i -lt 10000
+then 
+print "set terminal pbm small color; set output\"$3t=0$i.ppm\"; set noxtics; set noytics;
+set size 1.0, 1.0; set yrange [0:.1];
+plot 'run.0$i' using 1:2 w lines, 'run.0$i' using 1:3 w lines;
+" >data0$i.gnu
+gnuplot data0$i.gnu
+ppmquant -map samp_colormap $3t=0$i.ppm>$3at=0$i.ppm
+ppmtogif -map samp_colormap $3at=0$i.ppm > $30$i.gif
+rm $3t=0$i.ppm $3at=0$i.ppm data0$i.gnu
+i=i+100
+fi
+
+done

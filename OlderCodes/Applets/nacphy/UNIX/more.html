@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix Tutorial: The More and Cat Commands </title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  6.B:<a target="MainDoc" href="tail.html#top">
+  <img  align="left"  align="bottom" height=25 width=37 
+   alt="Next" src="figs/next-motif.gif">
+   The tail Command</a> 
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  6:<a target="MainDoc" href="view-home.html#top">
+  <img align="left"  align="bottom" height=25 width=27 
+  alt="Up" src="figs/up-motif.gif">
+  Viewing</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  6:<a target="MainDoc" href="view-home.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62 alt="Prev" 
+  src="figs/previous-motif.gif">
+  Viewing</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+  onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 alt="Contents" 
+  src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 6.A:&nbsp; The More and Cat Commands </h2></center>
+<hr>
+
+<p> The <em>more</em> command writes your file onto the screen one
+page at a time. This means that after each page, it stops and
+waits for you to tell it what to do (it may also print the name of the
+file and the percent of the file it has read through, or maybe the
+prompt <em>more</em>).
+
+<p>Pressing the <em>[space]</em> bar brings up another
+<em>page</em>, and so on till you reach the file's end.  To scroll
+through the file one <em>line</em> at a time, press the
+<em>[return]</em> or <em>[enter]</em> key in place of the
+<em>[space]</em> bar.  To quit before reaching the end of the file,
+press the <em>q</em> key.
+
+<p>
+To see <em>more</em> in action, try:
+
+<ul>
+<code>> more ~/README.first</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=140>
+      <param name="register" value="Unix Tutorial WebTerm">
+        <param name="label" value="more ~/README.first">
+          <param name="command" value="send">
+           <param name="text" value="more ~/README.first\r\n">
+  </applet>
+</ul>
+
+
+<p> One useful application of the <em>more</em> command is to
+regulate the output of some command which otherwise would zip by you
+before you get a chance to read it. To do this, you use a "pipe"
+<code>|</code> which pipes the output of one command into the input of
+another.
+
+
+<p> For example, here we list all the files in a large directory with
+the output of the <em>ls</em> command being piped (<code>|</code>) to
+<em>more</em>:
+
+<ul>
+<code>> ls -a | more</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=80>
+      <param name="register" value="Unix Tutorial WebTerm">
+        <param name="label" value="ls -a | more">
+          <param name="command" value="send">
+           <param name="text" value="ls -a | more\r\n">
+  </applet>
+</ul>
+
+
+Depending on your system, <em>more</em> may take many options.
+You can learn about them by using the on-line Unix <em>manual</em>:
+
+<ul>
+<code>> man more</code> 
+</ul>
+ 
+
+<p> If the file is very short you may wish to use the <em>cat</em> command
+instead.  To see <em>cat</em> in action try 
+
+<ul>
+<code>> cat area.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=80>
+      <param name="register" value="Unix Tutorial WebTerm">
+        <param name="label" value="cat area.f">
+          <param name="command" value="send">
+           <param name="text" value="cat area.f\r\n">
+  </applet>
+</ul>
+
+The <em>cat</em> command is actually a very powerful and versatile utility

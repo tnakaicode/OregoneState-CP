@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>A Chaotic Pendulum in Phase Space with Java</title>
+</head>
+<body>
+
+<h1>A Chaotic Pendulum in Phase Space with Java<IMG SRC="pend.gif"
+ALT="figure of pendulum" ALIGN=right></h1>
+
+
+<hr>
+ <h2>Equation of Motion</h2>
+
+ A pendulum is displaced from the vertical by an angle theta, 
+and moves through a viscous medium with frictional coefficient beta.  An 
+external, periodic torque is also applied to the pendulum. Although 
+simple, this system displays chaotic behavior (similar to that in which the 
+pivot point of the pendulum is made to oscillate).  Newton's laws 
+of rotational dynamics tells us that the moment of inertia <i>I</i> times the 
+angular acceleration equals the sum of torques due to gravity, friction, 
+and driver:<P>
+
+<CENTER><A NAME="eq1"></A> <IMG SRC="img1.gif" ALT="$I {d^2\theta
+\over dt^2} = -mgl\sin\theta -\beta {d\theta\over dt}
++\tau_0\cos(\omega t + \phi) $" 
+ALIGN=BOTTOM> </CENTER>
+ We divide by the moment of inertia to  obtain a second order, nonlinear,
+ordinary differential equation in standard form:
+
+<CENTER><A NAME="eq1"></A> <IMG SRC="img2.gif" ALT="${d^2\theta \over
+dt^2} = -\omega_0^2\sin\theta -\alpha {d\theta\over dt} +f \cos(\omega
+t + \phi) $"  ALIGN=BOTTOM> </CENTER>
+
+where omega without a subscript is for the external driver
+and the other constants are<P>
+ <CENTER><A NAME="eq1"></A> <IMG SRC="img3.gif" ALT="$\omega_0 =
+{mgl\over I}, \alpha= {\beta\over I}, f = {\tau_0\over I}$"
+ALIGN=BOTTOM> </CENTER> 
+
+
+<BR> <HR>
+<a href="java2.html"><b>Next: </b></a>What are Pendulum Applets<br>
+<a href="index.html"><b>Back: </b></a>Main Page<br><hr>
+</body> </html>

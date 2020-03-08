@@ -1,0 +1,52 @@
+<HTML>
+  <HEAD>
+   <TITLE>Ballistic Deposition</TITLE>
+   </HEAD>
+     <BODY BGCOLOR="#FFFFFF">     
+     <p><a href="Film2.html"> Disponible en Español</a></p>
+    <TABLE BORDER="5" cellspacing="3" cellpadding="0"><tr><th>
+     <APPLET CODE="Film2.class" WIDTH=530 HEIGHT=310>
+    </APPLET>
+    </th></tr>
+    </table>
+     <h3>Instructions</h3>
+       <ul>
+         <li>Once you obtain all the points press "continue" so that
+             the box counting begins; the boxes which contains parts of
+             the surface will be counted.
+         <li>Continue pressing the button four more times, the scale
+             increases and also the box number.
+         <li> Press "start" to obtain a new ballistic deposition.
+        </ul>
+       <h2> Ballistic Deposition</h2>
+        This model was proposed to simulate sedimentations of hydrocarbon
+        small spheres. 
+In this application we use a sustrate of 200 units long in which particles
+are going to be deposited forming columns; random numbers are used to
+simulate the place where the generated particle will be deposited according
+to simple rules.
+<p>
+For details of the calculation see the book by Landau and Páez <a
+href="libro.html">"Computational Physics" </a> , Wiley and  Sons Inc. 1997.
+<p>
+
+
+The interesting aspect of this application is that the surface is a fractal
+and the fractal dimension is determined with the box counting technique,
+which consists in:
+<ul>
+   <li> An scale <i>s</s> is chosen  and the number <i> N</i> of squares
+that contain surface points are counted.
+  <li>Here we begin with an scale 1:3, that is <i> s</i> =3,
+  <li> Next we take a bigger scale 1:6, then <i>s</i> = 6, and again the
+squares (N) are counted, a graph of <b>log(N)</b> versus <b> log(s)</b>.
+  <li> We continue duplicating the scale, count the squares number (N) and
+plot them in the graph, and finally the slope: 
+
+ <li> <u>  log(N1) -log(N2)</u> <br>
+             log(s2)-log(s1) <br>         
+                 
+<li> gives the fractal dimension.
+</ul>
+   </BODY>
+          </HTML>

@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 14.G: Searching Files with egrep</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="util-sort.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="util-sort.html#top">
+14.H: Sort with <TT>sort</TT> </A><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="util.html#top">
+14: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util-find.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="util-find.html#top">
+14.F: Find with <TT>find</TT></a> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 14.G:&nbsp;Search Files with the <TT><FONT SIZE=+1>grep
+</FONT></TT>Family</H2>
+
+<P>
+<HR></P>
+
+<P>The <FONT SIZE=-1><TT>grep</TT> </FONT>command (and its relatives <TT><FONT SIZE=-1>egrep
+</FONT></TT>for expression grep<TT><FONT SIZE=-1> </FONT></TT>and <TT><FONT SIZE=-1>fgrep
+</FONT></TT>for fast grep) are great for finding some specific information
+in a file, or for finding which files contain some specific information.
+For example, to search all files in the present directory for the word
+<TT><FONT SIZE=-1>Jack</FONT></TT></P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; egrep Jack *</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=85><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="egrep Jack *"><PARAM name="command" value="send"><PARAM name="text" value="egrep Jack *"></APPLET></P>
+</UL>
+
+<P>Here <TT><FONT SIZE=-1>*</FONT></TT> is a 
+ wildcard which gets replaced by all file names. Unix will then show you the
+names of the files containing the word <TT><FONT SIZE=-1>Jack</FONT></TT>,
+and the lines containing the word: </P>
+
+<UL>
+<P><BR>
+<TT><FONT SIZE=-1>sample.doc:Jack and Jill went up the hill<BR>
+sample.doc:Jack fell down and broke his crown</FONT></TT><BR>
+</P>
+</UL>
+
+<P>So now you know <I>both </I>what is said about <TT><FONT SIZE=-1>Jack</FONT></TT>,
+and <I>where </I>it is said.</P>
+
+<P>Like most Unix commands, the <TT><FONT SIZE=-1>grep</FONT></TT>s are
+case sensitive. For example, </P>
+
+<UL>
+<P><TT>&gt; <FONT SIZE=-1>grep jack *</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=85><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="egrep jack *"><PARAM name="command" value="send"><PARAM name="text" value="egrep jack *"></APPLET></P>
+</UL>
+
+<P>may well find nothing. If you want <FONT SIZE=-1><TT>grep</TT> </FONT>to
+be case insensitive, you can use the option <TT><FONT SIZE=-1>-i</FONT></TT>
+to make it <TT>i</TT>gnore the case:</P>
+
+<UL>
+<P><TT>&gt; <FONT SIZE=-1>grep -i jack *</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=100><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="egrep -i jack *"><PARAM name="command" value="send"><PARAM name="text" value="egrep -i jack *"></APPLET></P>
+</UL>
+
+<P>Be warned, the <TT><FONT SIZE=-1>grep </FONT></TT>family may have some
+difficulty searching for phrases containing punctuation and special characters.
+For example, <FONT SIZE=-1><TT>grep</TT> </FONT>will interpret <TT><FONT SIZE=-1>&gt;</FONT></TT>
+to be an output redirection character and not part of your search string.
+On some systems, enclosing your string in single quotes <NOBR><FONT SIZE=-1>(<TT>grep
+'answer &gt;' *.dat</TT>)</NOBR></FONT> will work. </P>
+
+<P>Check your <FONT SIZE=-1><TT>man</TT> </FONT>pages and <A HREF="http://www.nacse.org/demos/coping-with-unix/coping-with-unix/node150.html#SECTION00515000000000000000" target="Outside">the
+references </A>for the proper syntax for each of the <TT><FONT SIZE=-1>grep</FONT></TT>s
+and for specialized searches. 
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="util-sort.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="util-sort.html#top">
+14.H: Sort with <TT>sort</TT> </A><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="util.html#top">
+14: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util-find.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="util-find.html#top">
+14.F: Find with <TT>find</TT></a> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+ 
+</BODY>
+</HTML>

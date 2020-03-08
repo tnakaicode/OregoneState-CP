@@ -1,0 +1,167 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Creating Directories</title></head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<b>OSU Computational Physics</b> - <i>Landau Research Group (nacse)
+-</i>
+<hr>
+<table><tr>
+<td>
+  <a href="cp-file.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.F: Copying Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="cd-quick.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5.D: Changing Directories - Quickly</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 5.E:&nbsp;  Get Organized, Create Directories!</h2></center>
+<hr>
+
+<p> While it is possible to deal with Unix files without having them
+in directories and subdirectories, it's a great advance to organize
+related files into directories.  Keeping all of your files in a single
+directory is much like storing all your papers in one big pile.  In
+general, it leads to confusion and keeps you from working efficiently
+(if at all).  The <a target="Outside"
+href="http://www.nacse.org/demos/coping-with-unix/coping-with-unix/node9.html#SECTION00151000000000000000"> A
+Scientist's and Engineer's Guide to Workstations</a> book contains
+some good ideas on setting up directory structures, and we recommend
+you read it once you start taking us seriously.
+
+ <p> Let's start off in the already-existing directory 
+ <code>development</code>:
+
+<p>
+<code>> cd ~/development</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=130>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ~/development">
+	  <param name="command" value="send">
+	   <param name="text" value="cd ~/development\r\n">
+  </applet>
+
+ <p> To create a new directory, issue the "make directory" command 
+ followed by the name of the directory you want to 
+ create: 
+
+<p>
+<code>> mkdir backup</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=100>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="mkdir backup">
+	  <param name="command" value="send">
+	   <param name="text" value="mkdir backup\r\n">
+  </applet>
+
+<p>
+Now use the "list" command to check that it's there:
+
+<p> 
+<code>> ls</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=20>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="ls">
+	  <param name="command" value="send">
+	   <param name="text" value="ls\r\n">
+  </applet>
+
+<p>
+Now let's create two additional directories in the home directory:
+
+<p> 
+<code>> cd ~</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ~">
+	  <param name="command" value="send">
+	   <param name="text" value="cd ~\r\n">
+  </applet>
+
+<br>
+<code>> mkdir backuphome</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=130>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="mkdir backuphome">
+	  <param name="command" value="send">
+	   <param name="text" value="mkdir backuphome\r\n">
+  </applet>
+
+<br>
+<code>> mkdir backupdev</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=120>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="mkdir backupdev">
+	  <param name="command" value="send">
+	   <param name="text" value="mkdir backupdev\r\n">
+  </applet>
+
+<p> Check that this worked by issuing the "list" command <code>ls</code>.  
+Now  we get organized  and  copy some files into these directories.
+
+<hr>
+<table><tr>
+<td>
+  <a href="cp-file.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.F: Copying Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="cd-quick.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5.D: Changing Directories - Quickly</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+
+<hr>
+
+</body>
+</html>

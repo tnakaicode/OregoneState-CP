@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: The Tail Command </title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  6.C:<a target="MainDoc" href="view-com.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+  alt="Next" src="figs/next-motif.gif">
+  The <code>view</code> Command</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  6:<a target="MainDoc" href="view-home.html#top">
+  <img align="left"  align="bottom" height=25 width=27 
+  alt="Up" src="figs/up-motif.gif">
+  Viewing</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a target="MainDoc" href="more.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62 alt="Prev" 
+  src="figs/previous-motif.gif">
+  6.A: The <code>more</code> and <code>cat</code> Commands</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   <a target="MainDoc" href="contents.html";
+  onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 alt="Contents" 
+  src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align=left src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 6.B:&nbsp; The  Tail Command </h2></center>
+<hr>
+
+<p>
+The <code>tail</code> command writes the last lines of a file to the
+screen.  For example, try:
+
+<ul>
+<code>> tail area.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=70>
+      <param name="register" value="Unix Tutorial WebTerm">
+        <param name="label" value="tail area.f">
+          <param name="command" value="send">
+           <param name="text" value="tail area.f\r\n">
+  </applet>
+</ul>
+
+
+Unix should respond with something like:
+
+<ul>
+<pre>
+       A = pi * r**2  
+c      write area onto terminal screen   
+       Write(*, 10) 'radius r =', r, ' A =', A  
+10     Format(a20, f10.5, a15, f12.7)   
+       STOP 'area'  
+       END   
+</pre>
+</ul>
+
+ If the tail command is given the option <em>-n</em>, then 
+ it starts <em>n</em> lines from the bottom of the file.  If it is given 
+ the option <em>+n</em>, it starts <em>n</em> lines from the 
+ top.  Try it:
+
+<ul><code>> tail -5 area.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=90>
+      <param name="register" value="Unix Tutorial WebTerm">
+        <param name="label" value="tail -5 area.f">
+          <param name="command" value="send">
+           <param name="text" value="tail -5 area.f\r\n">
+  </applet>
+<br>
+<code>> tail +5 area.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=90>
+      <param name="register" value="Unix Tutorial WebTerm">
+        <param name="label" value="tail +5 area.f">
+          <param name="command" value="send">
+           <param name="text" value="tail +5 area.f\r\n">
+  </applet> 
+</ul>
+
+<hr>
+<table><tr>
+<td>
+  6.C:<a target="MainDoc" href="view-com.html#top">
+  <img  align="left"  align="bottom" height=25 width=37 
+  alt="Next" src="figs/next-motif.gif">
+  The <code>view</code> Command</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  6:<a target="MainDoc" href="view-home.html#top">
+  <img align="left"  align="bottom" height=25 width=27 
+  alt="Up" src="figs/up-motif.gif">
+  Viewing</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a target="MainDoc" href="more.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62 alt="Prev" 
+  src="figs/previous-motif.gif">
+  6.A: The <code>more</code> and <code>cat</code> Commands</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   <a target="MainDoc" href="contents.html";
+  onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 alt="Contents" 
+  src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<address>Comments and questions to

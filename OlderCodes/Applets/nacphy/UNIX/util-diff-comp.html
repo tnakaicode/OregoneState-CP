@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 15.I: Comparing Files with diff and cmp</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P>
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="programming.html#top" onclick="top.frames[0].location='manage-prog.html'"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="programming.html#top" onclick="top.frames[0].location='manage-prog.html'">
+16: Programming</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="util.html#top">
+15: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util-sort.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="util-sort.html#top">
+15.H: Sort Files with <TT>sort</TT></A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 15.I:&nbsp;Comparing Files with <TT><FONT SIZE=+1>diff</FONT></TT>
+and <TT><FONT SIZE=+1>cmp</FONT></TT></H2>
+
+<P>
+<HR></P>
+
+<P>The <TT><FONT SIZE=-1>diff</FONT></TT> command is used to compare two
+text files. So, to compare <FONT SIZE=-1><TT>sample.doc</TT> </FONT>with
+<TT><FONT SIZE=-1>vi.doc</FONT></TT><BR>
+</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; diff sample.doc vi.doc</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=145><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="diff sample.doc vi.doc"><PARAM name="command" value="send"><PARAM name="text" value="diff sample.doc vi.doc\r\n"></APPLET></P>
+</UL>
+
+<P>If you only changed the name and date without moving any lines, your
+output should be similar to </P>
+
+<UL>
+<PRE><FONT SIZE=-1>18c18
+&lt; NAME  DATE
+---
+&gt; Melanie Johnson  10-12-96</FONT>
+</PRE>
+</UL>
+
+<P>Here the first line indicates the line numbers (or group of line numbers)
+which differ betweeen the files. The <TT><FONT SIZE=-1>c</FONT></TT> between
+the numbers indicates that line <TT><FONT SIZE=-1>18</FONT></TT> (in <TT><FONT SIZE=-1>sample.doc</FONT></TT>)
+must be <TT>c</TT>hanged to match line <FONT SIZE=-1>18</FONT> (in <TT><FONT SIZE=-1>vi.doc</FONT></TT>)
+if the two documents are to match. The lines starting with the symbol<FONT SIZE=-1>
+<TT>&lt;</TT> </FONT>are in the first file. The lines starting with<FONT SIZE=-1>
+<TT>&gt;</TT></FONT> are in the second file. The command <FONT SIZE=-1><TT>diff</TT>
+</FONT>will continue comparing lines until it gets to the end of the files.</P>
+
+<P>Now as a quiz, use <FONT SIZE=-1><TT>diff</TT> </FONT>to compare the
+original <TT><FONT SIZE=-1>sample-homepage.html</FONT></TT> to <TT><FONT SIZE=-1>index.html</FONT></TT>.</P>
+
+<UL>
+<P><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=140><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="Enter first command"><PARAM name="command" value="send"><PARAM name="text" value="cd public-html\r\n"></APPLET></P>
+</UL>
+
+<UL>
+<P><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=160><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="Enter second command"><PARAM name="command" value="send"><PARAM name="text" value="diff sample-homepage.html index.html\r\n"></APPLET></P>
+</UL>
+
+<P>Do the indicated differences make sense? </P>
+
+<P>The command <FONT SIZE=-1><TT>cmp</TT> </FONT>is used to <TT>c</TT>o<TT>mp</TT>are
+files. Because it gives a &quot;yes&quot; or &quot;no&quot; answer, it
+can be used for binary files. If the two files are identical, it gives
+no response (Unix, again playing the strong, silent type). If the two files
+are different, it gives the filename and byte of the first difference.
+For instance, try </P>
+
+<UL>
+<P><BR>
+<TT><FONT SIZE=-1>&gt; cd public-html/figs</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=130><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="cd public-html/figs"><PARAM name="command" value="send"><PARAM name="text" value="cd public-html/figs\r\n"></APPLET></P>
+</UL>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; cp osu.gif osu.bak</TT> </FONT><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=120><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="cp osu.gif osu.bak"><PARAM name="command" value="send"><PARAM name="text" value="cp osu.gif osu.bak"\r\n"></APPLET></P>
+
+<P><FONT SIZE=-1><TT>&gt; diff osu.gif osu.bak</TT> </FONT><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=125><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="diff osu.gif osu.bak"><PARAM name="command" value="send"><PARAM name="text" value="diff osu.gif osu.bak\r\n"></APPLET></P>
+</UL>
+
+<P>No response. Okay. So now try <BR>
+</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; diff osu.gif osugrey.gif</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=145><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="diff osu.gif osugrey.gif"><PARAM name="command" value="send"><PARAM name="text" value="diff osu.gif osugrey.gif\r\n"></APPLET></P>
+</UL>
+
+<P>Now<TT> <FONT SIZE=-1>diff</FONT></TT><FONT SIZE=-1> </FONT>responds
+with</P>
+
+<UL>
+<P><BR>
+<FONT SIZE=-1>diff: 0653-827 Missing newline at the end of file osu.gif</FONT><BR>
+</P>
+</UL>
+
+<P>So now we know that the files are different. </P>
+
+<P>One of the strengths of Unix is its variety of file utilities. What
+you have seen in this tutorial barely scratches the surface. To learn more
+about file utilities, you may wish to consult <A HREF="http://www.nacse.org/demos/coping-with-unix/coping-with-unix/node144.html#SECTION00500000000000000000" target="Outside">&quot;Coping
+With Unix&quot;</A> or some some Unix book. Use <FONT SIZE=-1><TT>man -k</TT>
+(</FONT>or<FONT SIZE=-1> aprops) </FONT>to search the <FONT SIZE=-1><TT>man</TT>
+</FONT>pages for the action you wish to perform. If you may find yourself
+thinking &quot;I wish there was an easy way to ...&quot;, a little investigating
+usually tells you what it is. 
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="programming.html#top" onclick="top.frames[0].location='manage-prog.html'"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="programming.html#top" onclick="top.frames[0].location='manage-prog.html'">
+16: Programming</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="util.html#top">
+15: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util-sort.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="util-sort.html#top">
+15.H: Sort Files with <TT>sort</TT></A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+ 
+
+</BODY>
+</HTML>

@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Changing Directories - Carefully</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<b>OSU Computational Physics</b> - <i>Landau Research Group (nacse)
+-</i>
+<hr>
+<table><tr>
+<td>
+  <a href="cd-quick.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+  5.D: Changing Directories Quickly </a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="ls-options.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5.B: List Command Options </a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align=left src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 5.C:&nbsp;  Changing Directories   Slowly and Carefully</h2></center>
+<hr>
+
+<p> Let's say we want to work in the directory <code>development</code>.  
+We use the "change directory" command to get there:
+
+<p> 
+<code>> cd development</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=110>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd development">
+	  <param name="command" value="send">
+	   <param name="text" value="cd development\r\n">
+  </applet>
+
+<p> Notice that Unix does not give a response.  For commands that do not 
+request information, you get only a prompt asking "what next?".  (Yet like 
+many a domestic partner, Unix will not miss the opportunity to tell you if 
+you did something wrong.)  To check where you actually are and what's 
+there, issue the "print working directory"  and "list" commands:
+
+<p>
+<code>> pwd</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="pwd">
+	  <param name="command" value="send">
+<param name="text" value="pwd\r\n">
+  </applet>
+
+<br> 
+<code>> ls -FC</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=50>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="ls -FC">
+	  <param name="command" value="send">
+	   <param name="text" value="ls -FC\r\n">
+  </applet>
+
+<p> 
+  You should get:  
+
+<p>
+<code>
+/userid/development <br> 
+<pre> data/  prog/ </code></pre>
+
+<p>
+Now let's change to the  <code>data</code> directory and list its contents:
+<p>
+<code>> cd data</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=60>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd data">
+	  <param name="command" value="send">
+	   <param name="text" value="cd data\r\n">
+  </applet>
+
+<br>
+<code>> ls -FC</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=50>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="ls -FC">
+	  <param name="command" value="send">
+	   <param name="text" value="ls -FC\r\n">
+  </applet>
+
+<p> Don't be offended if Unix did not say anything to you.  Because there 
+are no files in the <code>data</code> directory, Unix gave an empty 
+response (think terse is nice).
+
+<p> In Unix, the current directory can be called by its proper name 
+<code>~/development/data</code>, or by the dot symbol "<code>.</code>" all 
+by itself.  The next directory "up" in the directory tree can be called by 

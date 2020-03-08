@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Archiving And  Compressing File Systems </title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  11.C.6: <a href="untar-uncompress.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+    Transfering and Restoring</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  11: <a href="multiple.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Multiple Machines</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>
+  11.C.4: <a href="ftp-tar.html#top">
+  <img  align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+    Transfering Large File Structures</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+
+<hr> <a Name="top"> </a> <img ALT="Basic" align="left"
+src="figs/CARGUY2.GIF" height= 75 width =120> <center><h2>&#167
+11.C.5: Archiving And Compressing File Systems </h2></center> <hr>
+
+<p> To <em>create</em> an archive of all (<code>*</code>) files and
+subdirectories in your working directory, to place the archive in the
+<em>file</em> <code>development.tar</code>, and to get a
+<em>verbose</em> verbose report of what's happening, issue the
+commands:
+
+<ul>
+<code>> cd development</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=120>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="cd development">
+    <param name="command" value="send">
+     <param name="text" value="cd development *\r\n">
+  </applet>
+<br>
+<code>> tar -cvf development.tar *</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=170>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="tar -cvf development.tar *">
+    <param name="command" value="send">
+     <param name="text" value="tar -cvf development.tar *\r\n">
+  </applet>
+</ul>
+
+Here the <em>-cvf</em> options are for "create", "verbose", and "file
+to follow". The file <code>development.tar</code> could be any name
+you prefer, with the <code>.tar</code> suffix conventional.  The final
+<code>*</code> says to archive all files and subdirectories in the
+present directory; it could be replaced by specific names if you do
+not want to archive everthing. The "verbose" response of <em>tar</em>
+you asked for gives something like:
+
+<ul>
+<code>
+a Mwm 180 Blocks<br>
+a README.first 26 Blocks<br>
+a a.out 57 Blocks<br>
+a development<br>
+a development/prog<br>
+a development/prog/area.f 2 Blocks<br>
+a development.tar.Z 2 Blocks<br>
+a eqns2.ms 4 Blocks<br>
+a plotoutfile.ps 8 Blocks<br>
+a public-html<br>
+a public_html/Coping.html 7 Blocks<br>
+</code></ul>
+
+<p> We now check that the <code>.tar</code> file is there, and if it is
+there, we compress it and  see how much smaller it is:
+
+<ul><code>> ls -l</code>
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=45>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="ls -l">
+    <param name="command" value="send">
+     <param name="text" value="ls -l\r\n">
+  </applet> 
+
+<br>
+<code>> compress development.tar</code>
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=170>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="compress development.tar">
+    <param name="command" value="send">
+     <param name="text" value="compress development.tar\r\n">
+  </applet>
+
+<br>
+<code>> ls -l</code>
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=45>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="ls -l">
+    <param name="command" value="send">
+     <param name="text" value="ls -l\r\n">
+  </applet> 
+  </ul>
+
+<p> If all this worked, you will find that your
+<em>development.tar</em> file has been replaced by a
+<em>developmen.tar.Z</em> file which is smaller.
+
+<p> You are now ready <a href="untar-uncompress.html#top"> to
+learn</a> how to transfer your file, how to uncompress it, and how to
+extract your archive.
+
+<hr>
+<table><tr>
+<td>
+  11.C.6: <a href="untar-uncompress.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+    Transfering and Restoring</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  11: <a href="multiple.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Multiple Machines</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>
+  11.C.4: <a href="ftp-tar.html#top">
+  <img  align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+    Transfering Large File Structures</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+  </body> </html>

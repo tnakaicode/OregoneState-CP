@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix: 17.F Emacs - Multiple Windows </TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="emacs-help.html#top" target="MainDoc">
+<IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+17.G: Help</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="emac-home.html#top" target="MainDoc">
+<IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT>
+17: Emacs</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="emacs-mode.html#top" target="MainDoc">
+<IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+17.E: Mode Lines</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 17.F: Using Multiple Windows in <I>emacs</I></H2>
+
+<P>
+<HR>Using multiple windows is the heart of the <I>emacs </I>editor. This
+is true even when accessing the computer through a <I>telnet</I> session.
+This allows you to edit several files (or different parts of the same file)
+at the one time, to move data from one file to the other, or even to have
+<I>emacs</I> compile a program in one window and send the results to another
+window. </P>
+
+<P>To create a second window, enter</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>C-x 2</FONT></TT></P>
+</UL>
+
+<P>The number 2 means create two windows (4 windows is the maximum). To
+go back to one window, enter </P>
+
+<UL>
+<P><FONT SIZE=-1><TT>C-x </TT>1 </FONT></P>
+</UL>
+
+<P>The second window you just opened is actually a copy of your first window.
+</P>
+
+<P>To pull up a different file in a window</P>
+
+<UL>
+<LI>switch to that window </LI>
+
+<UL>
+<LI>either by clicking your mouse in that window </LI>
+
+<LI>or by using the <TT><FONT SIZE=-1>C-x o</FONT></TT> command</LI>
+</UL>
+
+<LI>use the find command, <TT>C-x C-f</TT>, </LI>
+
+<LI>or activate one from the buffer list with <TT>C-x b <I>filename</I></TT>.</LI>
+</UL>
+
+<P>If you can't use your mouse with <I>emacs</I>, use the &quot;other&quot;
+window command <TT><FONT SIZE=-1>C-x o</FONT></TT> to switch windows. Each
+window has it's own cursor position, but only one, the active window, actually
+shows the cursor on the screen. </P>
+
+<P>Editing commands apply to the active window only. Closing a window does
+not save it or kill it; it is still there in the buffer waiting for you
+to act on it. So again, if you want to save your edits, make sure to save
+the buffer contents before killing the buffer.</P>
+
+<P>The <I>kill ring</I> is common to all buffers. So killing and yanking
+text from one window to another is the same procedure described before,
+only now you need to activate the appropriate window. </P>
+
+<P>Another useful command to remember when copying between files is </P>
+
+<UL>
+<P><FONT SIZE=-1><TT>C-M-v</TT> </FONT>scroll the inactive window</P>
+</UL>
+
+<P>With this command you can keep the cursor in the window where you are
+editing, while advancing through the other window you are reading.</P>
+
+<P>Now that we know to use the most useful option in <I>emacs</I>, let's
+got to what just might be the most helful section, <A HREF="emacs-help.html#top" target="MainDoc">Getting
+Help in <I>emacs</I></A><I>.</I> 
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="emacs-help.html#top" target="MainDoc">
+<IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+17.G: Help</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="emac-home.html#top" target="MainDoc">
+<IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT>
+17: Emacs</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="emacs-mode.html#top" target="MainDoc">
+<IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+17.E: Mode Lines</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR></P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix: 3. The Departmental Computer Cluster</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="cluster-which.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="cluster-which.html#top">
+3.A: Which Machine do I Log on to?<IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1></A>
+</TD>
+
+<TD><A HREF="logout.html#top" ; onclick="top.frames[0].location='manage-access.html'"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="logout.html#top" ; onclick="top.frames[0].location='manage-access.html'">
+4.C: Logging Out<IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1></A>
+</TD>
+
+<TD><A HREF="contents.html" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/CARGUY2.GIF" ALT="Basic" HEIGHT=75 WIDTH=120 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 3: Using a Workstation Cluster </H2>
+
+<P>
+<HR></P>
+
+<P>The Departmental computer cluster is a group of Unix workstations and
+X stations. You use your same userid and password to log on to any of them.
+You may logon through the console of a workstation (probably the fastest
+way to run) or through one of the X stations. Once logged onto one computer,
+you can then log onto others using the same windowing session. At present
+the Departmental workstations include: </P>
+
+<P>IBM RS/6000's (the &quot;fruit loop&quot; and friends, 32M RAM, AIX
+Unix): </P>
+
+<PRE>      <FONT SIZE=-1>banana.physics.orst.edu 
+        coconut.physics.orst.edu 
+        guava.physics.orst.edu 
+        mango.physics.orst.edu
+        papaya.physics.orst.edu
+        graphy.physics.orst.edu
+        hermes.physics.orst.edu</FONT>
+</PRE>
+
+<P>DEC Alpha's (64M RAM, OSF Unix): </P>
+
+<PRE>      <FONT SIZE=-1>daphy.physics.orst.edu
+        goophy.physics.orst.edu</FONT></PRE>
+
+<P>Usually these machines are called by their nicknames. For example, <TT>banana</TT>
+is all you need to use for an address within the cluster, with the full
+address used for networked communications. If you are curious, there is
+some <A HREF="stats.html#top">detailed information</A> about the machines.
+</P>
+
+<P>All computers in the cluster use a common file space for users such
+as yourself. <I>This means that you work with the same file regardless
+of the machine you are on.</I> This is a good thing as it allows you to
+switch from one machine, which may have a high workload, to another which
+is just sitting around. If you compile or interpret your programs (as happens
+when you run <I>f77, f90, cc, Maple, Mathematica</I>, or <I>Xmgr</I>) you
+should get essentially the same environment and results regardless of the
+machine. If you stay within the machines of one manufacturer (and therefore
+architecture), you can even run the same executeable (object code) on different
+machines. If you try to run an executable program on the wrong architecture,
+you should get an error message (unless you are unlucky). </P>
+
+<P>In order for each machine in the Cluster to run just right for you,
+it must have <I>dotfiles</I> which are appropriate for the operating system
+and windowing system on that particular machine (you will learn more about
+these later). In the present case, this means you need different dotfiles
+for the IBM's and for the DEC's. </P>
+
+<P>Usually when a user gets a new account on the Cluster, a bunch of standard
+dotfiles are automatically placed in the user's file space (&quot;home
+directory&quot;). These dotfiles let you log on from consoles and X Stations
+of different manufactures and designs. Normally, these dotfiles do their
+job with no interference on your part, and it's best not to interfere with
+them. </P>
+
+<P>Some users feel inclined to modify their dotfiles in order to obtain
+that &quot;custom look&quot;. We suggest you avoid that urge for individuality
+until you really know what you are doing. If you feel you &quot;must&quot;,
+then keep a backup copy of the original files. Changes that may seem harmless
+may prevent you logging in again! In our Departmental Cluster, you can
+get back the standard dotfiles by telneting onto <I>goophy</I> and issuing
+the command </P>
+
+<P><FONT SIZE=-1><TT>&gt; getdotfiles</TT> </FONT></P>
+
+<P>The following sections answer some common questions about clustered
+computing. </P>
+
+<UL>
+<LI><A HREF="cluster-which.html#top">So Which Machine Do I Log On To?</A>
+</LI>
+
+<LI><A HREF="cluster-x.html#top">What About X Stations?</A> </LI>
+
+<LI><A HREF="cluster-questions.html#top">Other Questions?</A> </LI>
+</UL>
+
+<P>
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="cluster-which.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="cluster-which.html#top">
+3.A: Which Machine do I Log on to?<IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1></A>
+</TD>
+
+<TD><A HREF="logout.html#top" ; onclick="top.frames[0].location='manage-access.html'"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="logout.html#top" ; onclick="top.frames[0].location='manage-access.html'">
+4.C: Logging Out<IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1></A>
+</TD>
+
+<TD><A HREF="contents.html" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR></P>
+
+</BODY>
+</HTML>

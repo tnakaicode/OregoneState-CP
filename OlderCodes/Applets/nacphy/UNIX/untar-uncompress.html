@@ -1,0 +1,232 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: File System Transfer and Restoration</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  12: <a href="mail.html#top";
+    onclick="top.frames[0].location='manage-mail.html'"> 
+     <img  align="left"  align="bottom" height=25 width=37
+     alt="Next" src="figs/next-motif.gif">
+     E-Mail</a>
+     <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="multiple.html#top">
+     <img align="left"  align="bottom" height=25 width=27
+     alt="Up" src="figs/up-motif.gif">
+     22. Multiple Machines</a>
+     <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>
+  11.C.5: <a href="tar-compress.html#top">
+  <img  align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+    <code>tar</code>ing and <code>compress</em>ing</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 11.C.6: File System Transfer and Restoration</h2></center>
+<hr>
+
+<p> We are about to learn how to convert the tar'd and compressed file back. 
+But before we do something that exciting, let's get a quiz out of the way.  Use
+<em>ftp</em>  to transfer your compressed tar file  to <em>ucs.orst.edu</em> as
+a <em>binary</em> file. For review you  might want to look at:
+
+<ul>
+ 11.B&nbsp;  <a href="ftp.html#top">Using <code>ftp</code></a> 
+<br>
+ 11.B.1&nbsp;  <a href="ftp-navigate.html#top">Help and Navigation</a> 
+<br>
+ 11.B.2&nbsp;  <a href="ftp-put-get.html#top">Transfering Individual Files</a> 
+</ul> 
+
+If you are still stuck, try
+
+<ul>
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=135>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="Enter first command">
+	  <param name="command" value="send">
+	   <param name="text" value="ftp ucs\r\n">
+  </applet>
+<br>
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=155>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="Enter second command">
+	  <param name="command" value="send">
+	   <param name="text" value="binary\r\n">
+  </applet>
+<br>
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=140>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="Enter third command">
+	  <param name="command" value="send">
+	   <param name="text" value="put development.tar.Z\r\n">
+  </applet>
+<br>
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=150>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="Enter fourth command">
+	  <param name="command" value="send">
+	   <param name="text" value="quit\r\n">
+  </applet>
+</ul>
+
+  
+Because all of life is a test, now <em>telnet</em> to <em>ucs.orst.edu</em>.
+
+<ul>  For review you might want to look at:
+ <a href="telnet.html#top">The <code>telnet</code> Command</a> <br> 
+ If you are still stuck, try   
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=110>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="Enter command">
+	  <param name="command" value="send">
+	   <param name="text" value="telnet ucs\r\n">
+  </applet>
+</ul>
+
+Normally, when you <em>ftp</em> your file to another computer for backup, 
+you would leave it in compressed form (it takes up less space and is easier 
+to <em>ftp</em> back when you have ruined the original).  However, for 
+pedagogical purposes we will <em>uncompress</em> our archive:
+
+<ul>
+<code>> uncompress development.tar.Z</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=200>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="uncompress development.tar.Z">
+	  <param name="command" value="send">
+	   <param name="text" value="uncompress development.tar.Z\r\n">
+  </applet>
+
+<br>
+<code>> gunzip development.tar.Z</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=180>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="gunzip development.tar.Z">
+	  <param name="command" value="send">
+	   <param name="text" value="gunzip development.tar.Z\r\n">
+  </applet>
+</ul>
+
+Note that <em>gunzip</em> will work with <em>gziped</em> files or with 
+<em>compressed</em> files, while <em>uncompress</em> will only work with 
+<em>compressed</em> files.  In either case, Unix should replace 
+<code>development.tar.Z</code> with a <code>development.tar</code>
+file.
+
+<p>
+To <em>extract</em> your archive from a <em>.tar</em> file,
+you use <em>tar</em> again, this time with
+<em>extract</em>, <em>verbose</em>, and <em>file following</em> 
+options:
+
+<ul>
+<code>> mkdir development</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=140>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="mkdir development">
+	  <param name="command" value="send">
+	   <param name="text" value="mkdir development\r\n">
+  </applet>
+
+<br>
+<code>> cd development</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=110>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd development">
+	  <param name="command" value="send">
+	   <param name="text" value="cd development\r\n">
+  </applet>
+
+<br>
+<code>> mv ../development.tar .</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=160>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="mv ../development.tar .">
+	  <param name="command" value="send">
+	   <param name="text" value="mv ../development.tar .\r\n">
+  </applet>
+
+<br>
+<code>> tar -xvf development.tar </code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=170>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="tar -xvf development.tar">
+	  <param name="command" value="send">
+	   <param name="text" value="tar -xvf development.tar\r\n">
+  </applet>
+</ul>
+
+<p> Note that we have made a new directory to extract the files into.  This 
+avoids the possiblity of the extracted files overwriting existing files.  
+When all this works, Unix should respond with something like:
+
+<ul>
+<code>
+blocksize = 128<br>
+x Mwm, 92160 bytes, 180 tape blocks<br>
+x README.first, 12983 bytes, 26 tape blocks<br>
+x development<br>
+x development/prog<br>
+x development/prog/area.f, 729 bytes, 2 tape blocks<br>
+x development/data<br>
+x development.tar.Z, 914 bytes, 2 tape blocks<br>
+x eqns2.ms, 1840 bytes, 4 tape blocks<br>
+x plotoutfile.ps, 3923 bytes, 8 tape blocks<br>
+x public-html<br>
+x public-html/rgb.html, 1351 bytes, 3 tape blocks<br>
+x public_html/figs<br>
+x public-html/figs/CONST.GIF, 5031 bytes, 10 tape blocks<br>
+x s2, 19917 bytes, 39 tape blocks<br>
+</code></ul>
+
+
+<p>
+To check what's there and their creation dates, do a long list:
+
+<ul>
+<code>> ls -l</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="ls -l">
+	  <param name="command" value="send">
+	   <param name="text" value="ls -l\r\n">
+  </applet> 
+</ul>
+ 
+
+<p> If you would like further information on transferring files, "A
+Scientist's and Engineer's Guide to Workstations" has information on
+<a target="Outside"
+href="http://www.nacse.org/demos/coping-with-unix/coping-with-unix/node89.html#SECTION00330000000000000000">
+  "Electronic File Transfer"</a>  and 
+<a target="Outside" href="http://www.nacse.org/demos/coping-with-unix/coping-with-unix/node93.html#SECTION00340000000000000000">

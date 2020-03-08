@@ -1,0 +1,226 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: LaTeX Print</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  22.B: <a target="MainDoc" href="latex-create.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   Creating <em>LaTeX</em> Documents</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  22: <a target="MainDoc" href="latex.html#top">
+  <img align="left"  align="bottom" height=25 width=27 
+   alt="Up" src="figs/up-motif.gif">
+   <em>LaTeX</em></a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  22:  <a target="MainDoc" href="latex.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  <em>LaTeX</em></a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 22.A: Printing a <i>LaTeX</i> File</h2></center>
+<hr>
+
+<P>While it may seem odd to start by learning how to print a <I>LaTeX</I>
+file before learning how to create one, there is a method to our madness.
+Once you know how to convert your <I>LaTeX</I> files to postscript form,
+you can view your new creations on your computer terminal. </P>
+
+<P><I>LaTeX</I> files consist of a series of commands which instruct the
+compiler to take certain actions when typesetting your file. The first
+step towards printing a <I>LaTeX</I> file is to convert your file to a
+more machine-friendly form. This is done with the command <TT><FONT SIZE=-1>latex</FONT></TT>
+(no surprise there). </P>
+
+<P>Look at the practice file <TT><FONT SIZE=-1>practice.tex</FONT></TT>
+(<TT><FONT SIZE=-1>more </FONT></TT>is good for this). Notice that the
+file has the extension <I>tex</I> indicating it is a <I>TeX</I> or <I>LaTeX</I>
+file. Now use the <TT><FONT SIZE=-1>latex</FONT></TT> command to compile
+the file </P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; latex practice.tex</TT> </FONT>
+<APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=120><PARAM name="register" value="Unix Tutorial WebTerm">
+     <PARAM name="label" value="latex practice.tex">
+     <PARAM name="command" value="send">
+     <PARAM name="text" value="latex practice.tex\r\n">
+ </APPLET></P>
+</UL>
+
+<P><I>LaTeX</I>should respond with: </P>
+
+<UL>
+<PRE><TT><FONT SIZE=-1>This is TeX, Version 3.1415 (C version 6.1)
+(practice.tex
+LaTeX2e &lt;1994/12/01&gt; patch level 3
+(/usr/local/lib/texmf/tex/latex2e/latex209.def
+Entering LaTeX 2.09 compatibility mode.
+(/usr/local/lib/texmf/tex/latex2e/tracefnt.sty)
+(/usr/local/lib/texmf/tex/latex2e/latexsym.sty))
+(/usr/local/lib/texmf/tex/latex2e/article.cls
+Document Class: article 1995/01/31 v1.2y Standard LaTeX document class
+(/usr/local/lib/texmf/tex/latex2e/size10.clo)) (practice.aux)
+(/usr/local/lib/texmf/tex/latex2e/Ulasy.fd)
+(/usr/local/lib/texmf/tex/latex2e/OMScmr.fd) [1] (practice.aux) )
+Output written on practice.dvi (1 page, 1472 bytes).
+Transcript written on practice.log.</FONT></TT>
+</PRE>
+</UL>
+
+<P>This verbose yet cryptic response tells you that <I>LaTeX</I> has run
+successfully and has created the file <I>practice.dvi</I> (among others).
+</P>
+
+<P>To view the typeset version of your file, you can preview the &quot;device
+independent&quot; or <I>.dvi</I> file with the X-Window previewer <TT><FONT SIZE=-1>xdvi:</FONT></TT></P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; xdvi practice.dvi</FONT> </TT></P>
+</UL>
+
+<P>Since a <TT><FONT SIZE=-1>.dvi</FONT></TT> file is device independent,
+a device like a printer cannot process it. Accordingly, you need to convert
+it to a postscript form so a postscript printer can print it. This is easy:
+</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; xdvips practice.dvi </FONT></TT></P>
+</UL>
+
+<P>You should receive a remarkably short and clear response: </P>
+
+<UL>
+<PRE><TT><FONT SIZE=-1>This is dvipsk 5.58f Copyright 1986, 1994 Radical Eye Software
+' TeX output 1997.06.15:1552' -&gt; practice.ps
+<texc.pro>. [1] </FONT></TT>
+</PRE>
+</UL>
+
+<P>In other words, you have just created the postscript version of your
+file <I>practice.ps</I>.</P>
+
+<P>It is also possible to view a postscript file in an X Window: </P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; ghostview practice.ps</TT> </FONT></P>
+</UL>
+
+<P>To print your file, use your standard postscript printer command <TT><FONT SIZE=-1>lpr,</FONT></TT>
+but <I>make sure that you send it to a postscript capable printer or printer
+queue</I>:</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; lpr -Pps practice.ps</FONT></TT><FONT SIZE=-1>
+</FONT></P>
+</UL>
+
+<P>Of course your documents will not always be easy for <I>LaTeX</I> to
+compile. You may get error messages while running <TT><FONT SIZE=-1>latex,</FONT></TT>
+or you may get output you do not like. We will create an error to give
+you the opportunity to see an error message. (It saves money and trees
+to use <FONT SIZE=-1><TT>xdvi</TT> </FONT>and <FONT SIZE=-1><TT>ghostview</TT>
+</FONT>and thereby<FONT SIZE=-1> </FONT>avoid printing draft documents.)
+</P>
+
+<P>Bring up <FONT SIZE=-1><TT>practice.tex</TT> </FONT>in your favorite
+editor and remove the closing brace after the word <TT><FONT SIZE=-1>document
+</FONT></TT>in the second line, that is, change <FONT SIZE=-1><TT>\begin{document}</TT>
+to</FONT></P>
+
+<UL>
+<P><FONT SIZE=-1><TT>\begin{document</TT> </FONT></P>
+</UL>
+
+<P>Now save your file and <I>LaTeX</I> it again. (Consider this a quiz.)
+</P>
+
+<UL>
+<P><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=115><PARAM name="register" value="Unix Tutorial WebTerm">
+     <PARAM name="label" value="Enter Command">
+     <PARAM name="command" value="send">
+     <PARAM name="text" value="latex practice.tex\r\n"></APPLET></P>
+</UL>
+
+<P>Unix should respond with: </P>
+
+<UL>
+<PRE><TT><FONT SIZE=-1>This is TeX, Version 3.1415 (C version 6.1)
+(practice.tex
+LaTeX2e &lt;1994/12/01&gt; patch level 3
+(/usr/local/lib/texmf/tex/latex2e/latex209.def
+Entering LaTeX 2.09 compatibility mode.
+(/usr/local/lib/texmf/tex/latex2e/tracefnt.sty)
+(/usr/local/lib/texmf/tex/latex2e/latexsym.sty))
+(/usr/local/lib/texmf/tex/latex2e/article.cls
+Document Class: article 1995/01/31 v1.2y Standard LaTeX document class
+(/usr/local/lib/texmf/tex/latex2e/size10.clo))
+Runaway argument?
+{document 
+! Paragraph ended before \begin was complete.
+<to be read again> 
+                   \par 
+l.3 
+    
+? </FONT></TT>
+</PRE>
+</UL>
+
+<P>The first lines should look familiar. Then <I>LaTeX</I> asks if you
+have a &quot;Runaway argument?&quot; Runaway argument explains the problem
+<I>LaTeX </I>is having, while the ? means it wants an answer or action
+from you. If you do not know what is wrong, you can request advice from
+<I>LaTeX</I> with the <TT>h</TT> command: </P>
+
+<UL>
+<P><TT><FONT SIZE=-1>? h</FONT></TT> 
+<APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=15>
+     <PARAM name="register" value="Unix Tutorial WebTerm">
+     <PARAM name="label" value="h"><PARAM name="command" value="send">
+     <PARAM name="text" value="h\r\n">
+</APPLET></P>
+</UL>
+
+<P>Unix responds with the helpful and good-natured advice </P>
+
+<UL>
+<PRE><TT><FONT SIZE=-1>I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+? </FONT></TT>
+</PRE>
+</UL>
+
+<P>Again it asks you what it should do. Since it recommends that we forget
+the whole thing and go ahead, just press <TT><FONT SIZE=-1>&lt;return&gt;</FONT></TT>
+and stumble onward. It then gives you another error (a second confusion
+created by the first):</P>
+
+<UL>
+<PRE><TT><FONT SIZE=-1>! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H &lt;return&gt;  for immediate help.

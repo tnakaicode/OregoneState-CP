@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 17.C: Emacs- Cutting and Pasting </TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="emacs-buffers.html#top" target="MainDoc"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="emacs-buffers.html#top" target="MainDoc">
+17.D: Buffers</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="emac-home.html#top" target="MainDoc"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="emac-home.html#top" target="MainDoc">
+17: Emacs</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="emacs-changes.html#top" target="MainDoc"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="emacs-changes.html#top" target="MainDoc">
+17.B: Changes</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 17.C: Cutting and Pasting in <I>emacs </I></H2>
+
+<P>
+<HR></P>
+
+<P><I>Emacs</I> lets you be destructive to text by either <I>deleting</I>
+or <I>killing</I> it. The difference is that <I>killed</I> things can be
+brought back (<I>yanked</I>), while <I>deleted</I> things are gone forever
+(well, maybe nothing is forever, <I>emacs </I>has probably made backup
+copies of your file on the disk). </P>
+
+<P>The <I>killed</I> text from a file is stored in a common area, the <I>kill
+ring, </I>so you the <I>killed</I> text from one file can be <I>yanked
+</I>into another file. In this respect, <I>kill</I> and <I>yank</I> are
+similar to <I>cut</I> and <I>paste</I> on a PC. </P>
+
+<P>When you put something into the <I>kill ring,</I> it does not delete
+the prior entry. So when you <I>yank</I> it back, the prior item will be
+waiting to be brought back next. This is a somewhat different from the
+usual cut and paste. So, if you cut some text and try to paste it in several
+places, the second and suceeding yanks will give you different text! This
+is great, if it is what you want, but real interesting otherwise.</P>
+
+<P>If you wish to cut text and then paste it to <I>several </I>places,
+you must use the <I>copy</I> command. </P>
+
+<P>Because <I>emacs </I>can be used without a mouse, there are several
+commands to allow you to <I>kill</I> different quantities of text. A few
+<B>basic kill commands</B> are: </P>
+
+<PRE><FONT SIZE=-1>    M-[Del]   kill the word immediately before the cursor
+    M-d       kill the word after the cursor
+    C-k       kill from the cursor position to the end of line</FONT>
+</PRE>
+
+<P>To bring back <I>killed</I> text, use the <I>yank</I> command <TT><FONT SIZE=-1>C-y</FONT></TT>.
+</P>
+
+<P>As long as you keep repeating the <I>kill</I> command, all text deleted
+will be considered to be from the same <I>kill</I> and will be stored as
+one unit. So, if you <I>kill</I> three lines in a row, a single <I>yank</I>
+will bring all three lines back. </P>
+
+<P>To <I>kill</I> a large region of text, mark the location at which you
+want to begin the <I>kill</I> with the <I>mark</I> command, <TT><FONT SIZE=-1>C-@</FONT></TT>
+or <FONT SIZE=-1><TT>C-[space bar]</TT>,</FONT> and move your cursor to
+the end of the killed region (<I>world</I>) and mark it wth <TT><FONT SIZE=-1>C-w</FONT></TT>.
+</P>
+
+<P>If you want to copy a region of text <I>without </I>deleting it, mark
+the beginning of the region as before, but instead of using the <TT>C-w</TT>
+command to delete the world, use the <TT>M-w</TT> command instead to copy
+the world. This is safer, especially until you become more familiar with
+Unix.</P>
+
+<P>If you have gone on a killing spree and deleted a whole bunch of things,
+you may want to to retrieve an earlier kill, but not a latter one. If so,
+the <TT><FONT SIZE=-1>M-y </FONT></TT>command scrolls though the kill ring
+until you find the kill you are looking for. If you follow your <I>yank</I>
+command <TT><FONT SIZE=-1>C-y </FONT></TT>with the <TT><FONT SIZE=-1>M-y</FONT></TT>
+command, you will get the second to last thing <I>killed</I>. If you continue
+to use the command <FONT SIZE=-1><TT>M-y</TT>, </FONT>you will scroll through
+all of your previous <I>kills</I>. Keep in mind that wherever you stop
+is reset as the most recent <I>kill</I>. </P>
+
+<P>If you accidentally <I>kill</I> something, you have two ways to repent.
+You can use the <I>undo </I>command, <TT><FONT SIZE=-1>C-x u</FONT></TT>
+which undoes whatever command you did last. Alternatively, if you have
+not continued on your killing spree, you can <I>yank</I> your text back
+with<FONT SIZE=-1> <TT>C-y</TT>.</FONT> </P>
+
+<P>Try some random <I>killing</I> and <I>yanking</I> before you start the
+<A HREF="emacs-buffers.html#top" target="MainDoc">next section</A>. 
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="emacs-buffers.html#top" target="MainDoc"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="emacs-buffers.html#top" target="MainDoc">
+17.D: Buffers </A><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="emac-home.html#top" target="MainDoc"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="emac-home.html#top" target="MainDoc">
+17: <TT>emacs</TT></A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="emacs-changes.html#top" target="MainDoc"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="emacs-changes.html#top" target="MainDoc">
+17.B: Changes</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR></P>
+
+</BODY>
+</HTML>

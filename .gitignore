@@ -10,7 +10,7 @@ __pycache__/
 build/*
 
 # Doc
-*.pdf
+#*.pdf
 *.docx
 tex2pdf*/*
 
@@ -19,3 +19,4 @@ tmp/*
 
 # index
 *index.html?*
+*index.php?*

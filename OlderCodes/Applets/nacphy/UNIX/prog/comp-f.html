@@ -1,0 +1,155 @@
+<html> 
+<head><title>NACSE - Unix 16.A: Compiling Fortran</title></head> 
+<body bgcolor="FFFFFF"> 
+<hr>
+<table><tr>
+<td>
+  <a href="prog-courtesy.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="../figs/next-motif.gif">
+   16.C: Programming Courtesy</a>
+   <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>  
+<td> <a href="programming.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="../figs/up-motif.gif">
+  16: Programming</a>
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td>  
+  <a href="programming.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="../figs/previous-motif.gif">
+  16: Programming</a> 
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="../contents.html";
+    onclick="top.frames[0].location='../mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="../figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+
+<img align="left" ALT="Specialized" src="../figs/RACECAR2.GIF" height=60 
+ width=130>
+<h2><center>&#167 16.A:&nbspCompiling Fortran Programs</center></h2>
+<hr>
+
+<p>
+Once you have gone through the trouble of writing your Fortran program, you 
+probably want to have it run. The most popular Fortran compiler is 
+<code>f77</code> (Fortran 77).   The most basic use of <code>f77</code> is 
+demonstrated as follows:<p>
+
+<br>
+<code>> cd ~/development/prog</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=160>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ~/development/prog">
+	  <param name="command" value="send">
+	   <param name="text" value="cd ~/development/prog\r\n">
+  </applet>
+<br>
+
+<code>> f77 area.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=70>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="f77 area.f">
+	  <param name="command" value="send">
+	   <param name="text" value="f77 area.f\r\n">
+  </applet>
+
+<p>  
+
+<code>area.f</code> is the name of the program you wish to compile.  
+This command produces a file called <code>a.out</code> which is the 
+executable program.  To run it, you just type <code>a.out</code> and 
+then the <code>return</code> key.
+
+<br>
+<code>> a.out</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="a.out">
+	  <param name="command" value="send">
+	   <param name="text" value="a.out\r\n">
+  </applet>
+
+<p>  
+<code>a.out</code> is not a very descriptive name.  Fortunately, it is possible
+for the compiler to give the compiled code a new name.  This is done with the 
+<code>-o</code> flag.  You use it after the compile line shown above, followed 
+by the name you want the executable program to have.
+
+<br>
+<code>> f77 area.f -o it-runs</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=140>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="f77 area.f -o it-runs">
+	  <param name="command" value="send">
+	   <param name="text" value="f77 area.f -o it-runs\r\n">
+  </applet>
+
+<p>  
+This compiles your Fortran program into an executable called 
+<code>it-runs</code>.  To run it, simply type the name of the executable.
+
+<br>
+<code>> it-runs</code>  
+  <applet codebase="../bin" code="RegistryButton.class" 
+     height=22 width=60>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="it-runs">
+	  <param name="command" value="send">
+	   <param name="text" value="it-runs\r\n">
+  </applet>
+
+<p>  
+For some scientific programs, an additional library of mathematical 
+functions called LAPACK is used. For a tutorial on how to use LAPACK routines, 
+look at the 
+<a target="Outside" href="http://nacphy.physics.orst.edu/lapack/">
+  PH 465 LAPACK tutorial</a>.
+<p>
+<hr>
+<table><tr>
+<td>
+  <a href="prog-courtesy.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="../figs/next-motif.gif">
+   16.C: Programming Courtesy</a>
+   <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>  
+<td> <a href="programming.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="../figs/up-motif.gif">
+  16: Programming</a>
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td>  
+  <a href="programming.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="../figs/previous-motif.gif">
+  16: Programming</a> 
+  <img height=25 width=1 alt=" " src="../figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="../contents.html";
+    onclick="top.frames[0].location='../mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="../figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<address>Comments and questions to
+<a href=mailto:nacse-unix@physics.orst.edu>nacse-unix@physics.orst.edu</a>.
+</address>
+</body>
+</html> 

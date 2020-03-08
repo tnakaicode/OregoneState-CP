@@ -1,0 +1,60 @@
+<HTML>
+  <HEAD>
+  <TITLE> Deposición Balística</TITLE>
+  </HEAD>
+   <BODY BGCOLOR="#FFFFFF">     
+        <p><a href="Film2en.html"> Available in English</a></p>
+    <TABLE BORDER="5" cellspacing="3" cellpadding="0"><tr><th>
+   <APPLET CODE="Film2.class" WIDTH=530 HEIGHT=310>
+   </APPLET>
+   </th></tr>
+    </table>
+    <h3>Instrucciones</h3>
+       <ul>
+         <li> Una vez obtenga la totalidad de los puntos resione "continue" 
+              para que se comience el conteo de cuadros.
+         <li> Continúe presionando este botón 4 veces más.
+         <li>Presione "start" para obtener otra deposición balística.
+       </ul>
+    <h2>Deposición Balística</h2>
+    El modelo fué propuesto para simular la sedimentación de 
+    esferitas en hidrocarburos. En esta aplicación usamos un
+    sustrato de 200 unidades de longitud sobre el cual se van a depositar 
+    partículas formando columnas utilizando números aleatorios y 
+    de acuerdo a ciertas reglas.
+   <p>
+<ul>
+<li> Se genera un número aleatorio entre 0 y 200, digamos que salió
+     el 78, entonces se analizan las alturas de las columnas 77, 78 y 79.
+<li> La partícula se deposita en la cima de la columna 78 si su altura es 
+mayor que la de las columnas 77 y 79.
+<li> Si la columna 78 tiene menos altura que la de las columnas 77 y 79, se deposita en
+     la 77 o la 79, la que tenga mayor altura.
+</ul>
+Lo interesante de esta aplicación es que la línea quebrada que une
+las alturas de las columnas, es un fractal.
+<p>
+Para determinar la dimensión fractal se utiliza la técnica de conteo de
+cuadros, la cual consiste:
+<ul>
+   <li> Se escoge una escala <i>s</i>, y se cuenta el número <i>N </i> de cuadros que
+     contienen puntos de la superficie.
+    <li> Aquí comenzamos con una escala  1:3 , es decir <i>s=3</i>.
+    <li>Enseguida se toma una escala mayor 1:6, es decir <i>s=6</i> se cuentan
+        de nuevo los cuadros y se va graficando <b>log(N)</b> versus 
+        <b>log(s) </b>
+    <li> se continúa duplicando la escala, se van contando los cuadros
+         y al final se traza una recta que pase lo más
+cerca posible a todos los puntos.
+     <li> La dimensión fractal está dada por la pendiente de la gráfica:
+
+      <li> <u>  log(N1) -log(N2)</u> <br>
+             log(s2)-log(s1) <br>         
+                 
+</ul>
+<p>
+  Para detalles sobre los cálculos consulte el libro de Landau y Páez
+<a href="libro.html">"Computational Physics"</a> Editorial Wiley and Sons,
+New  York, 1997.
+   </BODY>
+          </HTML>

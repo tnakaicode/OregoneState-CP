@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Multimedia - Graphs</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  <a href="media-sound.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   </a>23.D: Sound
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td>  
+  <a href="multimedia.html#top"> 
+  <img align="left"  align="bottom" height=25 width=27 
+   alt="Up" src="figs/up-motif.gif"> 
+   23: Multimedia</a><img height=25 width=1 alt=" " src="figs/blank.xbm"> 
+</td>
+<td>  
+  <a href="media-xfig-xv.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  23.B: Pictures</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img align="left" ALT="Specialized" src="figs/RACECAR2.GIF" height=60 width=130> 
+
+<center><h2>&#167 23.C:&nbsp; Creating Graphs from Data</h2></center>
+<hr>
+
+<P>Another kind of multimedia you may have previously done by hand is graphing
+data. Unix has a variety of tools which allow you to do complex graphs
+quickly. </P>
+
+<P>We recommend the free software Ace/GR (xvgr/xmgr) to graph two dimensional
+data. It is menu driven and creates publication-quality graphs. It also
+has several convenient features such as error bars and built-in digital
+signal processing. You can start <I>xmgr</I> by just entering its name
+(and then having it read in your data) or by having the data read in as
+<I>xmgr </I>starts up: </P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; xmgr</TT> <I>filename</I> </FONT></P>
+</UL>
+
+<P>Simply enter your data into your file <FONT SIZE=-1><I>filename</I>
+in </FONT>x-y pairs. To have several graphs (data sets) on the same plot,
+separate the data sets with a blank line or with a text line. For example,
+a simple data file might look like: </P>
+
+<UL>
+<PRE><TT><FONT SIZE=-1>0.0,0.0         
+1.0,1.0  
+2.0,4.0
+3.0,9.0
+break
+0.0,0.0         
+1.0,1.1  
+2.0,3.9
+3.0,9.2</FONT></TT>
+</PRE>
+</UL>
+
+<P>Here is an example of the kind of plot you can produce with <TT>xmgr</TT>.
+</P>
+
+<P><A HREF="figs/2dgraph.gif"><IMG SRC="figs/2dgraph.gif" ALT="Prev" HEIGHT=100 WIDTH=200 ALIGN=LEFT></A>
+</P>
+
+<P>(Click on the image for a larger version.) </P>
+
+<P>Since <I>xmgr</I> cannot plot three dimensional data, we recommend <I>gnuplot
+</I>for that purpose.  </p>
+
+<P>One way to display your graphs on the Web is to convert them to <I>gif</I>
+format (<I>jpeg </I>is another possibility). To do that, have your graphing
+program produce (or print) its output in <I>postscript</I> format, and
+use the utility <I>pstogif</I> to convert the <I>postscript</I> to <I>gif:</I></P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; pstogif</TT> filename.ps </FONT></P>
+</UL>
+
+<P>This creates a <I>gif</I> file <I>filename.gif. </I>Note that the <I>postscript
+</I>file name must end with the <TT>.ps </TT>extension.</P>
+
+<P><I>Xmgr</I>'s default is to save print files with the name <I>pout.dat</I>.
+You can either change the name with the print setup menu in <I>xmgr</I>,
+or you can change the name using the <A HREF="mv-file.html#top" target="Outside"><I>mv</I>
+command.</A> </P>
+
+<P>If you want to get really fancy, <I>pstogif</I> does have options; look
+at the <A HREF="man.html#top" target="Outside">man pages</A> and try them!</P>
+
+<P>
+<HR></P>
+
+<table><tr>
+<td>
+  <a href="media-sound.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   </a>23.D: Sound
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td>  
+  <a href="multimedia.html#top"> 
+  <img align="left"  align="bottom" height=25 width=27 
+   alt="Up" src="figs/up-motif.gif"> 
+   23: Multimedia</a><img height=25 width=1 alt=" " src="figs/blank.xbm"> 
+</td>
+<td>  
+  <a href="media-xfig-xv.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  23.B: Pictures</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+ 
+</body>
+</html>
+

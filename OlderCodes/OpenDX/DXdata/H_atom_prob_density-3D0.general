@@ -1,0 +1,12 @@
+file = /Users/vanegasj/DX/data/H_atom_prob_density-3D0.dat
+grid = 50 x 50 x 50
+format = ascii
+interleaving = record
+majority = column
+field = field0
+structure = scalar
+type = double
+dependency = positions
+positions = regular, regular, regular, -10.0, 0.4, -10.0, 0.4, -10.0, 0.4
+
+end

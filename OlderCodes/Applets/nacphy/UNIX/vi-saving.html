@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix 7.A.3: Saving and Exiting in vi</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<b>OSU Computational Physics</b> - <i>Landau Research Group (nacse)
+-</i>
+
+<hr>
+<table><tr>
+<td>
+  <a target="MainDoc" href="editor-mouse.html#top">
+  <img  align="left"  align="bottom" height=25 width=37 alt="Next" 
+    src="figs/next-motif.gif">
+   7.B: Other Editors </a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> <a target="MainDoc" href="editors-home.html#top">
+  <img align="left"  align="bottom" height=25 width=27 alt="Up" 
+    src="figs/up-motif.gif">
+   7: Editing Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a target="MainDoc" href="vi-changes.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62 alt="Prev" 
+    src="figs/previous-motif.gif">
+  7.A.2: Making Changes</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   <a target="MainDoc" href="contents.html";
+  onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 alt="Contents" 
+  src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+
+
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 7.A.3: Saving and Exiting in vi </h2></center>
+<hr>
+
+<p> As with most editors, <em>vi</em> does actually change your file
+when as you enter the modifications. Instead, you work with a copy of
+your original file, and the modified copy replaces the original when
+you <em>save</em> the file.
+
+<p> In <em>vi</em> there are a number of 
+ ways (subcommands) to <em>save</em> files:
+
+<ul>
+<table>
+
+<tr><td> <b><code>:w fname</code></b>
+<td>Write present file to fname</tr>
+
+<tr><td>  <b> <code>:w </code></b> <td> Write present file to original file </tr>
+
+<tr><td>  <b> <code>:wq</code></b> <td> Write file to original and
+<em>quit</em> editor</tr>
+
+<tr><td>  <b> <code>ZZ</code></b> <td> Write file to original and
+<em>quit</em> editor</tr>
+
+ </table></ul>
+
+
+<p> Because changes are permanent until you save (write) your file, if
+you make a major mistake while editing your file, it may be easier to
+abandon your editing and start again with the original file: 
+
+<ul><table> 
+<tr><td> <b> <code>:q!</code></b> <td> Quit without writing file</tr>
+</table> </ul>
+
+The exclamation point means really do it!  Otherwise, <em>vi</em> tries
+to save you grief and won't let you quit until after you write.
+
+
+<p> Especially at first, a good idea is to save a temporary version of
+the file (just in case you did something useful with your editing, but
+are not sure):
+
+<p><ul><table> 
+<tr><td>  <b> <code>:wq temp</code></b> <td> Write to temp and quit </tr>  
+<tr><td>  <b> <code>:wq vi.doc</code></b> <td> Write to vi.doc and quit </tr>  
+</table> <br>
+
+
+<code>:wq
+vi.doc</code>
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=70>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value=":wq vi.doc">
+    <param name="command" value="send">
+     <param name="text" value=":wq vi.doc\r\n">
+  </applet>
+</ul>
+
+
+
+We have only just brushed the surface of <em>vi</em> commands.  If you
+would like to know more about the <em>vi</em> editor, there are
+command summaries available in "A
+Scientist's and Engineer's Guide to Workstations".  You may also
+to use <em>vi</em>'s own tutorial by typing <code>:learn vi</code>
+while in <em>command</em> mode.
+
+
+<p> Now let's look some more <a href="editor-mouse.html#top">modern
+editors</a> in the next section.
+
+
+<hr>
+<table><tr>
+<td>
+  <a target="MainDoc" href="editor-mouse.html#top">
+  <img  align="left"  align="bottom" height=25 width=37 alt="Next" 
+    src="figs/next-motif.gif">
+   7.B: Other Editors </a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> <a target="MainDoc" href="editors-home.html#top">
+  <img align="left"  align="bottom" height=25 width=27 alt="Up" 
+    src="figs/up-motif.gif">
+   7: Editing Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a target="MainDoc" href="vi-changes.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62 alt="Prev" 
+    src="figs/previous-motif.gif">
+  7.A.2: Making Changes</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   <a target="MainDoc" href="contents.html";
+  onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 alt="Contents" 
+  src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+
+ 
+</body>
+</html>
+
+
+

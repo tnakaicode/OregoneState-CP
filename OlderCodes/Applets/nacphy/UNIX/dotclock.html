@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 16: Customizing - Loading Applications</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="emac-home.html#top" target="MainDoc";
+onclick="top.frames[0].location='manage-emacs.html'"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+17: Editing with Emacs </a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="dotcolor.html#top" target="MainDoc"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+16.B: Screen Appearance</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="dot.html#top" target="MainDoc"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+16: Customizing</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Basic" HEIGHT=75 WIDTH=120 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 16.C: Auto-Loading Applications</H2>
+
+<P>
+<HR></P>
+
+<P>A nice way to customize your Unix account is to have your favorite applications
+load automatically when you start an X-Session. </P>
+
+<P>Let's look first at how to start an application with custom options.
+Try the <FONT SIZE=-1><TT>xclock</TT> </FONT>command without any options</P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; xclock</TT> </FONT></P>
+</UL>
+
+<P>After a short delay, a cute little clock should appear. Note the position,
+size and type of clock. Then enter<FONT SIZE=-1> <TT>^c</TT> </FONT>(hold
+down the control key and type &quot;<TT><FONT SIZE=-1>c</FONT></TT>&quot;)
+to stop <TT><FONT SIZE=-1>xclock.</FONT></TT> </P>
+
+<P>Now let's change the color of the clock. The option to change the foreground
+color of an X object is<FONT SIZE=-1> </FONT></P>
+
+<UL>
+<P><FONT SIZE=-1><TT>-fg</TT> <I>color</I></FONT></P>
+</UL>
+
+<P>The option to change the background color is</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>-bg <I>color</I></FONT></TT></P>
+</UL>
+
+<P>(Remember: you can use the <A HREF="dotcolor.html#color" target="Outside">showrgb</A>
+command to find a list of available colors.) Try bringing up the clock
+with colors:</P>
+
+<UL>
+<P><TT>&gt;<FONT SIZE=-1> xclock -fg chartreuse3 -bg skyblue4 </FONT></TT></P>
+</UL>
+
+<P>Use <TT><FONT SIZE=-1>^c</FONT></TT> when you are done to kill the time.
+</P>
+
+<P>Now let's change the size and position of the clock. To specify the
+size and position of X objects you use a group of numbers </P>
+
+<UL>
+<P><TT><FONT SIZE=-1>width*height+x+y</FONT></TT></P>
+</UL>
+
+<P>These specify the width and height of the object and the <I>x </I>and
+<I>y</I> position in pixels. See the figure for additional clarification.
+</P>
+
+ 
+
+<P>See what happens when you try </P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; xclock -geometry 50x50-20+20 </FONT></TT></P>
+</UL>
+
+<P>The universe being relative, it should not surprise you that <TT>geometry
+</TT>can accept negative as well as positive numbers. Try some variations
+until you find a clock you like. </P>
+
+<P>When creating your favorite clock, you might want to try these options:
+</P>
+
+<CENTER><TABLE>
+<TR>
+<TD><TT><FONT SIZE=-1>-geometry <I>width*height+x+y</I></FONT></TT></TD>
+
+<TD><FONT SIZE=-1>Clock size and location</FONT></TD>
+</TR>
+
+<TR>
+<TD><FONT SIZE=-1><TT>-fg</TT> <I>color</I></FONT></TD>
+
+<TD><FONT SIZE=-1>Foreground color</FONT></TD>
+</TR>
+
+<TR>
+<TD><FONT SIZE=-1><TT>-bg</TT> <I>color</I></FONT></TD>
+
+<TD><FONT SIZE=-1>Background color</FONT></TD>
+</TR>
+
+<TR>
+<TD><TT><FONT SIZE=-1>-digital</FONT></TT></TD>
+
+<TD><FONT SIZE=-1>Digital clock</FONT></TD>
+</TR>
+
+<TR>
+<TD><TT><FONT SIZE=-1>-analog</FONT></TT></TD>
+
+<TD><FONT SIZE=-1>Analog clock</FONT></TD>
+</TR>
+</TABLE></CENTER>
+
+<P>Once you have created your favorite clock, why not have it load when
+you start your X session. To do this, modify your <TT><FONT SIZE=-1>.Xsession</FONT></TT>
+or .<TT><FONT SIZE=-1>xsession </FONT></TT>file. </P>
+
+<P>Open the X session file you have in your home directory and look for
+the lines with <TT><FONT SIZE=-1>exec </FONT></TT>commands. Then enter
+your own <TT><FONT SIZE=-1>exec </FONT></TT>command for your clock:</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>exec xclock -fg chartreuse3 -bg skyblue4 -geometry
+100x100-20+20 &amp; </FONT></TT></P>
+</UL>
+
+<P>Notice the ampersand &amp;. It tells your window manager to run the
+clock in the background and lets your xsession proceed. </P>
+
+<P>The <TT><FONT SIZE=-1>exec </FONT></TT>command can be used to automatically
+start any application. While it is great fun to bring up every application
+you may possibly use in the next year, be frugal; every application requires
+resources, and the more demands there are on the system, the worse the
+performance is for all.</P>
+
+<P>If you regularly use different sets of applications, you may want to
+set up aliases to start up groups of them with a single command. (You haven't
+forgotten about <A HREF="dotalias.html#top" target="Outside">aliases </A>yet,
+have you?) </P>
+
+<UL>
+<P><TT><FONT SIZE=-1>alias stdmode <BR>
+'xclock -fg chartreuse3 -bg skyblue4 -geometry 100x100-20+20 &amp;;<BR>
+xterm &amp;' </FONT></TT></P>
+</UL>
+
+<P>Here the semicolon ; is used to separate commands.</P>
+
+<P>Creating your custom terminal with <TT><FONT SIZE=-1>xterm </FONT></TT>is
+great fun. Here are some of its options</P>
+
+<CENTER><TABLE>
+<TR>
+<TD><FONT SIZE=-1><TT>-display</TT> <I>xhost</I></FONT></TD>
+
+<TD><FONT SIZE=-1>Server nam</FONT></TD>
+</TR>
+
+<TR>
+<TD><TT><FONT SIZE=-1>-geometry <I>width*height+x+y</I></FONT></TT></TD>
+
+<TD><FONT SIZE=-1>Window size and location</FONT></TD>
+</TR>
+
+<TR>
+<TD><FONT SIZE=-1><TT>-fg</TT> <I>color</I></FONT></TD>
+
+<TD><FONT SIZE=-1>Foreground color</FONT></TD>
+</TR>
+
+<TR>
+<TD><FONT SIZE=-1><TT>-bg</TT> <I>color</I></FONT></TD>
+
+<TD><FONT SIZE=-1>Background color</FONT></TD>
+</TR>
+
+<TR>
+<TD><TT><FONT SIZE=-1>-iconic</FONT></TT></TD>
+
+<TD><FONT SIZE=-1>Initial window to be icon</FONT></TD>
+</TR>
+
+<TR>
+<TD><FONT SIZE=-1><TT>-title</TT> <I>title</I></FONT></TD>
+
+<TD><FONT SIZE=-1>Window title</FONT></TD>
+</TR>
+</TABLE></CENTER>
+
+<P>Now, for our final section, we'll <A HREF="dotbehavior.html#top">change
+the way windows respond to your mouse.</A> </P>
+
+<P>
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="emac-home.html#top" target="MainDoc";
+onclick="top.frames[0].location='manage-emacs.html'"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+17: Editing with Emacs </a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="dotcolor.html#top" target="MainDoc"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+16.B: Screen Appearance</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="dot.html#top" target="MainDoc"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+16: Customizing</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR></P> 
+
+</BODY>
+</HTML>

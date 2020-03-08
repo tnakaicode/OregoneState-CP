@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Using ftp - Transfering Individual Files</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  11.C.3: <a href="ftp-mput-mget.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+    Transfering Multiple Files</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  11: <a href="multiple.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Multiple Machines</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>
+  11.C.1: <a href="ftp-navigate.html#top">
+  <img  align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+    Help and Navigation</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 11.C.2: ftp:  Transfering Individual Files</h2></center>
+<hr>
+
+<p> To transfer files from one machine to another, you use the 
+<em>put</em> and <em>get</em>  ftp subcommands:
+
+<table> <tr><td><b>ftp> put index.html</b>
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=105>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="put index.html">
+	  <param name="command" value="send">
+	   <param name="text" value="put index.html\r\n">
+  </applet><td> put   file from <em>local</em> to 
+<em>remote</em> </tr> 
+<tr> <td><b>ftp> get index.html</b> <td> get   file from 
+<em>remote</em>  to <em>local</em></tr>
+</table>
+
+<p>
+It is important to keep the action of these commands straight.  It is all 
+to easy to wipe out your work by writing over it with your old file.  One 
+way to keep them straight is to remember that the command verb always acts 
+on the <em>remote</em> machines files.
+
+<p>
+Try it! If the file transfers successfully, you will get a message like:
+
+<ul><code> 
+200 PORT command successful<br>
+150 Opening BINARY mode data connection for index.html<br>
+226 Transfer complete<br>
+2183 bytes sent in 0 seconds (2.1 Kbytes/s)<br>
+</code></ul>
+
+<p> To make sure it was really copied (not a bad thing to do):
+
+<ul> <code>ftp> ls -l</code> <applet 
+codebase="bin" code="RegistryButton.class" height=22 width=40> <param 
+name="register" value="Unix Tutorial WebTerm"> <param name="label" 
+value="ls -l"> <param name="command" value="send"> <param name="text" 
+value="ls -l\r\n"> </applet>
+</ul>
+ 
+Note that <code>ftp</code> has two modes:
+
+<table> <tr><td><b>ascii</b><td>for transfering text files (like 
+<code>index.html</code></tr> 
+<tr><td><b>binary</b><td>for transferring 
+binary files </tr> </table>
+ 
+<p>
+Text files will usually transfer successfully in either mode.  Entering
+ <code>ftp> ascii</code> prior to 
+transfer places <code>ftp</em> into ascii mode.  Here
+we transfer the binary file <code>CONST.GIF</code>:
+ 
+<ul>
+<code>ftp> binary</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=50>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="binary">
+	  <param name="command" value="send">
+	   <param name="text" value="binary\r\n">
+  </applet>
+</ul>
+
+<p> Before we <em>put</em> a file into the directory 
+<code>backup-cluster</code>, we need to get into the directory on the
+<em>local</em> computer containing that file.  The file we are going to <em>put</em> 
+is <code>CONST.FIG</code> and is in <code>~/public-html/figs</code>:
+
+<ul>
+<code>ftp> lcd figs</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=60>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="lcd figs">
+	  <param name="command" value="send">
+	   <param name="text" value="lcd figs\r\n">
+  </applet>
+
+<br>
+<code>ftp> put CONST.GIF</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=100>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="put CONST.GIF">
+	  <param name="command" value="send">
+	   <param name="text" value="put CONST.GIF\r\n">
+  </applet>
+</ul>
+
+<p> Now we'll see how to <a href="ftp-mput-mget.html#top">transfer a group 
+of files</a> with one command.
+ 
+<hr>
+<table><tr>
+<td>
+  11.C.3: <a href="ftp-mput-mget.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+    Transfering Multiple Files</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  11: <a href="multiple.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Multiple Machines</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>
+  11.C.1: <a href="ftp-navigate.html#top">
+  <img  align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+    Help an Navigation</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+<hr>
+</body>
+</html>

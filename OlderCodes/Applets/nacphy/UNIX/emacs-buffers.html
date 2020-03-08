@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix: 17.D: Emacs - Buffers </TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="emacs-mode.html#top" target="MainDoc"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="emacs-mode.html#top" target="MainDoc">
+17.E: Mode</A><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="emac-home.html#top" target="MainDoc"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="emac-home.html#top" target="MainDoc">
+17: Emacs</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="emacs-cut.html#top" target="MainDoc"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="emacs-cut.html#top" target="MainDoc">
+17.C: Cutting and Pasting</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 17.D: <I>emacs </I>File Buffers </H2>
+
+<P>
+<HR></P>
+
+<P>When you tell <I>emacs to </I>edit a file, it copies your file into
+a region of central memory which it calls a <I>buffer</I>. (Just to be
+safe, it also makes a backup disk file with a name like <TT><FONT SIZE=-1><I>filename</I>~</FONT></TT>).
+Each file has it's own separate buffer, and <I>emacs </I>allows you to
+edit multiple buffers (files) simultaneously. </P>
+
+<P>To start editing a file, you issue the <I>find file</I> command <TT><FONT SIZE=-1>C-x
+C-f filename</FONT></TT>. If the file doesn't exist, <I>emacs</I> will
+create a new one for you with the name you use for <TT><FONT SIZE=-1>filename</FONT></TT>.
+Try creating a new buffer by <I>finding </I>your home page:</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>C-x C-f public-html/index.html</FONT></TT> </P>
+</UL>
+
+<P>If you are editing more than one buffer, it is useful to know the names
+of all buffers currently in memory. This is obtained with the <TT><FONT SIZE=-1>C-x
+C-b</FONT></TT> command. After you enter this command, a list of buffers
+will appear on a split screen. You can move your mouse to either of the
+windows.</P>
+
+<P>You can switch to any of the listed buffers by just clicking on it with
+your mouse and then pressing the number <TT>1</TT>. If you don't have a
+mouse, use <TT>C-x o</TT> to switch to the buffer window, and then use
+the arrow keys. </P>
+
+<P>Try switching among your buffers now using <TT><FONT SIZE=-1>C-x C-b.</FONT></TT></P>
+
+<P>To get rid of the buffer list, type <TT><FONT SIZE=-1>C-x 1</FONT></TT>
+in the other window or <TT><FONT SIZE=-1>C-x k </FONT></TT>in the window
+with the list.<TT><FONT SIZE=-1> </FONT></TT>The first command only hides
+the buffer list by making <I>emacs </I>display only one window (this will
+be covered further in the &quot;Windows&quot; section) . The <TT><FONT SIZE=-1>C-x
+k </FONT></TT>command actually kills the active window. </P>
+
+<P><B><I>Be warned.</I></B> When you edit a file, <I>emacs</I> does not
+automatically save the file. To move the edited file from the buffer to
+the disk (save it), you issue the commands </P>
+
+<CENTER><TABLE ALIGN=ABSCENTER BORDER=1 CELLSPACING=3 CELLPADDING=3 >
+<TR>
+<TD><TT>C-x C-s</TT></TD>
+
+<TD>save current file</TD>
+</TR>
+
+<TR>
+<TD><TT>C-w</TT> <I>filename</I> </TD>
+
+<TD>write current file (buffer) to <I>filename</I></TD>
+</TR>
+
+<TR>
+<TD><TT>C-x k</TT></TD>
+
+<TD>kill current buffer with no write</TD>
+</TR>
+</TABLE></CENTER>
+
+<P>We have now covered the basic <I>emacs</I> commands. In the next few
+sections we'll deal with some more specialized commands. Let's start with
+<A HREF="emacs-mode.html#top" target="MainDoc">mode line</A>. 
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="emacs-mode.html#top" target="MainDoc"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="emacs-mode.html#top" target="MainDoc">
+17.E: Mode</A><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="emac-home.html#top" target="MainDoc"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="emac-home.html#top" target="MainDoc">
+17: Emacs</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="emacs-cut.html#top" target="MainDoc"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="emacs-cut.html#top" target="MainDoc">
+17.C: Cutting and Pasting</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR></P>
+
+</BODY>
+</HTML>

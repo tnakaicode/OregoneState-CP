@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 14.A: Viewing Files with head</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="util-cat.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="util-cat.html#top">
+14.B: The <TT>cat</TT> Command</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="util.html#top">
+14: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="util.html#top">
+14: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 15.A:&nbsp;Viewing Files with <TT>head</TT></H2>
+
+<P>
+<HR></P>
+
+<P><FONT SIZE=+1>You may remember the </FONT><TT><FONT SIZE=-1>tail</FONT></TT>
+command which we used to view the last few lines of files. The <TT><FONT SIZE=-1>head</FONT></TT>
+command is similar, except that it is used to view the first few lines
+of a file. </P>
+
+<P>Go to the <TT><FONT SIZE=-1>prog </FONT></TT>directory and try: </P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; cd development/prog/</TT> </FONT><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=150><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="cd development/prog/"><PARAM name="command" value="send"><PARAM name="text" value="cd development/prog/\r\n"></APPLET></P>
+</UL>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; head area.f</TT> </FONT><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=80><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="head area.f"><PARAM name="command" value="send"><PARAM name="text" value="head area.f\r\n"></APPLET></P>
+</UL>
+
+<P>Your response should look something like: </P>
+
+<UL>
+<PRE><FONT SIZE=-1>       PROGRAM area  
+c area of circle, r input from terminal  
+       DOUBLE PRECISION pi, r, A   
+c    Best value of pi for IEEE floating point   
+       pi = 3.14159265358979323846  
+c       read r from standard input (terminal)  
+
+       PROGRAM area  
+c area of circle, r input from terminal  
+       DOUBLE PRECISION pi, r, A   </FONT>
+</PRE>
+</UL>
+
+<P>Like the use of <FONT SIZE=-1><TT>tail,</TT> </FONT>you have the option
+of specifing the number of lines you wish to see </P>
+
+<UL>
+<P><TT>&gt; <FONT SIZE=-1>head -5 area.f</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=100><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="head -5 area.f"><PARAM name="command" value="send"><PARAM name="text" value="head -5 area.f\r\n"></APPLET></P>
+</UL>
+
+<P>
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="util-cat.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="util-cat.html#top">
+14.B: The <TT>cat</TT> Command</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="util.html#top">
+14: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="util.html#top">
+14: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR></P>
+
+
+</BODY>
+</HTML>

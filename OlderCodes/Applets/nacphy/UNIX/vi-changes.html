@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix 7.A.2: Making Changes in vi </title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  <a target="MainDoc" href="vi-saving.html#top">
+  <img  align="left"  align="bottom" height=25 width=37 alt="Next" 
+    src="figs/next-motif.gif">
+   7.A.3: Saving and Exiting
+  </a><img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a target="MainDoc" href="editors-home.html#top">
+  <img align="left"  align="bottom" height=25 width=27 
+  alt="Up" src="figs/up-motif.gif">
+ 7: Editing Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a target="MainDoc" href="vi-moving.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62 alt="Prev" 
+  src="figs/previous-motif.gif">
+  7.A.1: Moving in <em>vi</em></a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   <a target="MainDoc" href="contents.html";
+  onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 alt="Contents" 
+  src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 7.A.2: Making Changes in  vi </h2></center>
+<hr>
+
+<p> Now that you've opened a file with <em>vi</em>, let's edit it.  First 
+notice that at the end of the file there is a line with <code>NAME</code> 
+and <code>DATE</code> in it.  Try changing these to your name and today's 
+date.
+
+<p> One way to change text in <em>vi</em> is to: delete the old text, and 
+then, insert the new text.  (Some people find it easier to insert the new 
+text before deleting the old.)
+
+<ol>
+<li>   Move your cursor to the text you wish to change. 
+ 
+<li> Because you are in <em>command</em> mode,  you must 
+change to <em>insert</em> mode before entering text.  
+
+<li> Change to <b>insert</b> mode by typing <code>i</code>.  
+
+<li> Now type in your name and today's date.
+
+<li> Before you can delete the old name and date, you need to exit 
+<em>insert</em> mode.  
+
+<li> <b>Exit</b> insert mode  by pressing the <code>[Escape]</code> key.  
+
+
+<li> Now position the cursor over the leftmost characters you wish to delete.
+  
+<li> The <b>delete</b> commands are:
+
+<dl compact>
+<dt> <b><code>x</code></b> <dd>delete a single character 
+ 
+<dt>  <b><code>dw</code></b> <dd>delete a single word
+
+<dt>  <b><code>dd</code></b> <dd>delete   an entire line 
+</dl>
+
+<li>
+If you make any mistakes, the <b>undo</b> 
+commands are 
+
+<dl compact>
+<dt> <b><code>u</code></b> <dd>undo the last change
+ 
+<dt> <b><code>U</code></b> <dd>undo all changes on this line
+ 
+</dl>
+ </ol>
+
+<p>
+Other useful commands for editing are:
+
+<ul><table>
+
+<tr><td> <b><code>Y [Ret]</code></b> <td><em>yank</em> (<em>copy</em>) the
+current line</tr>
+
+<tr><td>  <b><code>yw [Ret]</code></b> <td><em>yank</em> (<em>copy</em>)
+next word</tr>
+
+<tr><td> <b><code>P</code></b> <td> put (<em>paste</em>) last thing yanked
+after cursor</tr>
+
+</table>   </ul>
+
+You will notice nothing appears to happen when you do a <em>yank</em>.  Yet 
+if you move the cursor to where you want to place the copied text and issue 
+the <em>put</em> command <code>P</code>, the text get put there.  <p> Try 
+these commands a few times with the sample file; it takes some getting used 
+to, but it can be real fast.  We will finish our brief introduction to 
+<em>vi</em> with <a href="vi-saving.html#top">saving your work and exiting 
+<em>vi</em></a>.
+
+   
+
+<hr>
+<table><tr>
+<td>
+  <a target="MainDoc" href="vi-saving.html#top">
+  <img  align="left"  align="bottom" height=25 width=37 alt="Next" 
+    src="figs/next-motif.gif">
+   7.A.3: Saving and Exiting
+  </a><img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a target="MainDoc" href="editors-home.html#top">
+  <img align="left"  align="bottom" height=25 width=27 
+  alt="Up" src="figs/up-motif.gif">
+ 7: Editing Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a target="MainDoc" href="vi-moving.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62 alt="Prev" 
+  src="figs/previous-motif.gif">
+  7.A.1: Moving in <em>vi</em></a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   <a target="MainDoc" href="contents.html";
+  onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 alt="Contents" 
+  src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+ 
+</body>
+</html>
+
+
+

@@ -1,0 +1,203 @@
+<html>
+<head>
+<title>The elm Mailer</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+
+ <a target="MainDoc" href="final.html#top";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   Final Exam</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td>   
+  <a target="MainDoc" href="mail.html#top">
+  <img align="left" align="bottom" height=25 width=25 
+    alt="Up" src="figs/up-motif.gif">
+  E-Mail</a>
+ <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a target="MainDoc" href="mail-mail-read.html#top">  
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  Reading a Message in <code>Mail</code></a>  
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+ <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+</tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 12.D: The elm Mailer </h2></center>
+<hr>
+
+<p> The <em>elm</em> mailer may be somewhat easier to use than
+<em>pine</em> because  it doesn't give you  as many choices. 
+Yet it uses the <em>vi</em> editor, so if you are not familiar with <em>vi</em>,
+there may be some learning to do.
+
+<p>
+To learn about and use <em>elm</em>, go to the Unix prompt and enter:
+
+<ul>
+<code>> man elm</code><br>
+<code>> elm</code>
+</ul>
+
+The mailer will now ask you to create a mail directory and some files.
+You need these to handle your mail properly with <code>elm</code>, so
+enter <code>y</code> at the prompts. After that, <em>elm</em> leads
+you through its functions. 
+
+<p>For help with <em>elm</em> while using it, enter <code>?</em>
+ at the <em>elm</em> command prompt. The <em>elm</em> commands
+include:
+
+<p>
+<table>
+<tr><td><code>!</code></td> 
+<td>Shell escape</td></tr>
+<tr><td> <code>$</code></td><td>                
+  Resynchronize folder</td></tr>
+<tr><td><code>?</code></td><td>                 
+Help</td></tr>
+<tr><td><code>+, [RIGHT] </code></td><td>          
+Display next index page</td></tr>
+<tr><td><code>-, [LEFT]  </code></td><td>          
+Display previous index page</td></tr>
+<tr><td><code>=  </code></td><td>            
+Set current message to first message</td></tr>
+<tr><td><code>*  </code></td><td>             
+Set current message to last message</td></tr>
+<tr><td><code>[NUMBER][RETURN] </code></td><td>    
+Set current message to [NUMBER]</td></tr>
+<tr><td><code>/ </code></td><td>                   
+Search from/subjects for pattern</td></tr>
+<tr><td><code>//  </code></td><td>           
+Search entire message texts for pattern</td></tr>
+<tr><td><code>>  </code></td><td>            
+Save current message to folder</td></tr>
+<tr><td><code><  </code></td><td>          
+Scan current message for calendar entries</td></tr>
+<tr><td><code>a  </code></td><td>                  
+Alias, change to "alias" mode</td></tr>
+<tr><td><code>b </code></td><td>                   
+Bounce (remail) current message</td></tr>
+<tr><td><code>C </code></td><td>             
+Copy current message or tagged messages</td></tr>
+<tr><td><code>c</code></td><td>                    
+Change to another folder</td></tr>
+<tr><td><code>d </code></td><td>                   
+Delete current message</td></tr>
+<tr><td><code>^D </code></td><td>  
+Delete messages with a specified pattern</td></tr>
+<tr><td><code>e</code></td><td>                    
+Edit current folder</td></tr>
+<tr><td><code>f</code></td><td>                    
+Forward current message</td></tr>
+<tr><td><code>g </code></td><td>          
+Group reply to current message</td></tr>
+<tr><td><code>h </code></td><td>                   
+Headers displayed with message</td></tr>
+<tr><td><code>J </code></td><td>                   
+Increment current message by one</td></tr>
+<tr><td><code>j, [DOWN] </code></td><td>           
+Advance to next undeleted message</td></tr>
+<tr><td><code>K   </code></td><td>                 
+Decrement current message by one</td></tr>
+<tr><td><code>k, [UP] </code></td><td>      
+Advance to previous undeleted message</td></tr>
+<tr><td><code>l  </code></td><td>           
+Limit messages by specified criteria</td></tr>
+ <tr><td><code>l  ^L </code></td><td>         
+Redraw screen</td></tr>
+<tr><td><code>m </code></td><td>                   
+Mail a message</td></tr>
+<tr><td><code>n</code></td><td>                    
+Next message, displaying current, then increment</td></tr>
+<tr><td><code>o </code></td><td>                   
+Change ELM options</td></tr>
+<tr><td><code>p </code></td><td>            
+Print current message or tagged messages</td></tr>
+<tr><td><code>q </code></td><td>         
+Quit, maybe prompting </td></tr>
+<tr><td>     <code>Q  </code></td><td>                 
+Quick quit - no prompting</td></tr>
+<tr><td><code>r</code></td><td>                    
+Reply to current message</td></tr>
+<tr><td><code>s </code></td><td>                  
+Save current message to a folder</td></tr>
+<tr><td><code>t</code></td><td>          
+Tag current message </td></tr>
+<tr><td> <code>^T </code></td><td>       
+Tag messages with a specified pattern</td></tr>
+<tr><td><code>u  </code></td><td>             
+Undelete current message</td></tr>
+<tr><td> <code>^U </code></td><td>       
+Undelete messages with a specified pattern</td></tr>
+<tr><td><code>x, ^Q </code></td><td>       
+Exit leave folder untouched, permission</td></tr>
+<tr><td><code>X </code></td><td>    
+Exit leaving folder untouched, unconditionally</td></tr>
+
+</table>
+
+
+
+<hr>
+<table><tr>
+<td>
+
+ <a target="MainDoc" href="final.html#top";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   Final Exam</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td>   
+  <a target="MainDoc" href="mail.html#top">
+  <img align="left" align="bottom" height=25 width=25 
+    alt="Up" src="figs/up-motif.gif">
+  E-Mail</a>
+ <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a target="MainDoc" href="mail-mail-read.html#top">  
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  Reading a Message in <code>Mail</code></a>  
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+ <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+</tr></table> 
+
+ 
+</body>
+</html>
+
+
+

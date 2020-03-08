@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix: The telnet Command</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; I; OSF1 V3.0 alpha) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD>11.B: <A HREF="rlogin.html#top" target="MainDoc"> <A HREF="rlogin.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A></A>
+<TT><FONT SIZE=-1>rlogin</FONT></TT> and <TT><FONT SIZE=-1>rloginX</FONT></TT><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1></TD>
+
+<TD>11: <A HREF="multiple.html#top" target="MainDoc"> <A HREF="multiple.html#top" target="MainDoc"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A></A>
+Multiple Machines <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD>11: <A HREF="multiple.html#top" target="MainDoc"> <A HREF="multiple.html#top" target="MainDoc"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A></A>
+Multiple Machines <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+Contents</A> </TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/CARGUY2.GIF" ALT="Basic" HEIGHT=75 WIDTH=120 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 11.A: The telnet Command</H2>
+
+<P>
+<HR></P>
+
+<P>One way to log into another machine is with the telecommunications network
+command <TT><FONT SIZE=-1>telnet</FONT></TT>. Don't get confused, <TT><FONT SIZE=-1>telnet</FONT></TT>
+is also the name of a terminal &quot;emulator program&quot;, that is, a
+program which lets your PC act as a terminal to another computer. </P>
+
+<P>The syntax for the <I>telnet</I> command is <TT><FONT SIZE=-1>telnet</FONT></TT>
+followed by the machine you wish to log onto: </P>
+
+<UL>
+<P><TT>&gt;<FONT SIZE=-1> telnet ucs.orst.edu</FONT> </TT> </P>
+</UL>
+
+<P>If your userid on the machine is different from that on the present
+machine, you may wish to include the <I>login</I> option <TT>-l</TT> followed
+by your userid: </P>
+
+<UL>
+<P><TT>&gt;<FONT SIZE=-1> telnet ucs.orst.edu -l smithjo</FONT></TT></P>
+</UL>
+
+<P>If you are logging in from a Departmental cluster, you may be able to
+use the abbreviation: </P>
+
+<UL>
+<P><TT>&gt;<FONT SIZE=-1> telnet uc</FONT>s </TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=75>
+<PARAM name="register" value="Unix Tutorial WebTerm"> <PARAM name="label" value="telnet ucs">
+<PARAM name="command" value="send"> <PARAM name="text" value="telnet ucs\r\n">
+</APPLET> </P>
+</UL>
+
+<P>Try &quot;telnetting&quot; to your <I>ucs</I> account now. You should
+get a response like: </P>
+
+<UL>
+<P><TT><FONT SIZE=-1>Trying 128.193.4.5...<BR>
+Connected to ucs.orst.edu.<BR>
+Escape character is '^]'.<BR>
+<BR>
+login: </FONT></TT><BR>
+</P>
+</UL>
+
+<P>Go ahead, log onto <I>ucs</I> the same way you did a <A HREF="login.html#top">login</A>
+to the Departmental cluster. Change your <A HREF="password.html#top">password</A>
+if requested. Feel free to look around your <I>ucs</I> account and check
+out some familiar commands in an alien environment. Enter the <A HREF="logout.html#top">logout</A>
+command to log out of <I>ucs</I> and automatically terminate your telnet
+session: </P>
+
+<UL>
+<P><TT>&gt; <FONT SIZE=-1>logout</FONT></TT> <APPLET codebase="bin" 
+code="RegistryButton.class" height=22 width=50>
+<PARAM name="register" 
+value="Unix Tutorial WebTerm"> <PARAM name="label" value="logout">
+<PARAM 
+name="command" value="send"> <PARAM name="text" value="logout\r\n">
+</APPLET> </P>
+</UL>
+
+<P>Soon we will discuss how to use your ucs account for mail. But first
+we'll discuss <A HREF="rlogin.html#top">another way</A> to remotely log
+in to a Unix machine and how to use the <I>file transfer protocol</I> command
+<I>ftp</I> to transfer files. </P>
+
+<P>
+<HR></P>
+
+<TABLE>
+<TR>
+<TD>11.B: <A HREF="rlogin.html#top" target="MainDoc"> <A HREF="rlogin.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A></A>
+<TT><FONT SIZE=-1>rlogin</FONT></TT> and <TT><FONT SIZE=-1>rloginX</FONT></TT><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1></TD>
+
+<TD>11: <A HREF="multiple.html#top"> <A HREF="multiple.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A></A>
+Multiple Machines <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD>11: <A HREF="multiple.html#top"> <A HREF="multiple.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A></A>
+Multiple Machines <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+Contents</A> </TD>
+</TR>
+</TABLE>
+
+<P>
+<HR></P>
+ 
+
+</BODY>
+</HTML>

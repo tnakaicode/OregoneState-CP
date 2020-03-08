@@ -1,0 +1,9 @@
+These are Java source files (mainly).
+
+They are compiled via the javac command:
+    javac Area.java
+This produces the file Area.class. The class file is executed via the java command
+    java Area
+
+The needed data (.dat) files are in the directory/folder, and should be moved
+the working directory where you compile these source files.

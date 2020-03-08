@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Dispersion Caotica</title>
+</head>
+<BODY TEXT="#000000" BGCOLOR="#C0C0C0" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+<CENTER><P><B><FONT COLOR="#000080"><FONT SIZE=+4>Dispersión Caotica<BR></CENTER>
+</FONT></B>
+
+<body>
+
+<P>Available in  
+<A HREF="Disper2e.html"><TT><FONT COLOR="#000080">ENGLISH</FONT></TT></A> too.
+</P>
+
+
+<HR WIDTH="100%"><B><FONT COLOR="#000080"><FONT SIZE=+1>Introducción :</FONT></FONT></B></P>
+
+
+</FONT></B>
+<FONT COLOR="#000000">
+<P>La dispersión la podemos considerar simplemente, como un problema en el
+cual un proyectil p, es disparado hacia la región de dispersión (un blanco fijo),
+con la cual interactua y posteriormente se aleja de ella.
+
+Consideremos entonces el caso en que una partícula se mueve sin fricción
+en un potencial V(x,y), este potencial es el que modela la interacción entre
+la partícula y el blanco. Para llevar a cabo nuestro experimento debemos
+conocer adicionalmente la velocidad inicial de la partícula y la posición
+inicial desde la cual se va a disparar contra el blanco, a la cual llamaremos
+parametro de impacto b.
+
+Finalmente, cuando la partícula se aleja de la zona de dispersión, mediremos
+la dirección en la cual la particula se va al infinito. Esta dirección será
+caracterizada por el ángulo de dispersión y sera igual al ángulo que forma
+el vector de la velocidad con un eje predeterminado.
+
+</P>
+
+<P><CENTER><IMG SRC="image3.gif" HEIGHT=300 WIDTH=415></CENTER></P>
+
+<P>Consideremos por ejemplo el potencial repulsivo :</P>
+
+<P>V(x,y)= x^2 y^2 exp[-(x^2+y^2)]</P>
+
+<P>Claramente observamos que el potencial posee 4 máximos, que
+estan ubicados en las coordenadas (1,1) , (-1,-1) , (-1,1) , (1,-1).
+En estos máximos v(x,y) = 1/e^2 = Em. Más adelante podremos comprobar
+que la dispersión depende de la relación E/Em donde E será la
+energía de la partícula</P>
+
+<P><CENTER><IMG SRC="dibujo.gif" HEIGHT=380 WIDTH=440></CENTER></P>
+
+<HR WIDTH="100%"><B><FONT COLOR="#000080"><FONT SIZE=+1>Algunos ejemplos :</FONT></FONT></B></P>
+<FONT COLOR="#000000">
+<P>1- Preparemos una simulación, en la cual la energía de la partícula sea
+mayor que la Em del potencial. Los valores de los parámetros los debemos ajustar
+de la siguiente manera: masa=1, vel. en x=1, vel. en y=0, b inicial=-1,
+b final=1, delta=0.05. ¿Qué comportamiento observa en la gráfica de dispersión?
+</P>
+
+
+<P>2- Tratemos de nuevo con una energía un poco menor que Em, los valores de 
+los parámetros seran: masa=0.5, vel. en x=0.5, vel. en y=0, b inicial=-1,
+b final=1, delta=0.05. ¿En qué regiones se observan cambios abruptos en la 
+gráfica?
+</P>
+
+<P>3- Tratemos de nuevo con la energía anterior, pero esta vez reduciendo el rango
+de valores de b, y haciendo el incremento más fino.
+Los valores de los parámetros seran: masa=0.5, vel. en x=0.5, vel. en y=0, 
+b inicial=-0.5,b final=0.5, delta=0.005. ¿Se observan aún cambios abruptos en la
+gráfica?
+</P>
+
+<P>4- Haga sus propios experimentos, pero esta vez poniendo el potencial atractivo.
+</P>
+
+
+<CENTER>
+<hr>
+<applet
+    code=Disper2.class
+    id=Disper2
+    width=600
+    height=300 >
+</applet>
+</CENTER>
+</FONT>
+
+<HR WIDTH="100%">Jaime Zuluaga<BR>
+<A HREF="mailto:jhzulu@pegasus.udea.edu.co">Comentarios --> jhzulu@pegasus.udea.edu.co</A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+</BODY>
+</HTML>

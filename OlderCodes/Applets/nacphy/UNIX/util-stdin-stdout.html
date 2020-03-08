@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 14.C: Redirecting Input and Output</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="util-append.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="util-append.html#top">
+14.D: Appending Files with &lt;&lt;</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="util.html#top">
+14: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util-cat.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="util-cat.html#top">
+14.B: The <TT>cat</TT> command</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 14.C:&nbsp;I/O Redirection</H2>
+
+<P>
+<HR></P>
+
+<P>The symbol <FONT SIZE=-1><TT>&lt;</TT> </FONT>stands for <I>redirect
+standard input.</I> It allows you to take input from a file instead of
+the (default) keyboard. For example, you can use it to run a program with
+input from a file. </P>
+
+<P>The related symbol <FONT SIZE=-1><TT>&gt;</TT> </FONT>stands for <I>redirect
+standard output. </I>It allows you to direct output to a file instead of
+the (default) video screen. For example, you can use it to run a program
+with output to a file. </P>
+
+<P>You can use output redirection with the <TT><FONT SIZE=-1>cat </FONT></TT>command
+to create a file:</P>
+
+<UL>
+<P><TT>%<FONT SIZE=-1> cat &gt; hello</FONT></TT><FONT SIZE=-1> </FONT><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=75><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="cat > hello"><PARAM name="command" value="send"><PARAM name="text" value="cat > hello\r\n"></APPLET></P>
+
+<P><FONT SIZE=-1><TT>Hello World!</TT> </FONT><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=85><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="Hello World!"><PARAM name="command" value="send"><PARAM name="text" value="Hello World!\r\n"></APPLET></P>
+
+<P><FONT SIZE=-1><TT>I am here!</TT> </FONT><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=75><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="I am here!"><PARAM name="command" value="send"><PARAM name="text" value="I am here!\r\n"></APPLET></P>
+
+<UL>
+<P><FONT SIZE=-1><TT>^d</TT> </FONT></P>
+</UL>
+</UL>
+
+<P>Here the control-d (<TT><FONT SIZE=-1>^d</FONT></TT> ) is used to end
+data entry. Whatever lines you enter, including carriage returns, will
+be placed in the file <TT><FONT SIZE=-1>hello</FONT></TT>. </P>
+
+<P>Another way to use <FONT SIZE=-1><TT>cat</TT> </FONT>and <TT><FONT SIZE=-1>&lt;</FONT></TT>
+to create a file, is to copy any number of files into the present one </P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; cat hello .forward &gt; old.text</FONT></TT>
+<APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=180><PARAM name="register" value="Unix Tutorial
+WebTerm"><PARAM name="label" value="cat hello .forward >
+old.text"><PARAM name="command" value="send"><PARAM name="text"
+value="cat hello .forward > old.text\r\n"></APPLET></P>
+</UL>
+
+<P>Be careful not to use the same name for input and output files. If you
+do, <FONT SIZE=-1><TT>cat</TT> </FONT>creates the file first and will therefore
+erase your input file before writing the output file.</P>
+
+<P>Now use the <FONT SIZE=-1><TT>cat</TT> </FONT>command to view the new
+file. (Quiz) </P>
+
+<P>In the next section we will use the <A HREF="util-append.html#top" target="MainDoc">append
+symbol</A> to input from and output to the same file. </P>
+
+<UL>
+<P><BR>
+<A HREF="util-cat.html#top" target="MainDoc">Review the <TT><FONT SIZE=-1>cat</FONT></TT>
+command</A> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=110><PARAM name="register" value="Unix Tutorial
+WebTerm"><PARAM name="label" value="Enter Command"><PARAM 
+name="command" value="send"><PARAM name="text" value="cat
+old.text\r\n"></APPLET></P>
+</UL>
+
+<P>
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="util-append.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="util-append.html#top">
+14.D: Append with &lt;&lt;</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="util.html#top">
+14: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util-cat.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="util-cat.html#top">
+14.B: The <TT>cat</TT> command</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+ 
+</BODY>
+</HTML>

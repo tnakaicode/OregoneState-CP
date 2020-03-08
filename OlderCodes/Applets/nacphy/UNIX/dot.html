@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 16: Customizing Your Workspace</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="dotalias.html#top" target="MainDoc"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="dotalias.html#top" target="MainDoc">
+16.A Creating an Alias</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="x-win.html#top" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+15: Looking Through X-Windows</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT>
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Basic" HEIGHT=75 WIDTH=120 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 16: Customizing Your Workspace</H2>
+
+<P>
+<HR></P>
+
+<P>Unix and X-Windows allows you to change many aspects of the environment
+in which you work. Whether this is a blessing or a curse depends on how
+careful you are in making these changes. (You should be <I>very </I>careful;
+make them incrementally and keep backups along the way.) </P>
+
+<P>Most environmental changes are made by creating or modifying your &quot;dot
+files&quot;. You saw an example of this when you created the file<TT><FONT SIZE=-1>.forward</FONT></TT>
+to automatically forward your mail. (You will also recall that dot files
+do not show up with the ordinary <TT><FONT SIZE=-1>ls</FONT></TT> command,
+but do with all option <TT><FONT SIZE=-1>ls -a</FONT></TT>.)</P>
+
+<P>This section will deal with some basic changes you should be able to
+affect without adverse side effects: </P>
+
+<OL>
+<LI><A HREF="dotalias.html">Creating an Alias for a Frequently Used Command</A>
+</LI>
+
+<LI><A HREF="dotcolor.html">Changing the Screen Appearance</A> </LI>
+
+<LI><A HREF="dotclock.html">Auto-Loading Applications</A> </LI>
+</OL>
+
+<P>Before you begin making any changes to your dot files, make backup copies.
+A common method is to copy <TT><FONT SIZE=-1>.filename </FONT></TT>to <TT><FONT SIZE=-1>.filename.old</FONT></TT>.
+In this way you can copy the old version back if your modification has
+unexpected results. (You may have to do the restoration in a telnet session
+if you have clobbered X-Windows).</P>
+
+<P>Be aware that the form of the dot files differ somewhat for different
+implementations of Unix. So you may have to modify different files or use
+different commands for some changes. If you have difficulty, check with
+your system administrator (this is the kind of thing he wants to be asked
+about in order to avoid having you chase after him in a panic). </P>
+
+<P>In many setups of clustered computer systems, there is a built in command
+to equip you with a standard set of dot files</P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; getdotfiles</TT> </FONT></P>
+
+<P><FONT SIZE=-1>&gt; cp /usr/local/bin/COPYDEFAULTS .</FONT></P>
+</UL>
+
+<P>The first command is for the OSU Physics cluster, the other is from
+a supercomputer center.</P>
+
+<P>
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="dotalias.html#top" target="MainDoc"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+16.A Creating an Alias</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="x-win.html#top" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+15: Looking Through X-Windows</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR></P>
+ 
+
+</BODY>
+</HTML>

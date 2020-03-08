@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Reading Mail with mail</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+ 12.D <a target="MainDoc" href="mail-elm.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+    Using <code>Elm</code></a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td>   
+  12. <a target="MainDoc" href="mail.html#top">
+  <img align="left" align="bottom" height=25 width=25 
+    alt="Up" src="figs/up-motif.gif">
+  email</a>
+ <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  12.C.1 <a target="MainDoc" href="mail-mail-comp.html#top">  
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  Composing a Message in <code>Pine</code></a>  
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+</tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 12.C.2: Reading Mail with mail</h2></center>
+<hr>
+
+<p>
+Reading your mail with  the <em>mail</em> utility is easy:
+
+<ul>
+<code>> mail</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="mail">
+	  <param name="command" value="send">
+	   <param name="text" value="mail\r\n">
+  </applet>
+<br>
+<code>No mail</code>
+</ul>
+
+As usual,  we have no mail. 
+
+<p>
+If you do have mail, the <em>mail</em> utility displays a one line entry:
+
+<ul>
+<code><pre> 
+"/var/spool/mail/john": 2 messages 2 new
+>N  1 goldie             Tue Nov 12 10:37  11/301  "meow"
+ N  2 boru               Tue Nov 12 10:37  12/300  "woof"
+Message #m: </pre></code>
+</ul>
+
+Here are some  responses for you to try:
+
+<table>
+<tr><th> Control Commands:</th></tr>
+<tr><td>?</td> <td>List all subcommands</td></tr
+<tr><td>q</td>  <td>Quit - apply mailbox commands entered this session</td></tr>
+<tr><td>x</td><td>Quit - restore mailbox to original state</td></tr>
+<tr><td>! [cmd]</td> 
+	<td>Start a shell, run [cmd], and return to mailbox</td></tr>
+<tr><td>cd [dir]</td>  <td>Change directory to [dir] or $HOME</td></tr>
+<tr><th>Display Commands:</th></tr>
+<tr><td>t [msg-list]</td> 
+	<td>Display messages in [msg_list] or current message</td></tr>
+<tr><td>n</td><td>Display next message</td></tr>
+<tr> <td>f [msg-list]</td> <td>Display headings of messages</td></tr>
+<tr> <td>h [num]</td>   <td>Display headings of group 
+containing message [num]</td></tr>
+<tr><th>Message Handling:</th></tr>
+ <tr>  <td>e [num]</td>  <td>Edit message [num] (default editor is ex)</td></tr>
+<tr>   <td>d [msg-list]</td> 
+	<td>Delete messages in [msg-list] or current message</td></tr>
+ <tr>  <td>u [msg_list] </td> <td>Recall deleted messages</td></tr>
+<tr>   <td>s [msg-list] <file></td>  
+<td>Append messages (with headings) to <file></td></tr>
+ <tr>  <td>w [msg-list] <file> </td>  <td>Append messages (text only) to <file></td></tr>
+ <tr>  <td>pre [msg-list]</td> <td>Keep messages in system mailbox</td></tr>
+<tr><th>Creating New Mail:</th>
+<tr>   <td>m [addrlist]</td> <td>Create/send new message to addresses 
+in <addrlist></td></tr>
+ <tr>  <td>r [msg-list]</td> 
+<td>Send reply to senders and recipients of messages</td></tr>
+ <tr>  <td>R [msg-list]</td>   <td>Send reply only to senders of messages</td></tr>
+  <tr> <td>a</td><td>Display list of aliases and their addresses</td></tr>
+</table>
+
+
+<hr>
+<table>
+<td>
+12.D <a target="MainDoc" href="mail-elm.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+    Using <code>Elm</code></a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td>   
+  12. <a target="MainDoc" href="mail.html#top">
+  <img align="left" align="bottom" height=25 width=25 
+    alt="Up" src="figs/up-motif.gif">
+  email</a>
+ <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  

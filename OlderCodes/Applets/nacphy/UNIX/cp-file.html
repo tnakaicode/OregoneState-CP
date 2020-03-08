@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Copying Files</title></head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<b>OSU Computational Physics</b> - <i>Landau Research Group (nacse)
+-</i>
+<hr>
+<table><tr>
+<td>
+  <a href="cp-dir.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.G: Copying Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="create-dir.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5.E: Creating Directories</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align=left src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 5.F:&nbsp; Copying Files</h2></center>
+<hr>
+
+<p> The Unix command to "copy" files is <code>cp</code>.  The 
+<code>cp</code> comand takes the names of two files as arguments:
+
+<p>
+<code> > cp filefrom fileto  </code>
+
+<p> Here the  <em>filefrom</em>   is copied into (over) the  
+<em>fileto</em>.  Beware, if <em>fileto</em> already 
+exists, the old copy is deleted and the new one takes its place.  For this 
+reason it's a good idea to use the "interactive" option <code>-i</code>, 
+which makes Unix ask you for permission before a file is copied over (that's
+how computers are supposed to behave, with a little respect!).
+
+<p> Note that the names of files can be their full pathnames, or just their 
+names in the local directory.  (Actually, the "file names" can also be 
+directory names, but that's getting a little ahead of ourselves.)  Let's 
+make sure we are in the <em>development</em> directory, and then copy 
+<em>area.f</em> from the <em>prog</em> subdirectory to the file 
+<em>test.f</em> in our current directory:
+
+<p>
+<code>> cd ~/development</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=130>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ~/development">
+	  <param name="command" value="send">
+	   <param name="text" value="cd development\r\n">
+  </applet>
+
+<br>
+<code>> cp -i prog/area.f test.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=150>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cp -i prog/area.f test.f">
+	  <param name="command" value="send">
+	   <param name="text" value="cp -i prog/area.f test.f\r\n">
+  </applet>
+
+<p>
+Now try it again
+so you can see how Unix tries to watch over you so you do not make too 
+many stupid mistakes: 
+
+<p>
+<code>> cp -i prog/area.f test.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=150>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cp -i prog/area.f test.f">
+	  <param name="command" value="send">
+	   <param name="text" value="cp -i prog/area.f test.f\r\n">
+  </applet>
+
+<br>
+<code>
+cp: overwrite test.f (y/n)?
+</code>
+
+<p> You see that Unix asks if you really want to overwrite the 
+<em>test.f</em> (and "suggests" that you respond with a "y" or "n").  
+Because we just copied this file, there is no need to copy it again. So go 
+ahead and just say "n":
+
+<p>
+<code>cp: overwrite test.f (y/n)? n</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=22>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="n">
+	  <param name="command" value="send">

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 18.A: maple</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="maple-xmaple.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="maple-xmaple.html#top">
+18.B: Using <TT>xmaple</TT></A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="maple.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="maple.html#top">
+18: Maple</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="maple.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="maple.html#top">
+18: Maple</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 18.A:&nbsp;Using <I>maple</I></H2>
+
+<P>
+<HR></P>
+
+<P>While <FONT SIZE=-1><TT>xmaple</TT> </FONT>is generally preferred for
+its better graphics and easier controls, it is often helpful and simpler
+to issue <FONT SIZE=-1><TT>maple</TT> </FONT>in a <I>telnet</I> session.
+We discuss that first. </P>
+
+<P>To start <I>Maple</I> , enter <TT><FONT SIZE=-1>maple</FONT></TT></P>
+
+<UL>
+<P><TT>&gt; <FONT SIZE=-1>maple</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class"  height=22 width=50><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="maple"><PARAM name="command" value="send"><PARAM name="text" value="maple\r\n"></APPLET></P>
+</UL>
+
+<P>A line drawing of a maple leaf and some copyright information should
+appear. This is followed by the suggestion that you type &quot;?&quot;
+for help and a prompt. </P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt;</FONT> <FONT SIZE=-1>?</FONT></TT> <APPLET codebase="bin"code="RegistryButton.class"  height=22 width=55><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="? intro"><PARAM name="command" value="send"><PARAM name="text" value="?\r\n"></APPLET></P>
+</UL>
+
+<P>Maple will respond with a description and syntax of the help function
+followed by a list of possible commands and several notes. Of the suggested
+commands that appear, <TT><FONT SIZE=-1>?intro</FONT></TT> is a good place
+to start. To try it, you first need to get out of <TT>?</TT>. (<TT>maple</TT>
+help works like the <TT>man</TT> command, to get out of <TT>?</TT> type
+<NOBR>&quot;<TT>q</TT>&quot;.</NOBR>) Then type <TT>?intro</TT>. </P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; ?intro</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=55><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="?intro"><PARAM name="command" value="send"><PARAM name="text" value="?intro\r\n"></APPLET></P>
+</UL>
+
+<P><TT>plot</TT> looks like an interesting function. Let's find out more
+about it. First get out of <TT>? intro</TT> if you aren't already. Now
+type <TT>? plot</TT>. <BR>
+</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; ? plot</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=50><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="? plot"><PARAM name="command" value="send"><PARAM name="text" value="? plot\r\n"></APPLET></P>
+</UL>
+
+<P>Now let's try a simple plot. The exponential function in <I>Maple</I>
+is <TT>exp</TT> and powers are taken using the &quot;caret&quot; symbol
+(^). So, to plot the function <FONT SIZE=-1>exp(x) </FONT>enter</P>
+
+<UL>

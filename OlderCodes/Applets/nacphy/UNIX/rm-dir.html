@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Removing Directories</title></head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<b>OSU Computational Physics</b> - <i>Landau Research Group (nacse)
+-</i>
+
+<hr>
+<table><tr>
+<td>
+  <a href="control.html#top">
+  <img  align="left"  align="bottom" height=25 width=37 
+  alt="Next" src="figs/next-motif.gif">
+ 5.L: Controlling Access to Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+   alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="rm-file.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62 
+  alt="Prev" src="figs/previous-motif.gif">
+ 5.J: Removing Files</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a href="contents.html";
+  onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+  alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td>
+</tr></table>
+
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 5.K:&nbsp; Removing Directories</h2></center>
+
+<hr>
+
+<p> The problem with the "remove" command is that once a file is removed, 
+it is gone completely; even if you really did not want to remove it.  
+Inadvertently removing a directory full of wanted files could be even more 
+of a disaster.  And so Unix, tries to protect you somewhat from yourself.
+
+<p> In order to remove a directory, you must first empty it of all files, 
+and then "remove the directory" with the special <code>rmdir</code> command:
+
+   <p>
+<code>> cd ~/development/prog</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=160>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ~/development/prog">
+	  <param name="command" value="send">
+	   <param name="text" value="cd ~/development/prog\r\n">
+  </applet>
+<br>
+<code>> rm -i bu/*</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=80>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="rm -i bu/*">
+	  <param name="command" value="send">
+	   <param name="text" value="rm -i bu/*\r\n">
+  </applet>
+<br> 
+<code>> rmdir bu</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=70>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="rmdir bu">
+	  <param name="command" value="send">
+	   <param name="text" value="rmdir bu\r\n">
+  </applet>
+<br>
+<code>> ls</code> 
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=20>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="ls">
+	  <param name="command" value="send">
+	   <param name="text" value="ls\r\n">
+  </applet>
+
+<p> Note, you already have a copy of <em>development/prog</em> in the 
+<em>backupdev</em> directory, so don't be afraid to try this.  You will be 
+asked to confirm your wishes to remove each file, at which point a reply of 
+<code>y</code> is appropriate.  When every last file is gone (and this 
+includes dotfiles if you have any other than .  and ..), you can remove the 
+directory.  Finally, do a <code>ls</code> to check that the directory is 
+gone.
+
+<p>
+Although it chills our heart to tell you this, you can also
+remove all the files in a directory and the directory itself,
+just by using the recursive option with the remove command:
+
+<p>
+<code> > rm -r bu </code>
+
+<p> The problem is this is so quick and final, and if you make a typing 
+mistake (like putting in a <code>*</code>), can be so devasting.  If this 
+is too elegant to resist, at least  use the interactive option:
+
+<p>
+<code> > rm -ir bu </code>
+
+<p>

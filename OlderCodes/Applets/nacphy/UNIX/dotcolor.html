@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 16.B: Customizing - Appearance</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="dotclock.html#top" target="MainDoc"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+21.C: Adding an Application</a> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="dot.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="dot.html#top">
+16: Customizing</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="dotalias.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+16.A: Creating an Alias</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Basic" HEIGHT=75 WIDTH=120 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 16.B: Changing Screen Appearance</H2>
+
+<P>
+<HR></P>
+
+<P>A neat way to change your work environment is to change the colors,
+fonts and sizes of windows. (Everyone believes the defaults colors are
+awful.) To do this, modify the <I>.twmrc</I>. or <I>.mwmrc </I>window manager
+initiation file. Here is what you might find in one such file: </P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; more .twmrc</TT> </FONT></P>
+</UL>
+
+<UL>
+<PRE><TT><FONT SIZE=-1>Color
+   {
+   DefaultBackground            &quot;maroon&quot;
+   DefaultForeground            &quot;gray&quot;
+   BorderColor                  &quot;black&quot;
+   TitleBackground              &quot;maroon&quot;
+   TitleForeground              &quot;gray&quot;
+   MenuBackground               &quot;midnightblue&quot;
+   MenuForeground               &quot;yellow&quot;
+   MenuTitleBackground          &quot;midnightblue&quot;
+   MenuTitleForeground          &quot;yellow&quot;
+   IconBackground               &quot;gray&quot;
+   IconForeground               &quot;black&quot;
+   IconBorderColor              &quot;gray&quot;
+   IconManagerBackground        &quot;gray&quot;
+   IconManagerForeground        &quot;black&quot;
+   }</FONT></TT>
+</PRE>
+</UL>
+
+<P>The word &quot;<TT><FONT SIZE=-1>Color </FONT></TT>&quot; tells Unix
+that we want to set the colors. The brackets indicate which lines contain
+color information. Each of the remaining lines has a type of area (e.g.
+<TT><FONT SIZE=-1>DefaultBackground</FONT></TT>) and a color (<TT><FONT SIZE=-1>maroon</FONT></TT>)
+which is enclosed in parentheses. <A NAME="#color"></A></P>
+
+<P>If you do not like the colors currently in the list, you can try asking
+the system to show you its reds, greens and blues:</P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; showrgb | more</TT> </FONT></P>
+</UL>
+
+<P>Your should get a response like: </P>
+
+<UL>
+<PRE><TT><FONT SIZE=-1>220 220 220             gainsboro
+240 255 240             honeydew
+255 228 225             mistyrose
+112 128 144             slategrey
+135 206 235             skyblue
+176 196 222             light steel blue
+224 255 255             lightcyan
+ 50 205  50             limegreen
+154 205  50             yellowgreen
+218 165  32             goldenrod
+205 133  63             peru
+255 160 122             light salmon</FONT></TT>
+</PRE>
+</UL>
+
+<P>The numbers indicate the intensity of red, green and blue (hence the
+rgb) and the name is the description of the color used in <I>.twmrc</I>.
+</P>
+
+<P>Before you modify your colors, make a backup copy of <I>.twmrc</I>.
+Then edit it with your favorite editor, sign off, sign on, and see what
+happens. If for some reason you cannot use your account after you have
+modified your colors (an old practical joke is to change all of the colors
+to black so that the machine will appear broken), you can always login
+using a telnet session and restore your backup<FONT SIZE=-1> </FONT>(<TT><FONT SIZE=-1>cp
+backup .twmrc</FONT></TT>). </P>
+
+<P>You can modify the colors for individual applications by changing the
+<I>.</I><TT><FONT SIZE=-1>Xdefaults </FONT></TT>file. The format for the
+colors here is (either)</P>
+
+<UL>
+<PRE><TT><FONT SIZE=-1>application.parameter:          value </FONT></TT></PRE>
+
+<PRE><TT><FONT SIZE=-1>application*parameter:          value </FONT></TT></PRE>
+</UL>
+
+<P>For example, </P>
+
+<UL>
+<P><TT><FONT SIZE=-1>emacs.Background: black </FONT></TT></P>
+</UL>
+
+<P>You modify fonts in a similar fashion. The command </P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; xfontsel</TT> </FONT></P>
+</UL>
+
+<P>helps you select a font by giving you samples. Click and drag your mouse
+on &quot;<TT><FONT SIZE=-1>fndry</FONT></TT>&quot; to select the machine.
+The font is displayed in the next line. This can be a tricky process because
+all fonts may not be available with your application. Also, be aware that
+most fonts have <A HREF="dotalias.html#top" target="Outside">aliases </A>(you
+remember those, right), so the names in <TT><FONT SIZE=-1>xfontsel</FONT></TT>
+(like <TT><FONT SIZE=-1>xfntsel</FONT></TT>) may not match the names in
+<FONT SIZE=-1><I>.twmrc</I> </FONT>or <I>.<FONT SIZE=-1>Xdefaults</FONT></I><FONT SIZE=-1>.
+</FONT></P>
+
+<P>Now let's look at another way to change the appearance of your screen,
+<A HREF="dotclock.html#top">loading applications</A>. </P>
+
+<P>
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="dotclock.html#top" target="MainDoc"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+21.C: Adding an Application</a> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="dot.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="dot.html#top">
+16: Customizing</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="dotalias.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+16.A: Creating an Alias</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR></P>
+ 
+</BODY>
+</HTML>

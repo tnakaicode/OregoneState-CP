@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: The  File Transfer Protocol ftp </title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  11.C.1: <a href="ftp-navigate.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+    Help and Navigation</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  11: <a href="multiple.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Multiple Machines</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  11.B: <a href="rlogin.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  The <code>rlogin</code> and <code>rloginX</code> Commands</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 11.C:&nbsp;   The File Transfer Protocol ftp</h2></center>
+<hr>
+
+<p> One of the most popular ways to transfer files from one computer to 
+another is with the <em>file transfer protocol</em> <code>ftp</code>.  The 
+computer you connect <em>to</em> is "remote", the computer you 
+connect <em>from</em> is "local".  Go ahead,   <em>ftp</em> to 
+<em>ucs</em> now:
+
+ 
+You should get a  response like:
+
+<ul>
+<code>
+Connected to ucs.orst.edu.<br>
+220 ucs.orst.edu FTP server (Digital UNIX)<br>
+Name (ucs.orst.edu:yourusername): <br>
+</code>
+</ul>
+
+Go ahead and login by typing your username in the "Name" field (if your 
+username is the same on both machines, you can just enter 
+<code>[return]</code>].  Enter your password as requested.  Once logged in, 
+the remote Unix responds and then <em>ftp</em> takes over (as indicted by 
+the special prompt <code>ftp></code>):
+
+<ul><code>
+230 User johnsome logged in.<br>
+Remote system type is UNIX.<br>
+Using binary mode to transfer files.<br>
+ftp> 
+</code>
+</ul>
+ 
+If you enter your password incorrectly, Unix will respond with:
+
+<ul><code>
+530 Login incorrect.<br>
+Login failed.<br>
+Remote system type is UNIX.<br>
+Using binary mode to transfer files.<br>
+ftp>
+ </code></ul>
+
+<p>
+While this may look like you are logged in and ready to go, <em>ftp</em>
+will not let you do a thing until you get your account  in order.
+Your choice is either to "<em>quit</em>" (or  <em>bye</em>):
+
+<ul>
+<code>ftp> bye</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=30>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="bye">
+    <param name="command" value="send">
+     <param name="text" value="bye\r\n">
+  </applet><br>
+
+<code>ftp> quit</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=30>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="quit">
+    <param name="command" value="send">
+     <param name="text" value="quit\r\n">
+  </applet>
+</ul>
+
+<p>
+or you can enter the <code>user</code> subcommand to re-enter your username:
+
+<ul>
+<code>ftp> user</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=35>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="user">
+    <param name="command" value="send">
+     <param name="text" value="user\r\n">
+  </applet>
+</ul>
+

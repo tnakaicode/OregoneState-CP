@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Chaotic scattering</title>
+</head>
+<BODY TEXT="#000000" BGCOLOR="#C0C0C0" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+<CENTER><P><B><FONT COLOR="#000080"><FONT SIZE=+4>Chaotic scattering<BR></CENTER>
+</FONT></B>
+
+<body>
+
+<P>Disponible tembien en 
+<A HREF="Disper2.html"><TT><FONT COLOR="#000080">ESPAÑOL</FONT></TT></A> 
+</P>
+
+
+<HR WIDTH="100%"><B><FONT COLOR="#000080"><FONT SIZE=+1>Introduction :</FONT></FONT></B></P>
+
+
+<FONT COLOR="#000000">
+<P>We can envision scattering as a particle that moves toward a fixed 
+target p, interacts with it, an then leaves the region.
+
+Let us consider a particle moving in a potential V(x,y) without friction
+, this potential rule the interaction between the particle and the target.
+For going on with our experiment, we aditionally 
+should know the particle´s initial velocity and position, the last is what
+we are going to call impact parameter b.
+
+Finally, when the particle leaves the scattering region, we measure the direction
+it takes. This direction being caracterized by the scattering angle, and is equal 
+to the angle that makes the velocity vector with a fixed axe.
+
+</P>
+
+<P><CENTER><IMG SRC="image3.gif" HEIGHT=300 WIDTH=415></CENTER></P>
+
+<P>Let us consider the repulsive potential :</P>
+
+<P>V(x,y)= x2 y2 exp[-(x2+y2)]</P>
+
+<P>We clearly see, that the potential has four maxima, in the 
+coordinates (1,1) , (-1,-1) , (-1,1) , (1,-1).
+At this maxima the potential energy has a value of v(x,y) = 1/e^2 = Em.
+Next, we can find that the scattering is related to the ratio
+ E/Em, E being the particle´s energy</P>
+
+<P><CENTER><IMG SRC="dibujo.gif" HEIGHT=380 WIDTH=440></CENTER></P>
+
+<HR WIDTH="100%"><B><FONT COLOR="#000080"><FONT SIZE=+1>Some examples :</FONT></FONT></B></P>
+<FONT COLOR="#000000">
+<P>1- Lets prepare a simulation, in this case the particle´s energy being 
+above the potential Em. The parameter values should be adjusted
+as: mass=1, vel. in x=1, vel. in y=0, initial b=-1,
+final b=1, delta=0.05. ¿what behavior do you see in the graphic?
+Remember to push the start button.
+</P>
+
+
+<P>2- Lets try again with an energy slower than Em,The parameter values 
+are : mass=0.5, vel. in x=0.5, vel. in y=0, initial b =-1,
+final b=1, delta=0.05. In wich regions do you observe abrupt changes
+in the graphic?
+</P>
+
+<P>3- Lets try again with the last energy, but this time lowering the b
+values range, and seting delta more fine.
+The parameter values are : mass=0.5, vel. in x=0.5, vel. in y=0, 
+initial b=-0.5,final b=0.5, delta=0.005. Do you still observe abrupt 
+changes?
+</P>
+
+<P>4- Do your own experiments, but this time, set the potential as atractive.
+</P>
+
+
+<CENTER>
+<hr>
+<applet
+    code=Disper2.class
+    id=Disper2
+    width=600
+    height=300 >
+</applet>
+</CENTER>
+</FONT>
+
+<HR WIDTH="100%">Jaime Zuluaga<BR>
+<A HREF="mailto:jhzulu@pegasus.udea.edu.co">Suggestions --> jhzulu@pegasus.udea.edu.co</A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+</BODY>
+</HTML>

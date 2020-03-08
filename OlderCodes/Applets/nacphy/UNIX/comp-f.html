@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 20.A: Compiling Fortran</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="prog-courtesy-f.html#top">
+<IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+20.B: Programming Courtesy</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="run-fortran.html#top">
+<IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT>
+20: Running Fortran</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="run-fortran.html.html#top">
+<IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+20: Running Fortran</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 20.A:&nbsp;Compiling Fortran</H2>
+
+<P>
+<HR></P>
+
+<P>Once you have gone through the trouble of writing your program, you
+deserve the opportunity to run it. The most popular Fortran compiler is
+<FONT SIZE=-1><TT>f77</TT> </FONT>(Fortran 77), although the <TT><FONT SIZE=-1>f90
+</FONT></TT>compiler may serve you just as well and contain <FONT SIZE=-1><TT>f77</TT>
+</FONT>as a subset.<FONT SIZE=-1> </FONT>A basic compilation is </P>
+
+<UL>
+<P><BR>
+<TT><FONT SIZE=-1>&gt; cd ~/development/prog</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=160><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="cd ~/development/prog"><PARAM name="command" value="send"><PARAM name="text" value="cd ~/development/prog\r\n"></APPLET><BR>
+<TT><FONT SIZE=-1>&gt; f77 area.f</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=70><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="f77 area.f"><PARAM name="command" value="send"><PARAM name="text" value="f77 area.f\r\n"></APPLET></P>
+</UL>
+
+<P><TT>Here <FONT SIZE=-1>area.f</FONT></TT> is the name of a file containing
+Fortran source code for the program you wish to compile. If your program
+does not contain serious errors, this command produces a file <TT><FONT SIZE=-1>a.out.</FONT></TT></P>
+
+<P>If your program is complete (and not just a subroutine, for example),
+<TT><FONT SIZE=-1>a.out </FONT></TT>will be executable version of <TT><FONT SIZE=-1>area.f</FONT></TT>.
+If your program is not complete, <TT><FONT SIZE=-1>a.out </FONT></TT>will
+contain an object code version of it.To run the executeable, just enter
+<TT><FONT SIZE=-1>a.out</FONT></TT> followed by the <FONT SIZE=-1><TT>return</TT>
+key</FONT></P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; a.out</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=40><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="a.out"><PARAM name="command" value="send"><PARAM name="text" value="a.out\r\n"></APPLET></P>
+</UL>
+
+<P>The name<TT> <FONT SIZE=-1>a.out</FONT></TT> is conventional, but not
+terribly descriptive. To make things clearer, you can give the <TT><FONT SIZE=-1>-o</FONT></TT>
+option (for &quot;object&quot;) to the compile command and thereby give
+the compiled code a new name:</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; f77 area.f -o it-runs</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 

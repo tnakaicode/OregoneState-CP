@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 14.F: Sorting Files with sort</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="util-diff-comp.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="util-diff-comp.html#top">
+14.F: Compare: <TT>diff, comp</TT></A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="util.html#top">
+14: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util-find.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="util-find.html#top">
+14.F: Find Files</A><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 14.H:&nbsp;Sorting Files with <TT>sort</TT></H2>
+
+<P>
+<HR></P>
+
+<P>The <FONT SIZE=-1><TT>sort</TT> </FONT>command can be used to sort one
+or more files together or to eliminate duplicate lines. The most basic
+use gives the command followed by the filename</P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; sort sample.doc &gt; sample.sort</TT> </FONT><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=195><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="sort sample.doc > sample.sort"><PARAM name="command" value="send"><PARAM name="text" value="sort sample.doc > sample.sort\r\n"></APPLET></P>
+</UL>
+
+<P>This sorts the file into alphabetic order, moving from left to right
+across the line. </P>
+
+<P>Now use <FONT SIZE=-1><TT>more</TT> </FONT>or <TT><FONT SIZE=-1>view</FONT></TT>
+to+see the changes.</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; more sample.sort</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=120><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="more sample.sort"><PARAM name="command" value="send"><PARAM name="text" value="more sample.sort\r\n"></APPLET></P>
+</UL>
+
+<P>Notice that all of the blank lines have been moved to the top of the
+file, which means that the first page you see is (probably) blank. </P>
+
+<P>A useful option with <TT><FONT SIZE=-1>sort </FONT></TT>is <TT><FONT SIZE=-1>-u</FONT></TT>
+to eliminate duplicate lines</P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; sort -u bugs.dat &gt; bugs.sort</TT> </FONT><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=180><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="sort -u bugs.dat > bugs.sort"><PARAM name="command" value="send"><PARAM name="text" value="sort -u bugs.dat > bugs.sort\r\n"></APPLET></P>
+</UL>
+
+<P>This can substantially decrease the size of the file and the time it
+takes to print it out. </P>
+
+<P>Use the list command to see how much smaller this file is</P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; ls -l bugs.*</TT> </FONT><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=80><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="ls -l bugs.*"><PARAM name="command" value="send"><PARAM name="text" value="ls -l bugs.*"></APPLET></P>
+</UL>
+
+<P>Now remove the large file <FONT SIZE=-1><TT>bugs.dat</TT>. </FONT></P>
+
+<UL>
+<P><BR>
+<FONT SIZE=-1><TT>&gt; rm bugs.dat</TT> </FONT><APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=85><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="rm bugs.dat"><PARAM name="command" value="send"><PARAM name="text" value="rm bugs.dat"></APPLET></P>
+</UL>
+
+<P>As expected<TT><FONT SIZE=-1>, sort </FONT></TT>has options to define
+fields or columns to be sorted and types of sorts to be made. Read about
+some of them in <A HREF="http://www.nacse.org/demos/coping-with-unix/coping-with-unix/node148.html#SECTION00513000000000000000" target="Outside">Coping
+with Unix, </A>or about all of them in the <TT><FONT SIZE=-1>man</FONT></TT>
+pages. 
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="util-diff-comp.html#top"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="util-diff-comp.html#top">
+14.F: Compare: <TT>diff, comp</TT></A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="util.html#top">
+14: File Utilities</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="util-find.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="util-find.html#top">
+14.F: Find Files</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+ 
+</BODY>
+</HTML>

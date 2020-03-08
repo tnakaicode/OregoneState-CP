@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 19: Using Emacs </TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="emacs-moving.html#top" target="MainDoc"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+17.A: Moving</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="dotclock.html#top" target="MainDoc" ;
+  onclick="top.frames[0].location='manage-dot.html'">
+<IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+16.C: Adding an Application</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 17: Editing with <I>Emacs </I></H2>
+
+<P>
+<HR></P>
+
+<P>The <B><I>emacs </I></B>editor is popular because it has many options,
+it's powerful, it has key-driven commands (experienced users find that
+faster than mouse-driven commands), and it is so much more than <I>vi</I>.
+In fact, <I>emacs </I>is so powerful, that in many ways it's like an operating
+system all to itself.</P>
+
+<P>To enter commands in <I>emacs</I>, you use the <TT><FONT SIZE=-1>control
+</FONT></TT>key (sometimes labeled <TT><FONT SIZE=-1>Ctrl</FONT></TT>)
+or the <TT><FONT SIZE=-1>Meta </FONT></TT>key (sometimes labeled <TT><FONT SIZE=-1>Alt
+</FONT></TT>or <TT><FONT SIZE=-1>Esc</FONT></TT>). If you don't have a
+<TT><FONT SIZE=-1>Meta </FONT></TT>key, then try the <TT><FONT SIZE=-1>esc
+</FONT></TT>key. To save time, we will write <TT><FONT SIZE=-1>Meta </FONT></TT>or
+<TT><FONT SIZE=-1>Control </FONT></TT>each time we discuss a command, we
+use </P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=3 CELLPADDING=0 >
+<TR>
+<TD>
+<UL>
+<P><TT><FONT SIZE=-1>C-character</FONT></TT></P>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<P><FONT SIZE=-1>control key + character</FONT></P>
+</UL>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<UL>
+<P><TT><FONT SIZE=-1>M-character</FONT></TT></P>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<P><FONT SIZE=-1>meta key + character</FONT></P>
+</UL>
+</TD>
+</TR>
+</TABLE></CENTER>
+
+<P>This means you press the <TT><FONT SIZE=-1>character</FONT> </TT>key
+while <I>simultaneously </I>holding down either the <TT><FONT SIZE=-1>Control
+</FONT></TT>or <FONT SIZE=-1><TT>m</TT>eta </FONT>key. </P>
+
+<P>First let's open the file <TT><FONT SIZE=-1>sample.doc </FONT></TT></P>
+
+<UL>
+<P><TT><FONT SIZE=-1>&gt; emacs sample.doc</FONT></TT> <APPLET codebase="bin" code="RegistryButton.class" 
+     height=22 width=130><PARAM name="register" value="Unix Tutorial WebTerm"><PARAM name="label" value="emacs sample.doc"><PARAM name="command" value="send"><PARAM name="text" value="emacs sample.doc\r\n"></APPLET></P>
+</UL>
+
+<P>You can also open <I>emacs </I>without a document</P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; emacs</TT> </FONT></P>
+</UL>
+
+<P>Now you are ready to explore <I>emacs</I>. </P>
+
+<OL type=A>
+<LI><A HREF="emacs-moving.html#top" target="MainDoc">Moving in <I><TT>emacs</TT></I></A><I><TT>
+</TT></I></LI>
+
+<LI><A HREF="emacs-changes.html#top" target="MainDoc">Making Changes</A>
+</LI>
+
+<LI><A HREF="emacs-cut.html#top" target="MainDoc">Cutting and Pasting</A>
+</LI>
+
+<LI><A HREF="emacs-buffers.html#top" target="MainDoc">Buffers and Saving</A>
+</LI>
+
+<LI><A HREF="emacs-mode.html#top" target="MainDoc">Modes</A> </LI>
+
+<LI><A HREF="emacs-windows.html#top" target="MainDoc">Multiple Windows</A>
+</LI>
+
+<LI><A HREF="emacs-help.html#top" target="MainDoc">Help with <I><TT>emacs</TT></I></A>
+</LI>
+</OL>
+
+<P>
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="emacs-moving.html#top" target="MainDoc"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+17.A: Moving</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="dotclock.html#top" target="MainDoc" ;
+  onclick="top.frames[0].location='manage-dot.html'">
+<IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+16.C: Adding an Application</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR></P>
+
+</BODY>
+</HTML>

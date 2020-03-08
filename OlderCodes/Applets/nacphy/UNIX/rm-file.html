@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Removing Files</title></head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<b>OSU Computational Physics</b> - <i>Landau Research Group (nacse)
+-</i>
+<hr>
+<table><tr>
+<td>
+  <a href="rm-dir.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.K: Removing Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="mv-dir.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5.I: Moving Directories</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>     
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align=left src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 5.J:&nbsp; Removing Files</h2></center>
+<hr>
+
+<p>
+The command to <code>r</code>e<code>m</em>ove files in Unix is 
+<code>rm</em>.  To remove a file type the command <code>rm</code>
+followed by the name of the file you wish to remove. 
+
+<p>
+You should consider the <code>rm</code> command permanent.  On the physics 
+cluster, your <a??>dot files</a> are set up to warn you if a file is about 
+be removed, but you should not depend on this.  In addition, most systems have
+periodic backups, so if you remove something important you might be able to 
+get it from a backup.  However, remove is very swift and efficient, and you
+can easily lose a lot of work, so be very careful using 
+remove, and <em>always</em> check your commands for typos <em>before</em>
+you press the <code>return</code> key.
+
+<p>
+Try deleting the file a.out in the directory prog (we will regenerate 
+it later). 
+First go to the directory you want to delete the file from (Unix will take 
+the <code>rm</code> command with filenames which involve pathnames, but this 
+is not recommended as it increases the chance of a typo.):
+
+<p>
+<code>> cd development/prog</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=140>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd development/prog">
+	  <param name="command" value="send">
+	   <param name="text" value="cd development/prog\r\n">
+  </applet>
+
+
+<p>
+Then remove the file (double check for typos before pressing 
+<code>return</code>):
+
+<p>
+<code>> rm -i a.out</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=80>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="rm -i a.out">
+	  <param name="command" value="send">
+	   <param name="text" value="rm -i a.out\r\n">
+  </applet>
+
+
+<p>
+Type <code>Y</code> at the prompt.<br>
+Be extremely cautious if you decide to use wildcards with this command.  The 
+command <code>rm temp.*</code> removes all of the files starting with "temp.", 
+the command <code>rm temp. *</code> removes the file "temp." and then 
+removes all files in the directory.
+Unlike <code>cp</code> and <code>mv</em>, the command to 
+<a href="rm-dir.html#top">remove directories</a>
+is not the same as the command to remove files.
+
+<hr>
+<table><tr>
+<td>
+  <a href="rm-dir.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.K: Removing Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  5: Managing Files and Directories</a>

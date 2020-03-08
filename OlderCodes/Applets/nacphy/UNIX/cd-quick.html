@@ -1,0 +1,243 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Changing Directories - Quickly </title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<b>OSU Computational Physics</b> - <i>Landau Research Group (nacse)
+-</i>
+<hr>
+<table><tr>
+<td>
+  <a href="create-dir.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.E: Creating Directories </a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="cd-slow.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5.C: Changing Directories - Carefully</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 5.D:&nbsp; Changing Directories Quickly</h2></center>
+<hr>
+
+<p> By now you may be wondering if there is a quicker way to change 
+directories.  There is.  With just one command you can do the equivalent of 
+several list commands and change directory commands.
+
+
+<p> Because most of the files you access will be in or near your home 
+directory, perhaps the most useful <code>cd</code> command is:
+<p>
+<code>> cd ~</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ~">
+	  <param name="command" value="send">
+	   <param name="text" value="cd ~\r\n">
+  </applet>
+<br> 
+<code>> cd</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=30>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ">
+	  <param name="command" value="send">
+	   <param name="text" value="cd \r\n">
+  </applet>
+
+<p> either one of which returns you to your home directory.  Now check this 
+by printing the working directory:
+
+ <br> <code>> pwd</code> <applet 
+codebase="bin" code="RegistryButton.class" height=22 width=40> <param 
+name="register" value="Unix Tutorial WebTerm"> <param name="label" 
+value="pwd"> <param name="command" value="send"> <param name="text" 
+value="pwd\r\n"> </applet>
+ 
+
+<p> The list command with recursive option <code>ls -R</code> no only lists 
+names of files and directories, but also the contents of the directories:   
+<p>
+<code>> ls -FCR</code>   
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=55>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="ls -FCR">
+	  <param name="command" value="send">
+	   <param name="text" value="ls -FCR\r\n">
+  </applet>
+
+<p>
+The listing of your home directory should look something like:
+
+<p>
+<pre><code>
+Mwm             a.out*          eqns2.ms        public-html/    sample.doc
+README.first    development/    plotoutfile.ps  s2
+
+development:
+data/   prog/
+
+development/prog:
+area.f </pre></code>
+
+<p> To see what the recursive <code>-R</code> buys you, compare that listing to the output of 
+<code>ls -FC *</code>:
+<pre><code>
+Mwm             a.out*          plotoutfile.ps  sample.doc
+README.first    eqns2.ms        s2
+
+development:
+data/   prog/
+</pre></code> 
+  
+<p> You can change directly to a specific directory without jumping from branch 
+to branch on the directory tree.    Just  give <code>cd</code> the 
+<em>pathname</em> of the target directory.  
+
+<p> The pathname is the sequence of directories that lead to a file.  It 
+can be specified three ways.  The full pathname has the form 
+
+<p>
+<code>> cd /u1/home/yourusername/development/prog</code><p> 
+
+Here the leading 
+<code>/</code> represents the topmost or <em>root</em> directory, and   
+<code>u1/home</code> is where users' home directories are kept on some 
+make-believe computer (it's not the same on all Unix systems).  You can also 
+give the pathname starting from the abbreviated form of your home 
+directory, for example, 
+
+<p><code>> cd ~/development/prog</code>
+
+<p> Or, you can give the relative pathname from the present (working) 
+directory in either of two forms 
+
+<p> <code>> cd development/prog</code> <br><br> 
+<code>> cd ./development/prog</code>
+
+<p> Notice that the subdirectories in pathnames are separted by the the 
+<code>/</code></b> or "slash" symbol.  (The <code>/</code> functions 
+similarly to the backslash <code>\</em> in DOS.) The exception to this 
+being the leading slash as in
+
+<p> <code>/u1/home/yourusername/development/prog</code><p> which represents 
+the "root" or very top of the directory tree (owned by the user 
+<em>root</em>).  It is unlikely you will work in the root directory unless 
+you become a system administrator.  Nevertheless, it is educational for you 
+to look at what's in the root directory, at least if you follow the cavaet, 
+"look, but do not change":
+
+<p>
+<code>> cd /</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd /">
+	  <param name="command" value="send">
+	   <param name="text" value="cd /\r\n">
+  </applet>
+<br>
+<code>> ls -FC</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=55>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="ls -FC">
+	  <param name="command" value="send">
+	   <param name="text" value="ls -FC\r\n">
+  </applet>
+
+
+<p> 
+If you want to know more about directory structure, try
+<a target="Outside"
+  href="http://www.nacse.org/demos/coping-with-unix/coping-with-unix/node9.html#SECTION00151000000000000000">
+  A Scientist's and Engineer's Guide to
+Workstations. </a>  
+
+<p> Remember, if you find yourself in the root directory, or anywhere else 
+you do not want to be, or should not be, you can always return home.  You do not 
+even have to know where you are to get home, all roads lead you there:
+
+<p>
+ <code>cd </code><br>
+ <code>cd ~</code>
+
+ <p> Instead of going home, let's jump directly to our 
+ <code>~/development/prog</code> directory:
+
+<p>
+<code>> cd ~/development/prog</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=160>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ~/development/prog">
+	  <param name="command" value="send">
+	   <param name="text" value="cd ~/development/prog\r\n">
+  </applet>
+
+<p>
+  Now do a 
+<code>pwd</code> to check where you are.    You might want to try some exploring
+with the <code>cd</code> and <code>ls</code> commands before going on to
+<a href="create-dir.html#top">Creating Directories</a>.
+
+<hr>
+<table><tr>
+<td>
+  <a href="create-dir.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.E: Creating Directories </a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="cd-slow.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5.C: Changing Directories - Carefully</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+</body>
+</html>
+
+

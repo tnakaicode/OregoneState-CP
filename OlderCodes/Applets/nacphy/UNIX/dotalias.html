@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix 16.A: Customizing - Aliases</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="dotcolor.html#top" target="MainDoc"><IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT></A><A HREF="dotcolor.html#top" target="MainDoc">
+16.B: Screen Appearance</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="dot.html#top"><IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT></A><A HREF="dot.html#top">
+16: Customizing</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="dot.html#top"><IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT></A><A HREF="dot.html#top">
+16: Customizing</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'"><IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT></A><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Basic" HEIGHT=75 WIDTH=120 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 16.A: Alias for Commands</H2>
+
+<P>
+<HR></P>
+
+<P>The <TT><FONT SIZE=-1>alias </FONT></TT>command makes life nicer for
+you. And so we recommend it. Frequently-used commands, especially those
+requiring many options, can be shortened into a shorter command that does
+the same thing as the original. </P>
+
+<P>There are two ways to use <TT><FONT SIZE=-1>alias</FONT></TT>. The first
+is by just typing it at the prompt</P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; alias real-command='newname'</TT> </FONT></P>
+</UL>
+
+<P>Here <TT><FONT SIZE=-1>real-command</FONT></TT> is the command the computer
+actually executes, and <TT><FONT SIZE=-1>newname </FONT></TT>is the alias
+for it. You have already seen an example of an alias with the long list
+<FONT SIZE=-1><TT>ll</TT> </FONT>command, which is really an alias for
+<TT><FONT SIZE=-1>ls -l</FONT></TT>. </P>
+
+<P>You may be able to see other examples of aliases by typing: </P>
+
+<UL>
+<P><TT><FONT SIZE=-1>grep alias .* </FONT></TT></P>
+</UL>
+
+<P>On the OSU Physics cluster, you will see something like</P>
+
+<UL>
+<PRE><TT><FONT SIZE=-1>.cshrc.AIX:alias cp 'cp -i'
+.cshrc.AIX:alias mv 'mv -i'
+.cshrc.AIX:alias rm 'rm -i'
+.cshrc.AIX:alias ls 'ls -FC'
+.cshrc.AIX:alias ll 'ls -l'
+.cshrc.AIX:alias msgs 'msgs -p'
+.cshrc.AIX:alias setprompt 'set prompt=&quot;%~::%m&gt; &quot; '
+.cshrc.AIX:alias   chfn 'echo &quot;not available&quot;'
+.cshrc.OSF1:alias cp 'cp -i'
+.cshrc.OSF1:alias mv 'mv -i'
+.cshrc.OSF1:alias rm 'rm -i'
+.cshrc.OSF1:alias ls 'ls -FC'
+.cshrc.OSF1:alias ll 'ls -l'
+.cshrc.OSF1:alias mail mailx
+.cshrc.OSF1:alias msgs 'msgs -p'
+.cshrc.OSF1:alias setprompt 'set prompt=&quot;%~:%m&gt; &quot; '
+.cshrc.OSF1:alias quota vquota
+.cshrc.OSF1:alias chsh  'echo &quot;not available&quot;'
+.cshrc.OSF1:alias chfn  'echo &quot;not available&quot;'</FONT></TT></PRE>
+</UL>
+
+<P>Did you know Unix was doing so much for you? (It's really so friendly.)
+Why not check the aliased commands in the <TT><FONT SIZE=-1>man </FONT></TT>pages
+to see what they do. </P>
+
+<P>If you are on a workstation cluster, you may have different <FONT SIZE=-1><TT>.cshrc</TT>
+</FONT>file for each type of machine. On the Physics cluster, the <FONT SIZE=-1><TT>.cshrc.AIX</TT>
+</FONT>file is for IBM machines and the <TT><FONT SIZE=-1>.cshrc.OSF1</FONT></TT>
+file is for DEC machines.</P>
+
+<P>Let's create a new alias. We assume that your username on the machine
+<I><TT>ucs</TT></I> is different from your username on your regular machine.
+So if try to telnet to <I>ucs</I> with</P>
+
+<UL>
+<P><FONT SIZE=-1><TT>&gt; telnet ucs</TT> </FONT></P>
+</UL>
+

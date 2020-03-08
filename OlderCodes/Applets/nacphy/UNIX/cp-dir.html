@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Copying Directories</title></head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<b>OSU Computational Physics</b> - <i>Landau Research Group (nacse)
+-</i>
+<hr>
+
+<table><tr>
+<td>
+  <a href="mv-file.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.H: Moving Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="cp-file.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  5.F: Copying Files</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 5.G:&nbsp; Copying Directories</h2></center>
+<hr>
+
+<p> The "copy" command also lets you copy all of the files in a directory, 
+without having copy its subdirectories.  Use <code>cp</code> as you would 
+for files, but specify the first file name as <em>directory/*</em>.  
+For example, to copy the contents of your home directory to the directory 
+<em>home.bk</em> (also in your home directory):
+
+<p>
+<code>> cp ~/* ~/home.bk</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=120>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="cp ~/* ~/home.bk">
+    <param name="command" value="send">
+     <param name="text" value="cp ~/* ~/home.bk\r\n">
+  </applet>
+
+<p> If you want to copy the subdirectories as well, use the "recursive" 
+option <code>-r</b></code>:
+
+<p>
+<code>> cp -r ~/* ~/home.bk</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=140>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="cp -r ~/* ~/home.bk">
+    <param name="command" value="send">
+     <param name="text" value="cp -r ~/* ~/home.bk\r\n">
+  </applet>
+
+<p> There is a potential problem here which can be catastrophic (at least 
+to the computer).  Let's say you make a directory <em>dev.bk</em> in the 
+<em>development</em> directory, and that you want to copy all of the files 
+in <em>development</em> into <em>dev.bk</em> as a backup.  You try
+to do this in one fell swoop  from within 
+the <em>development</em> directory  with the command
+
+<p><code>
+> cp -r * dev.bk
+</code>
+
+<p> While this is neat, the command will copy <em>dev.bk</em> into itself, 
+and then continue copying it into itself until you stop it or until you run 
+out of disk space.  (You can stop a command pressing the 
+<code>control</code> and <code>c</code> keys simultaneously.)  To avoid 
+infinite copies,    change to a directory
+one level up the directory tree, and from there issue the "copy" command:
+ 
+<p> 
+<code>> cd ~</code> <applet codebase="bin" code="RegistryButton.class" 
+height=22 width=40> <param name="register" value="Unix Tutorial WebTerm"> 
+<param name="label" value="cd ~"> <param name="command" value="send"> 
+<param name="text" value="cd ~\r\n"> </applet>
+
+<br>
+<code>> cp -i -r development dev.bk</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=190>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="cp -i -r development dev.bk">
+    <param name="command" value="send">
+     <param name="text" value="cp -i -r development dev.bk\r\n">
+  </applet>
+
+<p> After you are more familiar with UNIX, you may want to save yourself 
+some typing by using   <em>wildcards,</em> such as the <code>*</code> in 
+these examples.   
+
+ 
+<p> Remember, it's a good idea to use the "list" command <code>ls</code> 
+before you copy in order to check if files will be overwritten.
+
+<hr>
+<table><tr>
+<td>
+  <a href="mv-file.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.H: Moving Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="cp-file.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  5.F: Copying Files</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+
+<hr>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Print Queues</title></head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+
+<hr>
+<table><tr>
+<td>
+  9.B:<a href="print-text.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+  Text Documents</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  9:<a href="print.html#top">
+   <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+   Printing Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  9:<a href="print.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  Printing Files</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+
+<hr>
+
+<a Name="top"> </a> <img ALT="Basic" align="left" src="figs/CARGUY2.GIF" 
+height= 75 width =120> <center><h2>&#167 9.A:&nbsp; ;  Print 
+Queues</h2></center>
+
+<hr>
+
+<p> Unix permits multiple users to have access to the same printer, even if 
+the users are on different computers.  This is done by having the 
+<em>print</em> commands route the file you want printed to an active 
+program ("process"), the <em>print queue</em>.  The <em>print queue</em> 
+stores this and other files, and sends them to the appropriate printer 
+one-at-a-time.
+
+<p> If the printer is not working, the print queue holds the files until 
+the printer is "up".  Sometimes the print queue "goes down" if the printer 
+malfunctions.  In that case, the queue must be brought "up", possibly with 
+an explicit software command before printing will resume.  
+
+<p> It is generally a good idea to check the status of the print queue.  If 
+the queue is very long, or if it is down, it's probably a good idea not to 
+send anything to it.
+
+<p> The <em>line printer queue</em> command <code>lpq</code> tells you the 
+status of the print queue.  The <code>-d</code> option, followed by the 
+print queue name, is   optional.
+
+<p> Some of the print queues on the Department cluster are 
+<p><ul>
+<table> 
+<tr><td><b>ps</b><td> PostScript laser printer in Weniger 497</tr>
+<tr><td><b>ps2</b><td> PostScript laser printer in Weniger 412</tr>
+</table></ul>
+  
+<p> Depending on the way the computers are configured, you can get a 
+variety of responses from an <code>lpq</code> command.  As you become more 
+accustomed to print queues, the responses will become clearer:
+
+<ol>
+<li> DEC machines respond with 
+several lines ending with something like:
+
+<ul>
+<pre><code>
+daphy: Sun Jul 21 11:49:54 1996:
+Sun Jul 21 13:09:32 1996: 
+no entries
+</pre></code></ul>
+
+<li> IBM machines respond with several lines ending with  something like:
+
+<ul>
+<pre><code>
+Queue   Dev   Status    Job Files              User         PP %   Blks  Cp Rnk
+------- ----- --------- --- ------------------ ---------- ---- -- ----- --- ---
+ps2     @goop READY    
+ps2: Fri Jul 26 12:26:45 1996: 
+ps2     ps2   READY    
+</pre></code></ul>
+
+</ol>
+
+<p> In both cases the reponse means the print queue  has no jobs in it.
+
+<p> When the user <em>rubin</em> has the file <em>cp05.ps</em> 
+in a print queue, a 
+DEC reponse may look like:
+
+<ul>
+<pre><code>
+daphy: Fri Jul 26 14:47:49 1996: 
+Fri Jul 26 14:46:58 1996: Attempting to print dfA601daphy
+Rank   Pri Owner      Job  Files                                 Total Size
+active 0   rubin      601  cp05.ps                              375122 bytes
+</pre></code>
+</ul>
+
+<p> An IBM reponse may look like:
+
+<ul>
+<pre><code>
+Queue   Dev   Status    Job Files              User         PP %   Blks  Cp Rnk
+------- ----- --------- --- ------------------ ---------- ---- -- ----- --- ---
+ps2     @goop READY    
+ps2: Fri Jul 26 14:46:58 1996: Attempting to print dfA601daphy
+ps2     ps2   RUNNING     0 601                 0             0  0     1  1   0
+</pre></code></ul>
+ 
+<p> Now it's time for you   to try the <em>line printer queue</em> 
+command and check the status of the default printer queue:
+
+<ul>
+<code>> lpq</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=30>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="lpq">
+    <param name="command" value="send">
+     <param name="text" value="lpq\r\n">
+  </applet>
+</ul>
+
+To specify a print queue other than the default, use the 
+<code>-d</code> option followed by the print queue name.  How does the the 
+queue for <code>ps</code> look?
+
+<ul>
+<code>> lpq 
+-P ps</code> <applet codebase="bin" code="RegistryButton.class" height=22 
+width=70> <param name="register" value="Unix Tutorial WebTerm"> <param 
+name="label" value="lpq -dps"> <param name="command" value="send"> <param 
+name="text" value="lpq -dps\r\n"> </applet>
+ </ul>
+
+As we said before, if the queue is down or has many job in it, it's a 
+bad idea to send more jobs to it.  If there is another printer available, 
+check its queue and send your job there if its up.  In any case, it's a 
+<em>terrible</em> idea to keep sending your job to the printer again and 
+again, just because it did not print out the first time.  The queue is 
+probably down, and when it comes up, it will probably print many copies of 
+your job.
+
+<p>
+Often a printer is out of paper, and you can do something about that.  
+If jobs are not printing, talk to someone in the administration group about 
+fixing the printer or queue.
+
+<hr>
+<table><tr>
+<td>
+  9.B:<a href="print-text.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+  Text Documents</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  9:<a href="print.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Printing Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  9:<a href="print.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  Printing Files</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: List Options</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<b>OSU Computational Physics</b> - <i>Landau Research Group (nacse)
+-</i>
+<hr>
+<table><tr>
+<td>
+  <a href="cd-slow.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+ 5.C: Changing Directories Carefully </a><img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="home-dir.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5.A: Your Home Directory</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 5.B: &nbsp; Some List Command Options</h2></center>
+<hr>
+
+<p> The default  dotfiles on the Department cluster are set 
+up so that when you type the command <em>ls</em>, Unix actually adds on 
+some options and executes the command <em>ls -FC</em>.  The 
+<em>-F</em> option causes Unix to print out the <code>/</code> at the 
+end of the filename to indicate a directory and the <code>*</code> to 
+indicate an executable file.  The <em>-C</em> option causes the files 
+to be listed in several columns, rather than one long row down the page.  
+Try:
+
+<ul>
+<code>> ls -FC</code>   
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=50>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="ls -FC">
+    <param name="command" value="send">
+     <param name="text" value="ls -FC\r\n">
+  </applet>
+
+<br>
+<code>> ls -F -C</code>   
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=60>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="ls -F -C">
+    <param name="command" value="send">
+     <param name="text" value="ls -F -C\r\n">
+  </applet>
+</ul>
+
+
+Either should produce:
+
+<ul>
+<pre><code>
+Mwm             a.out*          eqns2.ms        public-html/   
+README.first    development/    plotoutfile.ps  s2
+</pre></code>
+</ul>
+
+
+Your home directory probably contains files like <em>.mwm</em> 
+beginning with ".", or as we say, a "dot".  These "dotfiles" customize some 
+standard Unix programs to run and look just the way the you like everytime 
+you start them up.  Dotfiles files are not normally visible with the 
+<em>ls</em> command, in part, because you should not be messing around 
+with them.  To list dotfiles, you tell <em>ls</em> to show 
+<em>all</em> files by adding on the <em>-a</em> option:
+
+<ul>
+<code>> ls -a</code>   
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=45>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="ls -a">
+    <param name="command" value="send">
+     <param name="text" value="ls -a\r\n">
+  </applet>
+</ul>
+
+<p> Be warned, changing your dot files can have unintended consequences, 
+such as making it impossible for you to log into your account.  If you feel 
+compelled to change your dot files, why not at least wait until you have 
+completed the section Customizing Your Account.
+
+<p>
+The <code>ls</code> command   other options which may become useful as
+you use Unix more.  You can learn about them with
+the   <code>man ls</code> command.  
+ 
+
+<hr>
+<table><tr>
+<td> 
+  <a href="directory.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+ 5: Managing Files and Directories</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="home-dir.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+ 5.A: Your Home Directory</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+ 
+</body>
+</html>
+

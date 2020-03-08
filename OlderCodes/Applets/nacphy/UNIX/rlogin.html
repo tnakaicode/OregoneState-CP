@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: The rlogin and rloginX Commands</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  11.C: <a target="MainDoc" href="ftp.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   Using <code>ftp</code></a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  11: <a target="MainDoc" href="multiple.html#top">
+  <img align="left"  align="bottom" height=25 width=27 
+   alt="Up" src="figs/up-motif.gif">
+   Multiple Machines</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  11.A:  <a target="MainDoc" href="telnet.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  The <code>telnet</code> Command</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<H2 ALIGN=CENTER>&sect; 11.B: Remote Login: <I>rogin</I> and <I>rloginX
+(local)</I></H2>
+
+<p>
+<HR></p>
+
+<P>The command <I>telnet</I> is the most basic, and accordingly most universal,
+way to access another computer. The remote login commands <TT>rlogin</TT>
+and <TT>rloginX</TT> give you more remote power, but are also less universal
+(for example, if you are careful you can run remote X Window applications
+with <I>rlogin</I>).</P>
+
+<P>You start a <TT>rlogin </TT>session exactly like a <TT>telnet</TT> one,
+that is, by entering the command followed by the machine (say 
+<I>banana</I>)&nbsp;you
+wish to log into:</P>
+
+<P><TT><FONT SIZE=-1>&gt; rlogin banana</FONT> </TT> <APPLET codebase="bin" 
+code="RegistryButton.class" 
+     height=22 width=95>
+<PARAM name="register" value="Unix Tutorial WebTerm"> <PARAM name="label" 
+value="rlogin banana">
+<PARAM name="command" value="send"> <PARAM name="text" value="rlogin 
+banana\r\n">
+</APPLET> </P>
+
+<P>If you have a different username on the remote machine, you may want
+to invoke the <TT>-l username</TT> option.</P>
+
+<P>Did <I>banana</I> ask for your password? If your local computer is 
+&quot;trusted&quot;,
+the remote computer will accept your user id. You determine which remote
+machines are &quot;trusted&quot; by placing their names in the <TT>.rhosts
+</TT>file. If you were asked for your password--and don't want to be asked
+again--edit the file <TT>.rhosts</TT> (if it does not exist, create it).
+Add a line to <TT>.rhosts</TT> containing the machine name and your user
+name, e.g.:</P>
+
+<UL>
+<PRE><TT><FONT SIZE=-1>goophy.physics.orst.edu johnsonm</FONT></TT></PRE>
+</UL>
+
+<P>This line states that user <TT>johnsonm</TT> from <TT><FONT 
+SIZE=-1>goophy.physics.orst.edu</FONT></TT>
+is trusted. </P>
+
+<P>Be careful to avoid two posible security problems when using 
+<TT>.rhosts</TT>.
+First, be certain that the remote machine is secure. Only the names of
+Unix machines should be used; Macintosh and PC computers should not be
+trusted. Second, always use the full name of the machine (<TT><FONT 
+SIZE=-1>goophy.physics.orst.edu)
+</FONT></TT>and not the short form (<TT><FONT SIZE=-1>goophy</FONT>)</TT>.
+</P>
+<P>End your <I>rlogin</I> session the way you would a regular <I>login
+</I>session:</P>
+
+<UL>
+<P><TT>&gt; <FONT SIZE=-1>exit</FONT> </TT> <APPLET codebase="bin" 
+code="RegistryButton.class" 
+     height=22 width=35>
+<PARAM name="register" value="Unix Tutorial WebTerm"> <PARAM name="label" 
+value="exit">
+<PARAM name="command" value="send"> <PARAM name="text" value="exit\r\n">
+</APPLET> </P>
+
+<P><TT>&gt; <FONT SIZE=-1>logout</FONT> </TT> <APPLET codebase="bin" 
+code="RegistryButton.class" 
+     height=22 width=50>
+<PARAM name="register" value="Unix Tutorial WebTerm"> <PARAM name="label" 
+value="logout">
+<PARAM name="command" value="send"> <PARAM name="text" value="logout\r\n">
+</APPLET> </P>
+</UL>
+
+<P>If you are working on an <I>xstation</I>, you can use the <TT><FONT 
+SIZE=-1>rloginX</FONT></TT>
+command. This command is like <TT>rlogin</TT> except that it allows you
+to use X W<I>indow</I> applications like Netscape and Xmaple, as well as
+text based applications. </P>
+
+<P>Soon we will discuss how to use your <I>ucs </I>account for mail. But
+first we'll discuss how to use the file transfer protocol command <A 
+HREF="ftp.html#top">ftp</A>
+to transfer files. 
+</p>
+
+<hr>
+<table><tr>
+<td>
+  11.C: <a target="MainDoc" href="ftp.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   Using <code>ftp</code></a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  11: <a target="MainDoc" href="multiple.html#top">
+  <img align="left"  align="bottom" height=25 width=27 
+   alt="Up" src="figs/up-motif.gif">
+   Multiple Machines</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  11.A:  <a target="MainDoc" href="telnet.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  The <code>telnet</code> Command</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+ 
+</body>
+</html>
+
+

@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Printing Postscript Documents</title></head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  9.D:<a href="print-lprm.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+  Cancelling Printing</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  9:<a href="print.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Printing Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  9.B:<a href="print-text.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  Text Documents</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+
+<hr>
+
+<a Name="top"> </a>
+<img align="left" ALT="Basic" src="figs/CARGUY2.GIF" height= 75 width =120> 
+<center><h2>&#167 9.C:&nbsp; Printing PostScript Documents</h2></center>
+
+<hr>
+
+<p> PostScript files are text files containing programs written in the
+PostScript language. That langauage tells those printers able to
+understand it exactly how to draw a page with typsetting
+quality. PostScript files are often produced as output from programs
+such as xmgr, Netscape, Maple, and LaTex.
+
+<p>It is customary, and advised, to use the <code>.ps</code> extenders
+for PostScript files.
+
+<p> We will use the command <em>multips</em> to generate a
+PostScript file.  This command puts multiple pages of text or
+PostScript format onto one page. (The <em>enscript</em> command
+discussed in the last section put multiple text pages onto one
+physical page.) The number of rows and columns of logical pages placed
+on a single physical page is controlled by the row and column options
+<code>-r</code> and <code>-c</code>.  The default is two rows and two
+columns:
+
+<ul>
+<code>> multips sample.doc plotoutfile.ps  > out.ps</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=280>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="multips sample.doc plotoutfile.ps  > out.ps">
+	  <param name="command" value="send">
+	   <param name="text" value="multips sample.doc plotoutfile.ps  > out.ps\r\n">
+  </applet>
+</ul>
+
+ You type <code>multips</code> followed by the names of all the
+files you want printed, in this case the two files
+<code>sample.doc</code> and <code>plotoutfile.ps</code>. The output
+pages start at the right column, go down, and continue, column by
+column, to the left. The redirection symbol <code>></code> places the
+output in the indicated file, <code>out.ps</code>.
+
+<p>
+Now that we have a PostScript file, let's look at it:
+
+<ul>
+<code>> more out.ps</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=80>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="more out.ps">
+	  <param name="command" value="send">
+	   <param name="text" value="more out.ps\r\n">
+  </applet>
+</ul>
+
+Notice that the file starts with the phrase
+<em>%!PS-Adobe-1.0</em>.  This tells the printer this is a PostScript
+document.  Notice too that the document is really long; the printer is
+being told how to draw and place every curve and every symbol on the
+page. If you send this document to a printer or printer queue meant
+for text (a line printer), you will get pages and pages of these
+PostScript commands as output.  Too much paper has passed through text
+printers in this way.
+
+<p> To see what a PostScript file (graphics and all) will really look
+like, without wasting yet more paper, use the <em>ghostview</em>
+previewer:
+
+<ul>
+<code>
+> ghostview out.ps
+</code>
+</ul>
+

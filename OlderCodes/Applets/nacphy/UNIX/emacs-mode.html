@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>OSU Computational Physics - Unix: 17.E E
+macs - Mode Lines </TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; U; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="emacs-windows.html#top" target="MainDoc">
+<IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+17.F: Windows</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="emac-home.html#top" target="MainDoc">
+<IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT>
+17: <TT>emacs</TT></A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="emacs-buffers.html#top" target="MainDoc">
+<IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+17.D: Buffers</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+<IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT>
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR><A NAME="top"></A><IMG SRC="figs/RACECAR2.GIF" ALT="Specialized" HEIGHT=60 WIDTH=130 ALIGN=LEFT>
+</P>
+
+<H2 ALIGN=CENTER>&sect; 17.E: <I>emacs </I>Mode Lines</H2>
+
+<P>
+<HR></P>
+
+<P>If you look at the bottom of the screen in an <I>emacs </I>session,
+you see a little window, the <I>command minibuffer</I>, in which <TT>emacs</TT>
+prints the commands you enter and its feelings about them. Just above the
+command minibuffer is the <I>mode line </I>in which emacs tells you the
+style of the current session.</P>
+
+<P>The <I>mode line may </I>look something like: </P>
+
+<UL>
+<PRE><FONT SIZE=-1> --**-Emacs: sample.doc       (Fundamental)--58%--------------------</FONT>
+</PRE>
+</UL>
+
+<P>Here the asterisks near the front mean that you have modified this file
+(if it is unmodified, there would be five dashes). If the file is read
+only (unmodifiable), the asterisks are replaced by percent symbols <NOBR>(<TT>---%%-</TT>).</NOBR>
+</P>
+
+<P>After the word <TT><FONT SIZE=-1>Emacs:,</FONT></TT> is the name <FONT SIZE=-1>sample.doc
+</FONT>of the currently active buffer. Following the filename is the mode
+type (<FONT SIZE=-1>Fundamental</FONT>). At the end of the line is a percentage
+telling you how far you are from the top of the file. </P>
+
+<P>The mode lets you specialize <I>emacs </I>for a specific language. If
+the language can be compiled (like Fortran, LaTeX, or C), you can even
+execute your file within <I>emacs</I>. </P>
+
+<P>The <I>Fundamental</I> (general editing) mode is the default setting.
+Other common modes include</P>
+
+<UL>
+<LI><TT><FONT SIZE=-1>text-mode</FONT></TT></LI>
+
+<LI><TT><FONT SIZE=-1>LaTeX-mode </FONT></TT></LI>
+
+<LI><TT><FONT SIZE=-1>c-mode</FONT></TT></LI>
+
+<LI><TT><FONT SIZE=-1>c++-mode</FONT></TT></LI>
+
+<LI><TT><FONT SIZE=-1>fortran-mode</FONT></TT></LI>
+
+<LI><TT><FONT SIZE=-1>emacs-lisp-mode</FONT></TT></LI>
+</UL>
+
+<P>Try changing <I>emacs </I>to <TT>text-mode</TT>, using the command</P>
+
+<UL>
+<P><TT><FONT SIZE=-1>M-x text-mode </FONT></TT></P>
+</UL>
+
+<P>The list above is of <I>major</I> modes. There are also <I>minor</I>
+modes used for finer tuning. Minor modes can be used in combination with
+<I>major</I> modes or with other minor ones.</P>
+
+<P>One of the most useful minor modes is </P>
+
+<UL>
+<P><TT><FONT SIZE=-1>auto-fill-mode</FONT></TT></P>
+</UL>
+
+<P>This mode automatically adds a carriage return when you near the right
+margin while entering text. </P>
+
+<P>Try changing to <TT>auto-fill mode </TT></P>
+
+<UL>
+<P><TT><FONT SIZE=-1>M-x auto-fill-mode</FONT></TT></P>
+</UL>
+
+<P>Type a few lines without the carriage return. </P>
+
+<P>To turn off a minor mode, repeat the same command as used to turn on
+the mode. (Turning a command on and off like this is called <I>toggeling
+</I>and it is a common feature of Unix.) </P>
+
+<P>For more information on specific modes, look at <NOBR>&quot;<A HREF="http://www.nacse.org/demos/coping-with-unix/coping-with-unix/node24.html#SECTION001102100000000000000" target="Outside">
+Coping With Unix</A>&quot;</NOBR> or the <I>emacs </I>help. (Getting help
+in <I>emacs </I>will be discussed soon.) </P>
+
+<P>
+<HR></P>
+
+<TABLE>
+<TR>
+<TD><A HREF="emacs-windows.html#top" target="MainDoc">
+<IMG SRC="figs/next-motif.gif" ALT="Next" HEIGHT=25 WIDTH=37 ALIGN=LEFT>
+17.F: Windows</a><IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="emac-home.html#top" target="MainDoc">
+<IMG SRC="figs/up-motif.gif" ALT="Up" HEIGHT=25 WIDTH=27 ALIGN=LEFT>
+17: <TT>emacs</TT></A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1>
+</TD>
+
+<TD><A HREF="emacs-buffers.html#top" target="MainDoc">
+<IMG SRC="figs/previous-motif.gif" ALT="Prev" HEIGHT=25 WIDTH=62 ALIGN=LEFT>
+17.D: Buffers</A> <IMG SRC="figs/blank.xbm" ALT="" HEIGHT=25 WIDTH=1> </TD>
+
+<TD><A HREF="contents.html" target="MainDoc" ; onclick="top.frames[0].location='mainfr.html'">
+<IMG SRC="figs/contents-motif.gif" ALT="Contents" HEIGHT=25 WIDTH=65 ALIGN=LEFT>
+</A></TD>
+</TR>
+</TABLE>
+
+<P>
+<HR></P>
+
+</BODY>
+</HTML>

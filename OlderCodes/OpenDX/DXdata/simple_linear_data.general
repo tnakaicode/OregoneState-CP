@@ -1,0 +1,12 @@
+file = /home/rubin/DXdata/simple_linear_data.dat
+grid = 720
+format = ascii
+interleaving = field
+majority = row
+field = field0
+structure = scalar
+type = double
+dependency = positions
+positions = regular, 0, 1
+
+end

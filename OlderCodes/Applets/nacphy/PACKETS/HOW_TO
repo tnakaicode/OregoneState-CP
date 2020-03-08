@@ -1,0 +1,195 @@
+Animations Made Easy, for the completely unexperienced!-------by Justin Murray, summer 1998
+
+	Making animations can be rather simple.  Some background experience with Unix,
+and computer programming would obviously be helpful.  Prior to this summer, I didn't even 
+know Unix was an operating system.  Therefore, I spent a lot of my time just learning 
+Unix.  IF YOU NEED TO LEARN UNIX, THE UNIX TUTORIAL IS AN EXCELLENT PLACE TO START.  IT CAN BE
+FOUND VIA A LINK TO THE NACPHY HOME PAGE AT //nacphy.physics.orst.edu.
+
+	The best way to begin your movie making career would be to look at the nacphy home page. 
+Searching through these pages is probably the best way of introducing yourself to the steps 
+involved in creating an animation.  And, once you have become familiar with these procedures 
+you can start the insanity.  
+
+
+Here is what I did!  -----------
+	
+	The animations I made are GIF89a animations.  Since you have looked through the examples
+I discussed in the preceding nacphy home pages, you know that you have the option of making MPEG
+animations also.  I don't know anything about MPEG animations; therefore, none of the following 
+information explains how to create MPEG movies directly.  However, the overall format of 
+getting the data ready for conversion is relatively the same.  
+
+	It takes very few commands to actually create an animation.  However, because we have a
+number of frames we wish to view back to back, it would be a pain to create a number of gif
+"pictures" by hand one by one, and then convert them to a gif animation.  Therefore, the most
+practical thing to do is to use a script --- a set of commands that will create all of the gif
+pictures one at a time and then create the animation.  Writing the script is probably the most
+time consuming part of the whole movie making process.  
+
+
+CONTENTS OF THE SCRIPT
+
+	The script is basically a program.  It contains a main "while" loop and a series of tiny 
+"if" loops.  The example I used for my script is found on a link to the nacphy home page 
+discussed earlier.  -------I once again highly recommend reading over those pages.-------
+
+	Before writing the script you need to know about your data.  The data I used for my
+animations was in a series of files.  These files were numbered from a beginning integer
+(run.00001) up to a final integer (run.40000) in intervals of 300.  ie--> run.00001, run.00300
+---->run.40000
+
+THE VERY FIRST THING YOU WANT TO DO IS CHECK THE INTERVAL SPACING OF THE DATA FILES TO ENSURE 
+YOUR FILES ARE NUMBERED ON A CONTINUOUS INTERVAL.  AS YOU CAN SEE 40000 CANNOT BE DIVIDED BY 300
+EVENLY.  YOUR DATA FILES MAY LOOK SOMETHING LIKE THIS---->  
+
+run.19500, run.19800, run.20000, run.20100, and ----> run.39600, run.39900, run.40000.  
+
+THEREFORE, IT IS NECESSARY TO WRITE YOUR SCRIPT SO IT DOES NOT MISS ANY DATA FILES.  
+
+	Now that the script can be run smoothly, and your loops are all effective, we can begin
+to talk about the contents of the loops.  
+
+
+---------Gnuplot ----------
+
+	Here is where you decide how the animation frames are going to look.  The plotting program 
+I used for my animations was GNUPLOT.  It is simple and easy to learn.  Play with gnuplot and
+decide how you want your animatins to look.  
+	The data files I was given consisted of three columns representing data for two wave packets.  
+The first column was information for both the wave packets, while the second column was for one of 
+the wave packets and the third column was for the other wave packet.  In other words, when I 
+plotted the data file -ie animation frame- columns 1 and 3 were for one wave packet and columns 
+1 and 2 were for the other wave packet.  Here is a simple example of gnuplot syntax showing this 
+distinction between columns.
+
+plot 'run.00300' using 1:3 with lines, 'run.00300' using 1:2 with lines
+
+	Anyway, once you have decided how you want your animation frames to look, you are pretty 
+much done.  The following segment was taken from one of my scripts.
+
+if test i -lt 10 
+  then 
+  print "set terminal pbm small color; set output\"$3t=0000$i.ppm\"; set noxtics; set noytics;
+  set size .75,.75; set yrange [0:14];
+  plot 'run.0000$i' using 1:3 with lines, 'run.0000$i' using 1:2 with lines;
+  " >data0000$i.gnu
+  gnuplot data0000$i.gnu
+  ppmquant -map samp $3t=0000$i.ppm>$3at=0000$i.ppm
+  ppmtogif -map samp $3at=0000$i.ppm > $30000$i.gif
+  rm $3t=0000$i.ppm $3at=0000$i.ppm data0000$i data0000$i.gnu
+  i=i+299
+  fi
+  
+ 	As you can see, it is one of the if loops!  Inside of it are all of the commands necessary
+to create the gif files that will later be merged together (outside of the script on your own) to 
+create an animation.  
+
+To understand the 3rd line thru the 5th line, simply learn gnuplot.  All of those commands
+for gnuplot are being sent into a file data0000$1.gnu.  Then Gnuplot is called with that file.  
+
+The 8th and 9th lines are the command lines which convert the data into gif format.  
+
+TO LEARN ABOUT ppmquant AND ppmtogif YOU SHOULD GO TO AN INTERNET SEARCH ENGINE LIKE YAHOO AND TYPE
+IN THOSE WORDS OR I BELIEVE SIMPLY ppm.  
+
+In those command lines, you can see the word "samp."  This is a file that needs to be in the same
+directory as the script you plan to run.  Samp is a color mapping file--(or something like that).  
+It looks like this-->
+
+P3
+10 1
+255
+0       0       0
+255     255     255
+0       201     255     
+255     0       0
+0       120     255     
+255     50      0
+200     50      255     
+130     10      0
+250     130       0
+255         0     100
+
+Then you can see that the tenth line simply gets rid of unnecessary files to save disk space.
+ 
+ --------------------------------
+  
+	It would be crucial to look at one of my scripts while you are reading this.  I
+conviently renamed all of my scripts so you can easily know which one is the script.  If you want
+to see run9's script then go to the directory nacphy/usersA/murray/packets/run9/ and open the file
+"run9_script" with nedit.   
+
+	ONCE YOU HAVE A SCRIPT THAT YOU ARE READY TO RUN, 
+	
+You first need to change the permissions on it so it is executable.  Also your script should be
+written so every data file will be processed.   Then if your script is like mine, in order to run 
+it you need to type the following syntax at the prompt:
+
+>script_name $1 $2 $3
+ 
+-------important--------
+Lets say your data files range from run.00001 to run.60000, and lets say your script is named
+SCRIPT.  Then you would replace script_name with SCRIPT, $1 with 1 and $2 with 60001.  The $3 can
+be replaced with any word you desire.  Just be aware that all of your gif pictures are going to   
+have the file name $3(#).gif!  Lets say you replace $3 with movie.  Then you will type this at the   
+prompt:
+
+>SCRIPT 1 60001 movie
+
+After this runs for about fifteen minutes, you should have a bunch of gif files like this---->
+
+movie00001.gif, movie00300.gif, movie00600.gif, ------> movie60000.gif
+
+---------------------------ACTUAL MOVIE MAKING------------------
+
+NOW that you have all of these gif "pictures," YOU CAN MERGE THEM!!!!
+Here is the gifmerge command and its options.
+
+-------------------------------------------------------------------------------
+  === GIFMerge Rev 1.30 (C) 1991,1992 by Mark Podlipec
+    Improvements by Rene K. Mueller 1996
+ 
+Usage: gifmerge [-<r>,<g>,<b>] [-<delay>] [-l<loops>] *.gif > anim.gif
+ 
+   -<r>,<g>,<b>   set transparency, ie -192,192,192, default: no transparency
+   -<delay>       set delay of between images in 1/100th secs, ie -100
+                  default 50 (0.5secs)
+   -l<loops>      set loop counter, ie -l0 (ever) or -l1000, default no loops
+ 
+   or look at http://www.iis.ee.ethz.ch/~kiwi/gifmerge.html
+ 
+                default 50 (0.5secs)
+   -l<loops>      set loop counter, ie -l0 (ever) or -l1000, default no loops
+ 
+   or look at http://www.iis.ee.ethz.ch/~kiwi/gifmerge.html
+ ------------------------------------------------------------------------------
+ 
+ Here is an example of how to execute this command:
+ 
+ >gifmerge -10 movie*.gif> animation.gif
+ 
+	I like to keep this command out of the script because then you are free to make a bunch of 
+ animations with different options (like speed "or delay", and looping) without having to run the
+ script every time.  It takes ten seconds for the gifmerge command to create the animation, while
+ it takes the script about fifteen minutes to create the gif pictures.  But this option is
+ entirely up to you.  If you wish to include the gifmerge command in the script, then do it!  
+ 
+ 
+ All of my files are open for anybody to read.  They are found in this directory------->
+ 
+ nacphy/usersA/murray/packets
+
+--------------------------------------------------------------------------------------------- 
+If you have any questions or comments, my e-mail address is  --->  jmurdock1@juno.com
+my home address is:
+
+Justin Murray
+435 east 16th street
+Ogden Utah 84404
+
+or ask rubin for an updated address.
+
+
+
+

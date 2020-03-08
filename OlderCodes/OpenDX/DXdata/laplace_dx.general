@@ -1,0 +1,13 @@
+file = /home/rubin/DXdata/laplace_dx.dat
+grid = 50 x 50
+format = ascii
+interleaving = record
+majority = column
+header = lines 6
+field = field0
+structure = scalar
+type = double
+dependency = positions
+positions = regular, regular, 0, 2, 0, 2
+
+end

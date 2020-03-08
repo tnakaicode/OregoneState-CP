@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: ftp: Transferring Entire File Structures </title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  11.C.5: <a href="tar-compress.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+    <code>Taring</code> and <code>Compressing</code> File Structures</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  11: <a href="multiple.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Multiple Machines</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>
+  11.C.3: <a href="ftp-mput-mget.html#top">
+  <img  align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+    Using <code>ftp</code> to Transfer Multiple Files<code></a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+
+<hr> <a Name="top"> </a> <img ALT="Basic" align="left"
+src="figs/CARGUY2.GIF" height= 75 width =120> <center><h2>&#167
+11.C.4: ftp: Transferring Entire File Structures </h2></center> <hr>
+
+Imagine that you are about to move to that great job you have been
+waiting for. So you just can't imagine taking it without taking all
+your Unix files with you.  You need to transfer entire directories and
+subdirectories.  While you might figure out some way to do this with
+enough wildcards, you really want to preserve the directory and
+subdirectory structure of the files being transferred. This requires
+some preparation.
+
+<p>
+The <code>tape archive</em> command <code>tar</code> creates a single
+file containing all directories and subdirectories you want to put in
+it. After you transfer the file, you simply issue the command again to
+rebuild your directory structure.
+
+<p> To save transfer time and disk (or diskette or tape) space, it's a
+good idea to <em>compress</em> your tar file before transfer, and then
+uncompress it afterwards. This is done with the <code>compress</code>
+and <code>uncompress</code> commands, or, preferably, with the
+<em>gzip</em> and <em>gunzip</em> commands.
+
+<p>
+Because these <em>tar</em> and <em>compress</em> are Unix commands,
+you have to get back to a Unix prompt (shell) to execute them, and
+then to your home directory to get the files to <a
+href="tar-compress.html#top">tar and compress</a>.:
+
+<ul>
+<code>ftp> quit </code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="quit">
+	  <param name="command" value="send">
+	   <param name="text" value="quit\r\n">
+  </applet>
+
+<br>
+<code>> cd ~</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="cd ~">
+	  <param name="command" value="send">
+	   <param name="text" value="cd ~\r\n">
+  </applet>
+
+<hr>
+<table><tr>
+<td>
+  11.C.5: <a href="tar-compress.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+    <code>Taring</code> and <code>Compressing</code> File Structures</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  11: <a href="multiple.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Multiple Machines</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>
+  11.C.3: <a href="ftp-mput-mget.html#top">
+  <img  align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+    Using <code>ftp</code> to Transfer Multiple Files<code></a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+<hr>
+</body>
+</html>

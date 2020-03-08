@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: 3.2 What About X Stations?</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  <a href="cluster-questions.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   3.C: Other Questions?</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> <a href="cluster-which.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  3.A: So Which Machine do I Log on to?</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  <a href="cluster.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  3: Physics Department Cluster</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 3.B:What About X Stations?</h2></center>
+<hr>
+
+<p> When you sit down at a Unix computer, you may be facing a
+"console" which is connected directly into a computer's central
+processing unit, or a terminal connected over a network.  It is likely
+that both can run the X Window System. A terminal engineered to run
+the X Window System remotely is called an <em>X terminal</em> or an <em>X
+station.</em> While these terminals contain rather substantial
+computing power themselves, they are still terminals in that they
+cannot function without the central workstation providing the terminal
+with operating system, programs, memory, and CPU cycles.
+
+<p> It might be hard to tell at first if you are seated at a console
+or an X station. If the screen in front of you requests a password,
+then you probably are at a console of a Unix machine.  After you enter
+your userid and password, the X Window System begins.
+
+
+<p> If the screen in front of you contains a list of computer names
+("hosts") or a whole bunch of windows, it's probably an X
+station. (Yet you can't be sure about that because some X stations may
+be set up to connect to only one computer. In that case you may need
+look at the physical characteristics, like lack of floppy drive, for
+clues.)
+
+
+<p> The X stations in our Departmental Cluster run the <em>XDM</em>
+station manager. This manager presents you with two host selection
+windows. Double clicking on a host in the <em>larger</em> or "Telnet"
+window will set up a <em>telnet</em> session.  While a <em>telnet</em>
+session is not good for things graphical, it is probably the most
+reliable and fastest connection to other computers. It is ideal for
+reading mail and for connecting outside the Department, and is not as
+much of a load on the system as the X Window System.  (Telnet is also
+useful if you've messed up your dotfiles and can't start an X
+session.)
+
+<p> Double clicking on a host name in the <em>smaller</em> or "Manage"
+window, which often gets hidden behind the larger one, starts a
+complete X session. This is what you usually want to do with an X
+station.  Don't bother clicking on host name for machines on which you
+don't have accounts.  You won't be able to get in.
+
+<p> Unix machines should go through a rather involved process before
+they are shut off.  If your console or X station locks up and you are
+unable to unlock it from the keyboard, get help.  If no help is
+available, then log onto another machine and send  support 
+email stating what happened on what machine.  <b>Never Turn The Power
+Off To A Unix Computer</b>. That is the job for the system
+administrator only. (An X station can have its power turned off and
+then <em>slowly</em> turned back on. This should unlock it, but may
+take several minutes and does load down the system.)
+

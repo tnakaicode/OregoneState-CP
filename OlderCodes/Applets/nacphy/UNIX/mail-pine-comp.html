@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>Sending Mail with Pine</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  
+  12.B.2 <a target="MainDoc" href="mail-pine-read.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   Reading a Message in <code>Pine</code></a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td>  
+  12.<a target="MainDoc" href="mail.html#top">  
+  <img align="left"  align="bottom" height=25 width=25
+    alt="Up" src="figs/up-motif.gif">
+  E-Mail</a>  
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  12.B <a target="MainDoc" href="mail-pine.html#top">  
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+    Using <code>Pine</code></a>  
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td>
+
+</tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 12.B.1: Sending Mail with Pine</h2></center>
+<hr>
+
+<p>  
+Let's tell pine we want to <em>compose</em> a letter: 
+
+<ul> 
+<code>> C</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=20>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="C">
+	  <param name="command" value="send">
+	   <param name="text" value="c">
+  </applet>
+</ul>  
+
+You should now get a new screen with your cursor next to the highlighted 
+word <b>To</b>.  Enter the email address of the person you are writing to.  
+We suggest you (sit right down and) write yourself a letter:
+
+<ul>  
+<code><b>To</b>: userid@ucs.orst.edu</code>
+</ul>  
+
+  After entering the recipient's address with <code>[return]</code>, the 
+  highlighted bar should move down to the <em>carbon copy</em> line  
+  <code><b>Cc</b></code>.  This is used for secondary recipients of your letter, 
+  and may include a list of names.  (You may also use a list as primary 
+  recipients.)  Why not cc yourself in, press <code>[return]</code>, 
+  and move on.
+ 
+<p> The line  <code><b>Attchmnt</b></code>  should now be highlighted.  This 
+allows you to send files to other people without physically   pasting those 
+files into your letter.  This is the useful for sending files with a note 
+attached.  We'll attach <code>area.f</code>:
+
+<ul>
+<code><b>Attchmnt:</b> area.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=85>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="'area.f'">
+	  <param name="command" value="send">
+	   <param name="text" value="../../area.f">
+  </applet>
+</ul>
+  
+The next highlighted line should be <code><b>Subject</b></code>.  Make it 
+descriptive since the recipient's mailer often indicates only the sender 
+and the subject of the mail; a bad subject may cause your letter to be 
+"junked":
+
+<ul>  
+<code><b>Subject</b>: mail example</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=100>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="mail example">
+	  <param name="command" value="send">
+	   <param name="text" value="mail example\r\n">
+  </applet>
+</ul>
+   
+Now <code><b>Message Text</b></code> is highlighted.  This is where you 
+place your message.  Type "Hello, testing" (or anything you want).  
+
+<p>When you are done with your message, look at the bottom of the screen 
+for the <code>Send</code> option.  The highlighted characters immediately 
+to the left of this are "control x".  Enter these by pressing the 
+<code>[ctrl]</code> key and the <code>x</em> key simultaneously.  
+
+<p>You are 
+now prompted at the bottom of the screen to <code>Send Message?</code>. 

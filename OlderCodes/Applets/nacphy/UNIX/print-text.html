@@ -1,0 +1,246 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Printing Text Documents</title></head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+
+<hr>
+<table><tr>
+<td>
+  9.C:<a href="print-ps.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+  Postscript Documents</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  9:<a href="print.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Printing Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  9.A:<a href="print-lpq.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+   Print Queues</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+
+<hr>
+
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>
+<center><h2>&#167 9.B:&nbsp; Printing Text Documents</h2></center>
+
+<hr>
+
+<p> A "text" document contains letters, numbers and punctuation, that
+is, no control character or special printer coding.  Text documents
+can be printed on any printer (although you may need a special command
+to do it on a PostScript printer).  
+
+<P> An example of a text document is your program in the file
+<code>area.f</code>. To start, use the <code>more</code> command to
+make sure the file's still OK:
+
+<ul>
+<code>> cd development/prog</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=140>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="cd development/prog">
+    <param name="command" value="send">
+     <param name="text" value="cd development/prog\r\n">
+  </applet>
+<br>
+
+<code>> more area.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=85>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="more area.f">
+    <param name="command" value="send">
+     <param name="text" value="more area.f\r\n">
+  </applet>
+</ul>
+
+To print this file, use the <em>line printer</em> command
+<code>lpr</code> followed by the filename
+(Alternatively, use the <code>lp</code> command):
+
+<ul>
+<code>> lpr area.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=70>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="lpr area.f">
+    <param name="command" value="send">
+     <param name="text" value="lpr area.f\r\n">
+  </applet>
+<br>
+
+<code>> lp area.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=65>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="lp area.f">
+    <param name="command" value="send">
+     <param name="text" value="lp area.f\r\n">
+  </applet> 
+</ul>
+
+If you do not want your job to print on the default printer, you
+take the chance of it  appearing on the printer in someone's
+office! To do that, you use the <code>-P</code> option followed by the
+printer name for <code>lpr</code>, or <code>-d</code> followed by the
+printer name for <code>lp</code>:
+
+<ul>
+<code>> lpr -Pps2 area.f</code>
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=110>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="lpr -Pps2 area.f">
+    <param name="command" value="send">
+     <param name="text" value="lpr -Pps2 area.f\r\n">
+  </applet>
+<br>
+<code>> lp -Dps2 area.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=105>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="lp -Dps2 area.f">
+    <param name="command" value="send">
+     <param name="text" value="lp -Dps2 area.f\r\n">
+  </applet>
+</ul>
+
+Many modern printers are PostScript printers. They are
+particularly adept at printing graphics and equations mixed with
+text. (We discuss printing PostScript files in the next section.)
+While the <em>lp</em> and <em>lpr</em> commands let you send text
+files to PostScript printers, if you have a PostScript printer, 
+you may also be able to use a really neat utility called
+<b>enscript</b>. We recommend it for printing text files and for
+converting text files to postscript:
+
+<ul>
+<code>> enscript area.f</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=100>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="enscript area.f">
+    <param name="command" value="send">
+     <param name="text" value="enscript area.f\r\n">
+  </applet>
+</ul>
+
+The <b>enscript</b> command automatically prints the file name and
+date as a header. It also can print multiple logical pages to a single
+physical page. This saves trees and sometimes makes your output much
+easier to understand.
+
+<p>
+To print two logical pages onto one physical page, you give the 
+<em>-2</em> option. In this case it's probably best to have
+the two pages appear as two "<em>rows</em>" on the page (as opposed
+to columns):
+<ul>
+<code>> enscript -2r README.first</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=170>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="enscript -2r README.first">
+    <param name="command" value="send">
+     <param name="text" value="enscript -2r README.first\r\n">
+  </applet></ul>
+
+You will note when you get your output, that the <em>two row</em>
+option <code>-2r</em> gives you printout in landscape mode.  Landscape
+mode is  more readable when printing two logical pages to a
+physical page.    
+
+<p>If you do not want the output to go to the default printer, use the
+<code>-P</code> option, just as you would for <code>lpq</code> or
+<code>lpr</code>.
+
+  
+If you wish to send the output to a file first (to view with
+<em>ghostview</em> or include with other postscript files), use the option
+<code>-p</code> followed by the filename:
+
+<ul>
+<code> > enscript -2r -p readme.ps README.first
+</code>
+</ul>
+
+As we have already said, you can check if the printer queue is up,
+and find out the names of the printer queues, with the <em>line
+printer queue</em> command:
+
+<ul>
+<code>> lpq</code>
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=30>
+      <param name="register" value="Unix Tutorial WebTerm">
+  <param name="label" value="lpq">
+    <param name="command" value="send">
+     <param name="text" value="lpq\r\n">
+  </applet>
+</ul>
+
+It's a good idea to issue a <code>lpq</code> command after you
+submit your job, in order to see how it's coming along. However, if
+your job is small and if the printer is not busy, it may be out of the
+queue (and in the printer's memory) before you get a chance to finish
+entering your command.
+
+<p> If your job is not in the queue, in the printer, or printed out,
+look at some other network printer for it. If it is not there, <em>do
+not</em> print it out again.  (Either the printer is not functioning, or
+it has gone to another printer; re-entering the command can only make
+matters worse.)
+
+<hr>
+<table><tr>
+<td>
+  9.C:<a href="print-ps.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+  Postscript Documents</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  9:<a href="print.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Printing Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  9.A:<a href="print-lpq.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  Print Queues</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+ 
+</body>
+</html>

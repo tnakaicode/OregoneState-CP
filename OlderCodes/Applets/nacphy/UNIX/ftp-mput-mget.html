@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix:ftp: Transferring Multiple Files </title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  11.C.4: <a href="ftp-tar.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+    Transferring Large File Structures</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  11: <a href="multiple.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Multiple Machines</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>
+  11.C.2: <a href="ftp-put-get.html#top">
+  <img  align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+    Transferring Individual Files</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 11.C.3:  ftp: Multiple File Transfers</h2></center>
+<hr>
+
+<p> To transfer several files with one <em>ftp</em> subcommand,   use the 
+<em>multiple put</em> and <em>get</em>:
+
+<ul>
+ftp> mput file1 file2 file3
+<br>
+ftp> mget file1 file2 file3
+</ul>
+ 
+
+   Let's use   <em>mput</em> with the wildcard character * 
+(every file)  to backup all of your C programs in  
+directory <code>~/development/prog</code> on   local:
+
+<ul>
+<code>ftp> lcd ~/development/prog</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=160>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="lcd ~/development/prog">
+	  <param name="command" value="send">
+	   <param name="text" value="lcd ~/development/prog\r\n">
+  </applet>
+
+<br>  
+<code>ftp> mput *.c</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=70>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="mput *.c">
+	  <param name="command" value="send">
+	   <param name="text" value="mput *.c\r\n">
+  </applet>
+</ul>
+
+The behavior of <em>ftp</em> during muliple transfer is controlled
+somewhat by whether you toggle "prompting" on or off with
+<ul>
+<code>ftp> prompt</code>
+</ul>
+Prompting "on"   prompts you  
+before each file is transfered,   prompting "off"   copies all files
+without stopping.  Without prompting,  
+<em>ftp</em> should respond with something like:
+
+<ul>
+ <code>
+200 PORT command successful<br>
+150 Opening ASCII mode  for big-math.c (97 bytes)<br>
+226 Transfer complete<br>
+local: big-math.c remote: big_math<br>
+104 bytes received in 0.022 seconds (4.6 Kbytes/s)<br>
+200 PORT command successful<br>
+150 Opening ASCII mode  for myprog.c (61 bytes)<br>
+226 Transfer complete<br>
+local: myprog.c remote: myprog.c<br>
+67 bytes received in 0.022 seconds (2.9 Kbytes/s)<br>
+</code>
+</ul>
+   
+<hr>
+<table><tr>
+<td>
+  11.C.4: <a href="ftp-tar.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+    Transferring Large File Structures</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  11: <a href="multiple.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Multiple Machines</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>
+  11.C.2: <a href="ftp-put-get.html#top">
+  <img  align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+    Transferring Individual Files</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 

@@ -1,0 +1,189 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Creating LaTeX Documents</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  22.C: <a target="MainDoc" href="latex-convert.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   Converting <em>LaTeX</em> to <em>HTML</em></a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  22: <a target="MainDoc" href="latex.html#top">
+  <img align="left"  align="bottom" height=25 width=27 
+   alt="Up" src="figs/up-motif.gif">
+   <em>LaTeX</em></a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  22.A:  <a target="MainDoc" href="latex-print.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  Printing <em>LaTeX</em> Documents</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 22.B: Creating <I>LaTeX</I> Documents</h2></center>
+<hr>
+
+<P>To create a <I>LaTeX</I> document, you first open the source file in
+your favorite editor. To save some typing, edit the document <TT><FONT SIZE=-1>skeleton.tex
+(</FONT>t</TT>his document contains the commands included in every <I>LaTeX</I>
+document, so you probably want to be careful and copy this file to another
+name before opening it). Notice that the file extension is <TT><FONT SIZE=-1>.tex</FONT></TT>.
+Using this extension identifies the file as a <I>LaTeX</I> or <I>TeX</I>
+document. </P>
+
+<P>The file <TT><FONT SIZE=-1>skeleton.tex</FONT></TT> contains a number
+of commands:</P>
+
+<UL>
+<P><FONT SIZE=-1>\documentstyle{article}<BR>
+\begin{document}<BR>
+<BR>
+\end{document}</FONT></P>
+</UL>
+
+<P>First, the <TT><FONT SIZE=-1>\documentstyle</FONT></TT> statement sets
+a number of default formatting commands. As you learn more about <I>LaTeX</I>
+you may want to change this line or even start creating your own custom
+styles. The <TT><FONT SIZE=-1>\begin</FONT></TT> and <TT><FONT SIZE=-1>\end
+</FONT></TT>statements do exactly what they say, they tell <I>LaTeX</I>
+where to begin and end the document. </P>
+
+<P>When you give text to<I>LaTeX</I>, it recognizes any set of characters
+separated by one or more spaces as a word, any period not following an
+upper-case letter to be the end of a sentence, and group of lines separated
+by blank lines to be a paragraph. Try adding some text on the line after
+<TT><FONT SIZE=-1>\begin{document}</FONT></TT>. Now, try compiling it and
+viewing it. </P>
+
+<P>Admittedly, that was a little bland, but now you are ready for the fun
+part, <I>equations</I>. In order for <I>LaTeX</I> to correctly interpret
+your equations, you must tell it that you wish to enter the <I>math</I>,
+<I>displaymath</I> or <I>equation </I>environments. The math environment
+is used for in line equations. Use the &quot;$&quot; symbol before and
+after your equation. For instance, the following text can be used to create
+<IMG SRC="figs/img1.gif" ALT="tex2html_wrap_inline6" HEIGHT=31 WIDTH=110 ALIGN=CENTER>
+</P>
+
+<UL>
+<PRE><FONT SIZE=-1>can be used to create $r = \sqrt(x^2 + y^2)$</FONT>
+</PRE>
+</UL>
+
+<P>Enter the command in your file after the text you typed earlier. Then
+you can compile and view it. </P>
+
+<P><I>LaTeX</I> has many commands for different mathematical symbols. Notice
+how the <TT><FONT SIZE=-1>\sqrt</FONT></TT> command automatically expanded
+the square root symbol to fit over the entire contents. </P>
+
+<P>If you wish to place your equations on a separate line, you can use
+the <I>displaymath</I> environment. You use a <TT><FONT SIZE=-1>\begin</FONT></TT>
+and <FONT SIZE=-1><TT>\end</TT> </FONT>statement to set up <I>displaymath:</I>
+</P>
+
+<UL>
+<PRE><FONT SIZE=-1>\begin{displaymath}
+\frac{d^2 \Theta}{d t^2} = -[1+d\cos(2\pi ft)] \sin(\Theta) - c\frac{d\Theta}{dt}
+\end{displaymath}</FONT>
+</PRE>
+</UL>
+
+<P>This creates <IMG SRC="figs/img3.gif" ALT="tex2html_wrap_inline14" HEIGHT=36
+WIDTH=500 ALIGN=CENTER>.
+A few new functions you might want to notice: </P>
+
+<UL>
+<TABLE>
+<TR>
+<TD><TT><FONT SIZE=-1>\frac{top}{bottom}</FONT></TT></TD>
+
+<TD>Displays a fraction.</TD>
+</TR>
+
+<TR>
+<TD><TT><FONT SIZE=-1>\cos \sin</FONT></TT></TD>
+
+<TD>For trigonometric functions precede the function name with a <TT>\</TT>.</TD>
+</TR>
+
+<TR>
+<TD><TT><FONT SIZE=-1>\Theta \pi</FONT> </TT></TD>
+
+<TD>For Greek letters, precede the letter name with a <TT>\</TT>. For capital
+letters, capitalize the first letter of the name.</TD>
+</TR>
+</TABLE>
+</UL>
+
+<P>Try adding this line to your file and see how <I>LaTeX</I> sets up the
+equation. Notice the spacing and symbol-size decisions that <I>LaTeX</I>
+makes automatically. Beautiful isn't it?</P>
+
+<P>Now that you have seen how text and equations can be typeset in <I>LaTeX,</I>
+you are ready to create your own documents. There are, of course, many
+more special formats, symbols and functions in <I>LaTeX</I>. Nikos Drakos,
+at the University of Leeds has created a more comprehensive <A HREF="http://riceinfo.rice.edu/Computer/Documents/Classes/Unix/class/class.html" target="Outside"><I>LaTeX</I>
+tutorial,</A> including a <A HREF="http://riceinfo.rice.edu/Computer/Documents/Classes/Unix/class/section3_11.html#SECTION00011000000000000000" target="Outside">quick
+reference</A> to many of the more popular <I>LaTeX</I> commands. </P>
+
+<P>For the latest <I>LaTeX</I> news and tutorials, you may want to look
+at the <A HREF="http://www.tug.org/" target="Outside"><I>TeX Users Group</I>
+home page</A>. </P>
+
+<P>For those of you interested in using <I>LaTeX</I> to make your Web page
+publishing easier, the <A HREF="latex-convert.html#top">next section </A>will
+explain how to convert <I>LaTeX</I> to <I>HTML</I>. 
+<HR></P>
+
+<table><tr>
+<td>
+  22.C: <a target="MainDoc" href="latex-convert.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+   Converting <em>LaTeX</em> to <em>HTML</em></a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  22: <a target="MainDoc" href="latex.html#top">
+  <img align="left"  align="bottom" height=25 width=27 
+   alt="Up" src="figs/up-motif.gif">
+   <em>LaTeX</em></a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  22.A:  <a target="MainDoc" href="latex-print.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  Printing <em>LaTeX</em> Documents</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+ 
+</body>
+</html>
+
+

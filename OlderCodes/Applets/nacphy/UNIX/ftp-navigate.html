@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix:  ftp: Help and Navigation</title>
+</head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      - and Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  11.C.2: <a href="ftp-put-get.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+    transferring Individual Files</a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  11: <a href="multiple.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Multiple Machines</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>
+  11.C: <a href="ftp.html#top">
+  <img  align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+    Using <code>ftp</code></a>
+   <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  Contents</a>
+</td></tr></table>
+<hr>
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>  
+<center><h2>&#167 11.C.1: ftp: Help and Navigation</h2></center>
+<hr>
+
+<p> Once you've set up an <em>ftp</em> connection, you can use a variety of 
+subcommands to help get your file transfer right.  To see a list of the 
+available subcommands (while in an <em>ftp</em> session), enter 
+<code>?</code> followed by a return:
+
+<ul>
+<code>ftp> ?</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=20>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="?">
+	  <param name="command" value="send">
+	   <param name="text" value="?\r\n">
+  </applet>
+</ul>
+
+Try it now. You should get a response like:
+
+<p>
+<code><pre>
+Commands may be abbreviated.  Commands are:
+
+!               debug           mget            pwd             site
+$               dir             mkdir           quit            size
+account         disconnect      mls             quote           status
+append          form            mode            recv            struct
+ascii           get             modtime         remotehelp      sunique
+bell            glob            mput            rstatus         system
+binary          hash            nmap            rhelp           tenex
+bye             help            nlist           rename          trace
+case            image           ntrans          reget           type
+cd              lcd             open            restart         user
+cdup            ls              prompt          reset           verbose
+close           macdef          proxy           rmdir           ?
+cr              mdelete         sendport        runique
+delete          mdir            put             send
+</pre></code>
+
+<p> Some of these subcommands are the familiar ones you learned about in <a 
+href="directory.html#top">Managing Files and Directories</a>.  So, as 
+usual, you use the <em>cd</em> and <em>ls</em> subcommands to move around 
+and see what's there.
+
+<p>To get more information about a particular 
+subcommand, such as <em>get</em>, ask for help:
+
+<ul>
+<code> > help get </code>
+</ul>
+ 
+<p> To gain some experience, after checking where we are,
+we  create a backup directory on <em>ucs</em> and 
+<code>cd</code> to it:
+
+<ul> 
+<code>ftp> pwd</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=40>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="pwd">
+	  <param name="command" value="send">
+	   <param name="text" value="pwd\r\n">
+  </applet>
+
+<br>
+<code>ftp> mkdir backup-cluster</code>  
+  <applet codebase="bin" code="RegistryButton.class" 
+     height=22 width=145>
+      <param name="register" value="Unix Tutorial WebTerm">
+	<param name="label" value="mkdir backup-cluster">
+	  <param name="command" value="send">

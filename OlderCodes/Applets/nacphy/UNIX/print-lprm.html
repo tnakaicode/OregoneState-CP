@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>OSU Computational Physics - Unix: Canceling Printing</title></head>
+ <!-- Copyright 1996 by the Landau Research Group (nacse) 
+      -, Oregon State University. -->
+<body bgcolor="FFFFFF">
+<hr>
+<table><tr>
+<td>
+  9.E:<a href="print-final.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+  Smart Printing</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  9:<a href="print.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Printing Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  9.C:<a href="print-ps.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  Postscript Documents</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+<hr>
+
+<a Name="top"> </a>
+<img ALT="Basic" align="left" src="figs/CARGUY2.GIF" height= 75 width =120>
+<center><h2>&#167 9.D:&nbsp;  Cancelling A Print Job</h2></center>
+<hr>
+
+<p> Let's say that without thinking (an understatement) you
+accidentally sent the Encyclopedia Brittanica to the printer.  This is
+a case where you need to cancel a job in the print queue or already
+printing.
+
+<p> Use the line printer remove or cancel commands 
+followed by the <em>job number</em> to cancel a print job:
+
+<ul>
+<code> > lprm 601
+<br> > cancel 601</code>
+</ul>
+
+Sometimes Unix tells you the <em>job number</em> when you submit your
+job. You can always get the job number from the print queue listing:
+
+<ul>
+<code>> lpq</code> 
+<br>
+<pre><code> daphy: Fri Jul 26 14:47:49 1996: Fri Jul 26 14:46:58 1996:
+Attempting to print dfA601daphy Rank Pri Owner Job Files Total Size
+active 0 rubin 601 cp05.ps 375122 bytes
+
+Queue   Dev   Status    Job Files              User         PP %   Blks  Cp Rnk
+------- ----- --------- --- ------------------ ---------- ---- -- ----- --- ---
+ps2     @goop READY    
+ps2: Fri Jul 26 14:46:58 1996: Attempting to print dfA601daphy
+ps2     ps2   RUNNING     0 601                 0             0  0     1  1   0
+</pre></code>
+</ul>
+
+We see  that the job number is 601.  
+
+<p>
+Because we do not have to
+cancel the Encyclopedia Brittanica, we will go on to  <a
+href="print-final.html#top">Smart Printing</a>.  <hr>
+<table><tr> <td>
+  9.E:<a href="print-final.html#top">
+  <img  align="left"  align="bottom" height=25 width=37
+    alt="Next" src="figs/next-motif.gif">
+  Smart Printing</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>  
+<td> 
+  9:<a href="print.html#top">
+  <img align="left"  align="bottom" height=25 width=27
+    alt="Up" src="figs/up-motif.gif">
+  Printing Files</a>
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>  
+  9.C:<a href="print-ps.html#top"> 
+  <img align="left"  align="bottom" height=25 width=62
+    alt="Prev" src="figs/previous-motif.gif">
+  Postscript Documents</a> 
+  <img height=25 width=1 alt=" " src="figs/blank.xbm">
+</td>
+<td>   
+  <a target="MainDoc" href="contents.html";
+    onclick="top.frames[0].location='mainfr.html'"> 
+  <img align="left" align="bottom" height=25 width=65 
+    alt="Contents" src="figs/contents-motif.gif">
+  </a>
+</td></tr></table>
+ 
+</body>
+</html>
