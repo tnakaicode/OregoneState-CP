@@ -6,14 +6,13 @@
 
 # TeleMat.py:  Lossless transmission line animation, Matplotlib
 
-from numpy import *
-from matplotlib import animation
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import animation
 
 L = 0.1
 C = 2.5
-c = 1 / sqrt(L * C)
+c = 1 / np.sqrt(L * C)
 dt = 0.025
 dx = 0.05
 R = (c * dt / dx)**2
@@ -34,8 +33,8 @@ def init():
     return line,
 
 
-for i in arange(0, 100):
-    V[i, 0] = 10 * exp(-(xx**2) / 0.1)
+for i in np.arange(0, 100):
+    V[i, 0] = 10 * np.exp(-(xx**2) / 0.1)
     xx = xx + dx
 
 for i in range(1, 100):
@@ -45,7 +44,7 @@ V[:, 1] = V[:, 2]           # Recycle array
 
 
 def animate(dum):
-    i = arange(1, 100)
+    i = np.arange(1, 100)
     V[i, 2] = 2. * V[i, 1] - V[i, 0] + R * \
         (V[i + 1, 1] + V[i - 1, 1] - 2 * V[i, 1])
     line.set_data(i, V[i, 2])

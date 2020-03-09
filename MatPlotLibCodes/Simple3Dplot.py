@@ -6,20 +6,22 @@
 
 # Simple3Dplot.py: matplotlib 3D plot, rotate & scale with mouse
 
-import matplotlib.pylab as p
+import numpy as np
+import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 print("Please be patient while I do importing & plotting")
 delta = 0.1
-x = p.arange(-3., 3., delta)
-y = p.arange(-3., 3., delta)
-X, Y = p.meshgrid(x, y)
-Z = p.sin(X) * p.cos(Y)                       # Surface height
-fig = p.figure()                               # Create figure
-ax = Axes3D(fig)                                  # Plots axes
-ax.plot_surface(X, Y, Z)                            # Surface
-ax.plot_wireframe(X, Y, Z, color='r')        # Add wireframe
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('Z')
-p.show()                                        # Output figure
+x = np.arange(-3., 3., delta)
+y = np.arange(-3., 3., delta)
+X, Y = np.meshgrid(x, y)
+Z = np.sin(X) * np.cos(Y)                       # Surface height
+
+fig = plt.figure()                               # Create figure
+axs = Axes3D(fig)                                  # Plots axes
+axs.plot_surface(X, Y, Z)                            # Surface
+axs.plot_wireframe(X, Y, Z, color='r')        # Add wireframe
+axs.set_xlabel('X')
+axs.set_ylabel('Y')
+axs.set_zlabel('Z')
+plt.show()                                        # Output figure

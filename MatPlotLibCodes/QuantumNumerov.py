@@ -9,7 +9,6 @@
 # hbarc* omega=hbarc*sqrt(k/m)=19.733,  r mc**2=940 MeV, k=9.4
 # E =(N+1/2)hbarc*omega = (N+1/2)19.733, N even, change N odd
 
-from numpy import *
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -31,13 +30,13 @@ xmax = 5.0
 print("nl, nr", nl, nr)
 print(h)
 
-xLeft = arange(-10, 0.02, 0.02)
-xRight = arange(10, 0.02, -0.02)
-xp = arange(-10, 10, 0.02)         # Bisection interval
-uL = zeros((503), float)
-uR = zeros([503], float)
-k2L = zeros([1000], float)
-k2R = zeros([1000], float)
+xLeft =  np.arange(-10, 0.02, 0.02)
+xRight = np.arange(10, 0.02, -0.02)
+xp = np.arange(-10, 10, 0.02)         # Bisection interval
+uL = np.zeros((503), float)
+uR = np.zeros([503], float)
+k2L = np.zeros([1000], float)
+k2R = np.zeros([1000], float)
 uL[0] = 0
 uL[1] = 0.00001
 uR[0] = 0
@@ -74,8 +73,8 @@ def diff(e):
 
 
 istep = 0
-x1 = arange(-10, .02, 0.02)
-x2 = arange(10, -0.02, -0.02)
+x1 = np.arange(-10, .02, 0.02)
+x2 = np.arange(10, -0.02, -0.02)
 fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.grid()

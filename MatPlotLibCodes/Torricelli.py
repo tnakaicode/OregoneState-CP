@@ -6,7 +6,7 @@
 
 # Torricelli.py: solves Navier-Stokes equation for orifice flow
 
-from numpy import *          # Need for zeros
+import numpy as np
 
 Niter = 700
 Ndown = 20
@@ -23,9 +23,9 @@ Vtop = 8.0e-4
 omega = 0.1
 R = Vtop * h / nu
 
-u = zeros((Nx + 1, Ny + 1), float)
-ua = zeros((N2x, Ny), float)
-w = zeros((Nx + 1, Ny + 1), float)
+u =  np.zeros((Nx + 1, Ny + 1), float)
+ua = np.zeros((N2x, Ny), float)
+w =  np.zeros((Nx + 1, Ny + 1), float)
 
 Torri = open('Torri.dat', 'w')
 uall = open('uall.dat', 'w')
@@ -39,15 +39,15 @@ def BelowHole():
             if i == Nb:
                 vy = 0
             if i == Nx:
-                vy = -sqrt(2.0 * g * h * (Ny + Nb - j))
+                vy = -np.sqrt(2.0 * g * h * (Ny + Nb - j))
             if i == Nx - 1:
-                vy = -sqrt(2.0 * g * h * (Ny + Nb - j)) / 2.
+                vy = -np.sqrt(2.0 * g * h * (Ny + Nb - j)) / 2.
             u[i, j] = u[i - 1, j] - vy * h      # du/dx=-vy
 
 
 def BorderRight():
     for j in range(1, Ny + 1):    # Center orifice very sensitive
-        vy = -sqrt(2.0 * g * h * (Ny - j))
+        vy = -np.sqrt(2.0 * g * h * (Ny - j))
         u[Nx, j] = u[Nx - 1, j] + vy * h
         u[Nx, j] = u[Nx, j - 1]
         w[Nx, j] = -2 * (u[Nx, j] - u[Nx, j - 1]) / h**2

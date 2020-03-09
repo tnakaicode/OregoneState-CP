@@ -40,13 +40,15 @@ while (t < Tend):
     yy.append(y[0])
     yv.append(y[1])
     t = t + h
-fig = plt.figure()
+
+plt.figure()
 plt.subplot(111)
 plt.plot(tt, yy, 'r')
 plt.title('Position versus')
 plt.xlabel('t')
 plt.ylabel('y')
-fig1 = plt.figure()
+
+plt.figure()
 plt.subplot(111)
 plt.plot(tt, yv)
 plt.title('Velocity versus time')

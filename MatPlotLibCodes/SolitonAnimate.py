@@ -6,7 +6,6 @@
 
 # SolitonAnimate.py:      Korteweg de Vries soliton equation
 
-from numpy import *
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -22,8 +21,8 @@ u = np.zeros((mx, 3), float)        # Soliton amplitude
 
 def init():
     for i in range(0, mx):            # Initial wave
-        u[i, 0] = 0.5 * (1 - ((math.exp(2 * (0.2 * ds * i - 5)) - 1)
-                              / (math.exp(2 * (0.2 * ds * i - 5)) + 1)))
+        u[i, 0] = 0.5 * (1 - ((np.exp(2 * (0.2 * ds * i - 5)) - 1)
+                              / (np.exp(2 * (0.2 * ds * i - 5)) + 1)))
     u[0, 1] = 1.
     u[0, 2] = 1.
     u[mx - 1, 1] = 0.

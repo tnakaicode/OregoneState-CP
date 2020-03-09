@@ -21,8 +21,8 @@ for x in np.arange(2.7, 40, 0.2):
     yy[i] = Vef
     yy1[i] = -1 / x + ell**2 / (2. * x**2)
     i += 1
-f1 = plt.figure()
-plt.axes()
+
+fig, axs = plt.subplots()
 plt.plot(xx[:180], yy[:180])
 plt.plot(xx[22:180], yy1[22:180])
 plt.xlabel("r/M")
