@@ -31,6 +31,7 @@ def PlotFields(Ex, Hy):
 
 
 def animate(t):
+    print(t)
     Ex[1:Xm - 1, 1] = Ex[1:Xm - 1, 0] + beta * (Hy[0:Xm - 2, 0] - Hy[2:Xm, 0])
     Hy[1:Xm - 1, 1] = Hy[1:Xm - 1, 0] + beta * (Ex[0:Xm - 2, 0] - Ex[2:Xm, 0])
     Ex[0, 1] = Ex[0, 0] + beta * (Hy[Xm - 2, 0] - Hy[1, 0])
@@ -53,6 +54,7 @@ def init():
     return
 
 
-ani = FuncAnimation(fig, animate, frames=10000,init_func=init, interval=0.1, blit=False)
-#ani.save("./FDTD.gif", writer='pillow')
+ani = FuncAnimation(fig, animate, frames=50,
+                    init_func=init, interval=20, blit=False)
+ani.save("./FDTD.gif", writer='pillow')
 plt.show()
