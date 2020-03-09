@@ -20,8 +20,7 @@ k0 = 20.
 k1 = 0.
 dt = 0.002
 fc = dt / dx2
-Xo = 40
-Yo = 25
+
 # Declare arrays
 V = np.zeros((N, N), float)
 Rho = np.zeros((N, N), float)
@@ -29,11 +28,6 @@ RePsi = np.zeros((N, N), float)
 ImPsi = np.zeros((N, N), float)
 ix = np.arange(0, 101)
 iy = np.arange(0, 101)
-X, Y = np.meshgrid(ix, iy)
-
-fig = plt.figure()
-axs = Axes3D(fig)
-# Create figure
 
 
 def Pot1Disk(xa, ya):
@@ -41,13 +35,13 @@ def Pot1Disk(xa, ya):
     for i in range(ya - r, ya + r + 1):
         for j in range(xa - r, xa + r + 1):
             if np.sqrt((i - ya)**2 + (j - xa)**2) <= r:
-                V[i, j] = 5.
+                V[i, j] = 10
 
 
 def Pot3Disks():
     # Potential three disk
-    Pot1Disk(30, 45)
-    Pot1Disk(70, 45)
+    Pot1Disk(25, 45)
+    Pot1Disk(75, 45)
     Pot1Disk(50, 80)
 
 
@@ -61,37 +55,53 @@ def Psi_0(Xo, Yo):
             Rho[i, j] = RePsi[i, j]**2 + ImPsi[i, j]**2 + 0.01
 
 
-# Psi and Rho initial
-# Initial Psi
-Psi_0(Xo, Yo)
-Pot3Disks()
+if __name__ == '__main__':
+    # Psi and Rho initial
+    # Initial Psi
+    Xo = 60
+    Yo = 25
+    Psi_0(Xo, Yo)
+    Pot3Disks()
 
-for t in range(0, 150):
-    # 120->30
-    # Compute Psi t < 120
-    sys.stdout.write("\r{:d} / {:d}".format(t, 150))
-    sys.stdout.flush()
+    num = 201
+    for t in range(0, num):
+        sys.stdout.write("\r{:d} / {:d}".format(t + 1, num))
+        sys.stdout.flush()
 
-    ImPsi[1:-1, 1:-1] = ImPsi[1:-1, 1:-1] + fc * (RePsi[2:, 1:-1]
-                                                  + RePsi[:-2, 1:-1] - 4 * RePsi[1:-1, 1:-1] + RePsi[1:-1, 2:]
-                                                  + RePsi[1:-1, :-2]) + V[1:-1, 1:-1] * dt * RePsi[1:-1, 1:-1]
-    RePsi[1:-1, 1:-1] = RePsi[1:-1, 1:-1] - fc * (ImPsi[2:, 1:-1]
-                                                  + ImPsi[:-2, 1:-1] - 4 * ImPsi[1:-1, 1:-1] + ImPsi[1:-1, 2:]
-                                                  + ImPsi[1:-1, :-2]) + V[1:-1, 1:-1] * dt * ImPsi[1:-1, 1:-1]
-    for i in range(1, N - 1):
+        ImPsi[1:-1, 1:-1] = ImPsi[1:-1, 1:-1] + fc * (RePsi[2:, 1:-1]
+                                                      + RePsi[:-2, 1:-1] - 4 * RePsi[1:-1, 1:-1] + RePsi[1:-1, 2:]
+                                                      + RePsi[1:-1, :-2]) + V[1:-1, 1:-1] * dt * RePsi[1:-1, 1:-1]
+        RePsi[1:-1, 1:-1] = RePsi[1:-1, 1:-1] - fc * (ImPsi[2:, 1:-1]
+                                                      + ImPsi[:-2, 1:-1] - 4 * ImPsi[1:-1, 1:-1] + ImPsi[1:-1, 2:]
+                                                      + ImPsi[1:-1, :-2]) + V[1:-1, 1:-1] * dt * ImPsi[1:-1, 1:-1]
+
         # Compute Rho
         # Hard Disk, psi = 0
-        for j in range(1, N - 1):
-            if V[i, j] != 0:
-                RePsi[i, j] = 0
-                ImPsi[i, j] = 0
-            Rho[i, j] = 0.1 * (RePsi[i, j]**2
-                               + ImPsi[i, j]**2) + 0.0002 * V[i, j]
-X, Y = np.meshgrid(ix, iy)
-Z = Rho[X, Y]
+        for i in range(1, N - 1):
+            for j in range(1, N - 1):
+                if V[i, j] != 0:
+                    RePsi[i, j] = 0
+                    ImPsi[i, j] = 0
+                Rho[i, j] = 0.1 * (RePsi[i, j]**2
+                                   + ImPsi[i, j]**2) + 0.0002 * V[i, j]
 
-axs.set_xlabel('y')
-axs.set_ylabel('x')
-axs.set_zlabel('Rho(x,y)')
-axs.plot_wireframe(X, Y, Z, color='g')
-plt.show()
+        if t in [50, 100, 110, 125, 150, 200]:
+            X, Y = np.meshgrid(ix, iy)
+            Z = Rho[X, Y]
+
+            fig = plt.figure()
+            axs = Axes3D(fig)
+            axs.set_xlabel('y')
+            axs.set_ylabel('x')
+            axs.set_zlabel('Rho(x,y)')
+            axs.plot_wireframe(X, Y, Z, color='g')
+            fig.savefig("../img/3QMdisks_3D_{:03d}.png".format(t))
+
+            fig, axs = plt.subplots()
+            axs.set_aspect("equal")
+            axs.set_xlabel('y')
+            axs.set_ylabel('x')
+            axs.grid()
+            axs.contourf(X, Y, Z, cmap="jet")
+            fig.savefig("../img/3QMdisks_2D_{:03d}.png".format(t))
+            plt.close()
