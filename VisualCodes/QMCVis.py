@@ -6,7 +6,7 @@
 		
 # QMCVis.py: Quantum MonteCarlo (Feynman path integration)
 
-from visual import *;  from visual.graph import *;  import random
+from vpython import *;  from vpython.graph import *;  import random
 
 N = 100; Nsteps = 101;  xscale = 10.                 # Initialize
 path = zeros([Nsteps], float);  prob = zeros([Nsteps], float)   

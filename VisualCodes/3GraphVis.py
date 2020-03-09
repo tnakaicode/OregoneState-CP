@@ -6,8 +6,8 @@
   
 # 3GraphVis.py: Visual package, 3 plots, with bars, dots & curve
 
-from visual import *
-from visual.graph import*  
+from vpython import *
+from vpython.graph import*  
 
 string = "blue: sin^2(x), white: cos^2(x), red: sin(x)*cos(x)"
 graph1 = gdisplay(title=string, xtitle='x', ytitle='y')

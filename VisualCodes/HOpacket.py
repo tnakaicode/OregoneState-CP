@@ -7,7 +7,7 @@
 # HOpacket.py: HO wave packet in motion via Visual
 
 from numpy import *
-from visual.graph import *
+from vpython.graph import *
 
 oneoverpi = 1/math.sqrt(math.pi); a = 1.        # m=1=hbar
 xx = 5; tt = 0                   # Initial x & t (classical)

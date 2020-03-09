@@ -6,7 +6,7 @@
     
 # SlidingBoxVis.py: 3-D animation forces on a beam, Visual
 
-from visual.graph import *
+from vpython.graph import *
 
 Hsupport=30;  d=100                # height, distance supports
 Lbeam=500; Wbeam=80;  thickness=10 # beam dimensions     

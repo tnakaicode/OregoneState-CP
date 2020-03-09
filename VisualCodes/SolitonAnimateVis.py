@@ -6,7 +6,7 @@
 
 # SolitonAnimateVis.py: KdeV equation for a soliton, Visual 
 
-from visual import *
+from vpython import *
 
 # Set up plot
 g   = display(width = 600, height = 300, title = 'Soliton')

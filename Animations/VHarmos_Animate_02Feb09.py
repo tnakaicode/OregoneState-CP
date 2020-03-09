@@ -7,7 +7,7 @@
 """
 # VHarmos.py: Animaated t - dep Schro eq, Gaussian wavepacket, harm oscill V
 
-from visual import *
+from vpython import *
 
 # Parameters
 xmax = 300

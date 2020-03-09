@@ -6,7 +6,7 @@
 
 # DLAVis.py:   Visual, Diffusion Limited Aggregation 
 
-from visual.graph import *;  import random
+from vpython.graph import *;  import random
 
 Maxx = Maxy = 700;  R = 45.;  step =0;  trav = 0
 size = 80; max = 500                                   

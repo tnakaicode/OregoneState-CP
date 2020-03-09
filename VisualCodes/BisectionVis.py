@@ -6,7 +6,8 @@
 
 # BisectionVis.py: Visual pack, 0 of f(x) via Bisection algorithm 
 
-from visual.graph import *
+import vpython
+#from vpython.graph import *
 eps = 1e-3;  Nmax = 100;  a = 0.0; b = 7.0     # Precision, [a,b]
                           
 def f(x): return 2*math.cos(x) - x           # Your function here

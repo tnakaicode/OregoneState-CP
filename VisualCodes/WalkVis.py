@@ -6,8 +6,8 @@
 
 # WalkVis.py  Random walk with graph, Visual
 
-from visual import * 
-from visual.graph import *
+from vpython import * 
+from vpython.graph import *
 import random
 
 random.seed(None)                  # None => system clock

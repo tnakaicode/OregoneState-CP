@@ -6,7 +6,7 @@
 
 # TwoWells.py:  Time-dependent Schroedinger packets in two wells
 
-from visual.graph import *
+from vpython.graph import *
 
 dx = 0.08; dx2 = dx*dx; k0 = 5.; dt = dx2/8; Nmax = 200; addi=250
 V_L = zeros((Nmax),float);  V_R = zeros((Nmax),float)

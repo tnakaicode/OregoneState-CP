@@ -6,7 +6,7 @@
    
 # TelegraphVis.py:  Lossless transmission line animation, Visual
 
-from visual import *
+from vpython import *
 
 g = display(width = 600, height = 300, title='Telegrapher`s Eqnt')
 vibst = curve(x=list(range(0,101)), color=color.yellow,radius=0.5)

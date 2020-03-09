@@ -6,9 +6,9 @@
 
 # NewtonNDanimate.py:              MultiDimension Newton Search
 
-from visual import *
+from vpython import *
 from numpy.linalg import solve
-from visual.graph import *
+from vpython.graph import *
 
 scene = display(x=0,y=0,width=500,height=500,
                 title='String and masses configuration')

@@ -8,7 +8,7 @@
 												
 import matplotlib.pylab as p;
 from mpl_toolkits.mplot3d import Axes3D ;
-from visual.graph import *;
+from vpython.graph import *;
 
 originalsignal=gdisplay(x=0, y=0, width=600, height=200, \
         title='Input Signal',xmin=0,xmax=12,ymin=-20,ymax=20)

@@ -6,7 +6,7 @@
 
 # QuarterPlate.py  FDTD solution of Maxwell's equations in 1-D
 
-from visual import *
+from vpython import *
 
 xmax = 401; ymax = 100;  zmax = 100; ts = 2; beta = 0.01
 

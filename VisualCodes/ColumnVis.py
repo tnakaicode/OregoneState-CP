@@ -6,7 +6,7 @@
     
 # ColumnVis.py: Visual package, correlated ballistic deposition
 
-from visual import *; import random
+from vpython import *; import random
 
 maxi = 100000;   npoints = 200                
 i = 0;   dist = 0;   r = 0;   x = 0;  y = 0

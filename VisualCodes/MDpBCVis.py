@@ -6,7 +6,7 @@
 
 # MDpBCVis.py: Visual MD with Periodic BC
 
-from visual.graph import *
+from vpython.graph import *
 import random
 
 L=1; Natom=16;  Nrhs=0; dt=1e-6                                       

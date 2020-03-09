@@ -6,7 +6,7 @@
 
 # SqBillardCMVis.py: Animated classical billiards on square table
 
-from visual import *
+from vpython import *
 
 dt = 0.01;   Xo = -90.;  Yo =  -5.4;  v = vector(13.,13.1)
 r0 = r= vector(Xo,Yo); eps = 0.1;  Tmax = 500; tp = 0

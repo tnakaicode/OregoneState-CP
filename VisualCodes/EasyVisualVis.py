@@ -6,7 +6,7 @@
 
 # EasyVisualVis.py: Visual, simple graph object using Visual
  
-from visual.graph import *                  # Import Visual
+from vpython.graph import *                  # Import Visual
 
 Plot1 = gcurve(color = color.white)         # gcurve method
 for x in arange(0., 8.1, 0.1):              # x range

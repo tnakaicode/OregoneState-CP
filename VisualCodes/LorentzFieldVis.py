@@ -6,7 +6,7 @@
    
 # LorentzFieldVis.py:  Lorentz TF of E, B & V wi Visual
 
-from visual.graph import *
+from vpython.graph import *
 
 scene = display(width=700,height=400,range=100,title="In O, Bz(Dots)")
 graf = curve(color=color.red)

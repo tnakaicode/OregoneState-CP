@@ -6,7 +6,7 @@
 
 # DecaySound.py spontaneous decay simulation
 
-from vpython import *    # Was: from visual.graph import *
+from vpython import *    # Was: from vpython.graph import *
 import random, winsound
 
 lambda1 = 0.005                               # Decay constant                      

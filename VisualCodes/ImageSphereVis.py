@@ -6,7 +6,7 @@
 
 # ImageSphereViz.py: E field lines for charge plus image wi Visual
 
-from visual.graph import *
+from vpython.graph import *
 
 scene= display(width=500, height=500,range=100, 
 	title="E of Charge in Sphere (Red Image)")

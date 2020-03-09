@@ -6,8 +6,8 @@
 
 # ProjectileAirVis.py: Visual, O(dt^2) projectile + drag
 
-from visual import *
-from visual.graph import *
+from vpython import *
+from vpython.graph import *
 
 v0 = 22.;   angle = 34.;   g = 9.8;   kf = 0.8;   N = 5
 v0x = v0*cos(angle*pi/180.);   v0y = v0*sin(angle*pi/180.)

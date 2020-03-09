@@ -7,7 +7,7 @@
 # AdvecLaxVis.py: Visual package, advection eqnt via Lax-Wendroff
 # du/dt+ c*d(u**2/2)/dx=0;   u(x,t=0)=exp(-300(x-0.12)**2)
 
-from visual.graph import *
+from vpython.graph import *
 import math
 m = 100                                       # No steps in x
 c = 1.

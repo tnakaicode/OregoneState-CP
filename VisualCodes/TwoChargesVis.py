@@ -6,7 +6,7 @@
    
 # TwoChargesVis.py:  Motion of 2 charges in 2 frames wi Visual
 
-from visual.graph import *
+from vpython.graph import *
 
 scene = display(width=700,height=300, ange=1, background=(1,1,1),
            title="O: Charges with Parallel Initial Velocities")

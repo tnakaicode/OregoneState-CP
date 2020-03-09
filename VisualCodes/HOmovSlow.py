@@ -6,7 +6,7 @@
 
 # HOcharge.py: Quantum particle in HO & E field with Visual
 
-from visual import *
+from vpython import *
  
 dx = 0.04;  dx2 = dx*dx;  k0 = 5.5*pi;  dt = dx2/20.;  xmax = 6.
 xs = arange(-xmax,xmax+dx/2,dx)        # Array x positions

@@ -6,7 +6,7 @@
 
 # DecaySoundVis.py: Visual, spontaneous decay simulation
 
-from visual import *; from visual.graph import *
+from vpython import *; from vpython.graph import *
 import random, winsound
 
 lambda1 = 0.005                               # Decay constant                      

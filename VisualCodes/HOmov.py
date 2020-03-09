@@ -6,7 +6,7 @@
 
 # HOmov: Solve t-dependent Sch Eqt for HO wi animation
 
-from visual import *
+from vpython import *
 
 # Initialize wave function, probability, potential
 dx = 0.04;    dx2 = dx*dx;  k0 = 5.5*pi;  dt = dx2/20.0;  

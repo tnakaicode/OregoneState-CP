@@ -6,7 +6,7 @@
 
 # ThinFilmVis.py: Thin film interference by reflection, Visual
 
-from visual.graph import *
+from vpython.graph import *
 
 escene = display(width=500, height=500, range=400, 
 	background=color.white,foreground=color.black, 

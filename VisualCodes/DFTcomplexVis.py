@@ -6,7 +6,7 @@
 
 # DFTcomplexVis.py:  Visual, discrete Fourier TF wi complex math 
 
-from visual import *;  from visual.graph import *
+from vpython import *;  from vpython.graph import *
 import cmath                                        # Complex math
 
 N = 100;  twopi = 2.*pi;  h = twopi/N;  sq2pi = 1./sqrt(twopi)                        

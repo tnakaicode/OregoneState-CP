@@ -6,7 +6,7 @@
 
 # Walk3DVis.py  3-D Random walk with 3-D graph, Visual
  
-from visual import *
+from vpython import *
 import random
 
 random.seed(None)                  # None => system clock

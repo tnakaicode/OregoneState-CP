@@ -6,7 +6,7 @@
 
 # DielectVis.py: Visual-Animated FDTD E&B dielectric fields 
 
-from visual import *
+from vpython import *
 Xmax = 401;  Ymax = 100;  Zmax = 100
 scene = display(x=0,y=0,width=800,height=500, title= 'Hy (cyan),
         Ex (yellow), Dielectric (gray)',forward=(0.0,-0.3,-0.7))

@@ -6,7 +6,7 @@
 
 # SolitonVis.py:      Korteweg de Vries equation for a soliton
 
-from visual import *
+from vpython import *
 import matplotlib.pylab as p;
 from mpl_toolkits.mplot3d import Axes3D ;
 import numpy

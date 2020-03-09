@@ -8,7 +8,7 @@
 # EqString.py:          Animated leapfrog solution of wave equation (Sec 18.2.2)
 
 
-from visual import *
+from vpython import *
 
 # Set up curve
 g = display(width = 600, height = 300, title = 'Vibrating string')

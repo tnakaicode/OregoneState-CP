@@ -6,7 +6,7 @@
 
 # UranusNeptune.py: Orbits of Neptune & Uranus
 
-from visual.graph import *
+from vpython.graph import *
 scene = display(width=600,height=600,  
 	title =  'White Neptune & Black Uranus', range=40)
 sun = sphere(pos=(0,0,0), radius=2, color=color.yellow)

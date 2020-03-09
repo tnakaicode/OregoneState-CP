@@ -6,7 +6,7 @@
 
 # PredatorPreyVis.py:     Lotka-Volterra models
 
-from visual import *;  from visual.graph import *
+from vpython import *;  from vpython.graph import *
 
 Tmin = 0.0;  Tmax = 500.0; Ntimes = 1000
 y[0] = 2.0;  y[1] = 1.3   

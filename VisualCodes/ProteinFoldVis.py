@@ -9,7 +9,7 @@
 # energy  =  -f|eps, f=1 if neighbour = H, f=0 if p
 # Yellow dot indicates unconnected neighbor
 
-from visual import *;  import random
+from vpython import *;  import random
 
 Maxx = 500;  Maxy = 500;  ran = 20; L = 100;  m = 100
 size  = 8;  size2 = size*2;  nex = 0;  n = 100

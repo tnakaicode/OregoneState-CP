@@ -6,7 +6,7 @@
 	 
 # BugsVis.py The Logistic map wi V isual package
 
-from visual.graph import *
+from vpython.graph import *
 
 m_min = 1.0;      m_max = 4.0;       step = 0.01
 graph1 = gdisplay(width=600, height=400, title='Logistic Map',

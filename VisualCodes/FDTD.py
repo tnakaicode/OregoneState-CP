@@ -6,7 +6,7 @@
 
 # FDTD.py  FDTD Maxwell's equations in 1-D wi Visual
 
-from visual import *
+from vpython import *
 
 Xm = 201;  Ym = 100; Zm = 100; ts = 2;  beta = 0.01 
 Ex = zeros((Xm,ts),float);   Hy = zeros((Xm,ts),float)  # Arrays

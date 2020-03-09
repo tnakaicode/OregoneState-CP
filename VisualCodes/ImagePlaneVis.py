@@ -6,7 +6,7 @@
 
 # ImagePlaneVis.py: E field lines for charge plus image wi Visual
 
-from visual.graph import *
+from vpython.graph import *
 scene =  display(width=500, height=500,range=100,
 	title="E of Charge Left of Plane (Red Image)")
 plane = box(pos=(0,0,0),length=2,height=130,width=130,
