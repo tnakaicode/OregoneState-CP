@@ -8,6 +8,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
 
 Xm = 201
 Ym = 100
@@ -17,52 +18,41 @@ beta = 0.01
 Ex = np.zeros((Xm, ts), float)
 Hy = np.zeros((Xm, ts), float)  # Arrays
 
-scene = graph(x=0, y=0, width=800, height=500,
-              title='E: cyan, H: red. Periodic BC', forward=(-0.6, -0.5, -1))
-Eplot = curve(x=list(range(0, Xm)), color=color.cyan,
-              radius=1.5, display=scene)
-Hplot = curve(x=list(range(0, Xm)), color=color.red,
-              radius=1.5, display=scene)
-# vplane = curve(pos=[(-Xm, Ym), (Xm, Ym), (Xm, -Ym), (-Xm, -Ym),
-#                    (-Xm, Ym)], color=color.cyan)
-vplane = curve(color=color.cyan)
-#zaxis = curve(pos=[(-Xm, 0), (Xm, 0)], color=color.magenta)
-zaxis = curve(color=color.magenta)
-hplane = curve(pos=[(-Xm, 0, Zm), (Xm, 0, Zm), (Xm, 0, -Zm), (-Xm, 0, -Zm),
-                    (-Xm, 0, Zm)], color=color.magenta)
-#ball1 = sphere(pos=(Xm + 30, 0, 0), color=color.black, radius=2)
-ball1 = sphere(color=color.black, radius=2)
-#ExLabel1 = label(text='Ex', pos=(-Xm - 10, 50), box=0)
-ExLabel1 = label(text='Ex', box=0)
-#ExLabel2 = label(text='Ex', pos=(Xm + 10, 50), box=0)
-ExLabel2 = label(text='Ex', box=0)
-HyLabel = label(text='Hy', box=0)
-#HyLabel = label(text='Hy', pos=(-Xm - 10, 0, 50), box=0)
-#zLabel = label(text='Z', pos=(Xm + 10, 0), box=0)
-zLabel = label(text='Z', box=0)
+fig, axs = plt.subplots()
+axs.grid()
+eplot, = axs.plot(np.arange(Xm), np.arange(Xm))
+hplot, = axs.plot(np.arange(Xm), np.arange(Xm))
 
 
-def PlotFields():
+def PlotFields(Ex, Hy):
     z = np.arange(Xm)
-    Eplot.x = 2 * z - Xm                    # World to screen coords
-    Eplot.y = 800 * Ex[z, 0]
-    Hplot.x = 2 * z - Xm
-    Hplot.z = 800 * Hy[z, 0]
+    eplot.set_data(2 * z - Xm, 800 * Ex[z, 0])
+    hplot.set_data(2 * z - Xm, 800 * Hy[z, 0])
 
 
-z = np.arange(Xm)
-Ex[:, 0] = 0.1 * np.sin(2 * np.pi * z / 100.0)                 # Initial field
-Hy[:, 0] = 0.1 * np.sin(2 * np.pi * z / 100.0)
-PlotFields()
-
-while True:
-    rate(600)
+def animate(t):
     Ex[1:Xm - 1, 1] = Ex[1:Xm - 1, 0] + beta * (Hy[0:Xm - 2, 0] - Hy[2:Xm, 0])
     Hy[1:Xm - 1, 1] = Hy[1:Xm - 1, 0] + beta * (Ex[0:Xm - 2, 0] - Ex[2:Xm, 0])
-    Ex[0, 1] = Ex[0, 0] + beta * (Hy[Xm - 2, 0] - Hy[1, 0])   # BC
+    Ex[0, 1] = Ex[0, 0] + beta * (Hy[Xm - 2, 0] - Hy[1, 0])
     Ex[Xm - 1, 1] = Ex[Xm - 1, 0] + beta * (Hy[Xm - 2, 0] - Hy[1, 0])
-    Hy[0, 1] = Hy[0, 0] + beta * (Ex[Xm - 2, 0] - Ex[1, 0])    # BC
+    Hy[0, 1] = Hy[0, 0] + beta * (Ex[Xm - 2, 0] - Ex[1, 0])
     Hy[Xm - 1, 1] = Hy[Xm - 1, 0] + beta * (Ex[Xm - 2, 0] - Ex[1, 0])
-    PlotFields()
-    Ex[:Xm, 0] = Ex[:Xm, 1]                              # New -> old
+    PlotFields(Ex, Hy)
+    # New -> old
+    Ex[:Xm, 0] = Ex[:Xm, 1]
     Hy[:Xm, 0] = Hy[:Xm, 1]
+    return
+
+
+def init():
+    z = np.arange(Xm)
+    # Initial field
+    Ex[:, 0] = 0.1 * np.sin(2 * np.pi * z / 100.0)
+    Hy[:, 0] = 0.1 * np.sin(2 * np.pi * z / 100.0)
+    PlotFields(Ex, Hy)
+    return
+
+
+ani = FuncAnimation(fig, animate, frames=10000,init_func=init, interval=0.1, blit=False)
+#ani.save("./FDTD.gif", writer='pillow')
+plt.show()
