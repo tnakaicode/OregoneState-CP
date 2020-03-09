@@ -8,8 +8,9 @@ wget -r -np -l 0 http://sites.science.oregonstate.edu/~landaur/Books/CPbook/
 
 ## 3QMdisks
 
-|     num | sol                             | sol                             |
+|     num | 2D                              | 3D                              |
 | ------: | ------------------------------- | ------------------------------- |
+| num=  0 | ![pic](img/3QMdisks_2D_000.png) | ![pic](img/3QMdisks_3D_000.png) |
 | num= 50 | ![pic](img/3QMdisks_2D_050.png) | ![pic](img/3QMdisks_3D_050.png) |
 | num=100 | ![pic](img/3QMdisks_2D_100.png) | ![pic](img/3QMdisks_3D_100.png) |
 | num=110 | ![pic](img/3QMdisks_2D_110.png) | ![pic](img/3QMdisks_3D_110.png) |

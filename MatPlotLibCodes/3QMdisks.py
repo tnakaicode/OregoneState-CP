@@ -85,7 +85,7 @@ if __name__ == '__main__':
                 Rho[i, j] = 0.1 * (RePsi[i, j]**2
                                    + ImPsi[i, j]**2) + 0.0002 * V[i, j]
 
-        if t in [50, 100, 110, 125, 150, 200]:
+        if t in [0, 50, 100, 110, 125, 150, 200]:
             X, Y = np.meshgrid(ix, iy)
             Z = Rho[X, Y]
 
