@@ -7,13 +7,12 @@
 # 3GraphVis.py: Visual package, 3 plots, with bars, dots & curve
 
 from vpython import *
-from vpython.graph import*  
 
 string = "blue: sin^2(x), white: cos^2(x), red: sin(x)*cos(x)"
-graph1 = gdisplay(title=string, xtitle='x', ytitle='y')
-y1 = gcurve(color=color.yellow, delta=3)          # curve
+graph1 = graph(title=string, xtitle='x', ytitle='y')
+y1 = gcurve(color=color.yellow)          # curve
 y2 = gvbars(color=color.white)             # vertical bars
-y3 = gdots(color=color.red, delta=3)              # dots
+y3 = gdots(color=color.red)              # dots
 
 for x in arange(-5, 5, 0.1):                # arange for floats
     y1.plot( pos=(x, sin(x)*sin(x)) )
