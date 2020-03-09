@@ -4,14 +4,16 @@
     C Bordeianu, Univ Bucharest, 2018. 
     Please respect copyright & acknowledge our work."""
 
-# Scatter3dPlot.py: Matplotlib scatter plot example 
+# Scatter3dPlot.py: Matplotlib scatter plot example
 
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 
+
 def randrange(n, vmin, vmax):
-    return (vmax-vmin)*np.random.rand(n) + vmin
+    return (vmax - vmin) * np.random.rand(n) + vmin
+
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')

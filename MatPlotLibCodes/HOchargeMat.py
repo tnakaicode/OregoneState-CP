@@ -6,19 +6,18 @@
 
 # HOchargeMat.py charge in HO plus E field wi Matplotlib
 
-from numpy import *
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 dx = 0.06
 dx2 = dx * dx
-k0 = 5.5 * pi
+k0 = 5.5 * np.pi
 dt = dx2 / 8.
 xmax = 6.
 xs = np.arange(-xmax, xmax + dx / 2, dx)             # x array
-psr = exp(-0.5 * (xs / 0.5)**2) * cos(k0 * xs)       # Re Psi
-psi = exp(-0.5 * (xs / 0.5)**2) * sin(k0 * xs)       # Im Psi
+psr = np.exp(-0.5 * (xs / 0.5)**2) * np.cos(k0 * xs)       # Re Psi
+psi = np.exp(-0.5 * (xs / 0.5)**2) * np.sin(k0 * xs)       # Im Psi
 E = 70                                        # E field
 v = 25.0 * xs**2 - E * xs                         # V HO + E
 fig = plt.figure()
