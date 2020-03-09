@@ -16,7 +16,7 @@ y = 0.0
 z = -0.2
 xn = 0.0
 yn = 0.0
-graph1 = display(width=500, height=500, forward=(-3, 0, -1),
+graph1 = graph(width=500, height=500, forward=(-3, 0, -1),
                  title='Rotatable 3D Fractal Fern', range=10)
 graph1.show_rendertime = True
 pts = points(color=color.green, size=0.01)

@@ -5,15 +5,15 @@
     Please respect copyright & acknowledge our work."""
 
 # EasyVisualVis.py: Visual, simple graph object using Visual
- 
-from vpython.graph import *                  # Import Visual
 
-Plot1 = gcurve(color = color.white)         # gcurve method
+from vpython import *                  # Import Visual
+
+Plot1 = gcurve(color=color.white)         # gcurve method
 for x in arange(0., 8.1, 0.1):              # x range
-    Plot1.plot( pos = (x, 5.*cos(2.*x)*exp(-0.4*x)) )
-graph1 =  gdisplay(width=600, height=450,
-    title='Visual 2-D Plot', xtitle='x', ytitle='f(x)',
-     foreground = color.black, background = color.white)
-Plot2 = gdots(color = color.black)          # Dots
-for x in arange( -5.,  +5, 0.1 ):
-    Plot2.plot(pos = (x, cos(x)))
+    Plot1.plot(pos=(x, 5. * cos(2. * x) * exp(-0.4 * x)))
+graph1 = graph(width=600, height=450,
+               title='Visual 2-D Plot', xtitle='x', ytitle='f(x)',
+               foreground=color.black, background=color.white)
+Plot2 = gdots(color=color.black)          # Dots
+for x in arange(-5., +5, 0.1):
+    Plot2.plot(pos=(x, cos(x)))
