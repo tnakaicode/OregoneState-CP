@@ -37,6 +37,7 @@ def normal_dist_param():
 for i in range(0, NR):
     dist = SumRandoms()
     SumList.append(dist)           # Fill list with NR sums
+
 plt.hist(SumList, bins=50, color='white', normed=True)  # True: normalize
 mu, sigma = normal_dist_param()
 x = np.arange(450, 550)
