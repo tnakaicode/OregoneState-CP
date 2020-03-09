@@ -6,8 +6,9 @@
 
 # 3QMdisks.py: Wavepacket scattering from 3 disks wi MatPlot
 
-import matplotlib.pylab as p
 import numpy as np
+import matplotlib.pylab as plt
+import sys
 from mpl_toolkits.mplot3d import Axes3D
 
 r = 10
@@ -29,24 +30,29 @@ ImPsi = np.zeros((N, N), float)
 ix = np.arange(0, 101)
 iy = np.arange(0, 101)
 X, Y = np.meshgrid(ix, iy)
-fig = p.figure()
-ax = Axes3D(fig)            # Create figure
+
+fig = plt.figure()
+axs = Axes3D(fig)
+# Create figure
 
 
-def Pot1Disk(xa, ya):                  # Potential single disk
+def Pot1Disk(xa, ya):
+    # Potential single disk
     for i in range(ya - r, ya + r + 1):
         for j in range(xa - r, xa + r + 1):
             if np.sqrt((i - ya)**2 + (j - xa)**2) <= r:
                 V[i, j] = 5.
 
 
-def Pot3Disks():                       # Potential three disk
+def Pot3Disks():
+    # Potential three disk
     Pot1Disk(30, 45)
     Pot1Disk(70, 45)
     Pot1Disk(50, 80)
 
 
-def Psi_0(Xo, Yo):                               # Initial Psi
+def Psi_0(Xo, Yo):
+    # Initial Psi
     for i in np.arange(0, N):
         for j in np.arange(0, N):
             Gaussian = np.exp(-0.03 * (i - Yo)**2 - 0.03 * (j - Xo)**2)
@@ -55,20 +61,27 @@ def Psi_0(Xo, Yo):                               # Initial Psi
             Rho[i, j] = RePsi[i, j]**2 + ImPsi[i, j]**2 + 0.01
 
 
-Psi_0(Xo, Yo)  # Psi and Rho initial
-Pot3Disks()                                        # Initial Psi
+# Psi and Rho initial
+# Initial Psi
+Psi_0(Xo, Yo)
+Pot3Disks()
 
-for t in range(0, 150):  # 120->30         # Compute Psi t < 120
-    if t % 5 == 0:
-        print('t =', t)               # Print ea 5th t
+for t in range(0, 150):
+    # 120->30
+    # Compute Psi t < 120
+    sys.stdout.write("\r{:d} / {:d}".format(t, 150))
+    sys.stdout.flush()
+
     ImPsi[1:-1, 1:-1] = ImPsi[1:-1, 1:-1] + fc * (RePsi[2:, 1:-1]
                                                   + RePsi[:-2, 1:-1] - 4 * RePsi[1:-1, 1:-1] + RePsi[1:-1, 2:]
                                                   + RePsi[1:-1, :-2]) + V[1:-1, 1:-1] * dt * RePsi[1:-1, 1:-1]
     RePsi[1:-1, 1:-1] = RePsi[1:-1, 1:-1] - fc * (ImPsi[2:, 1:-1]
                                                   + ImPsi[:-2, 1:-1] - 4 * ImPsi[1:-1, 1:-1] + ImPsi[1:-1, 2:]
                                                   + ImPsi[1:-1, :-2]) + V[1:-1, 1:-1] * dt * ImPsi[1:-1, 1:-1]
-    for i in range(1, N - 1):                        # Compute Rho
-        for j in range(1, N - 1):   # Hard Disk, psi = 0
+    for i in range(1, N - 1):
+        # Compute Rho
+        # Hard Disk, psi = 0
+        for j in range(1, N - 1):
             if V[i, j] != 0:
                 RePsi[i, j] = 0
                 ImPsi[i, j] = 0
@@ -76,9 +89,9 @@ for t in range(0, 150):  # 120->30         # Compute Psi t < 120
                                + ImPsi[i, j]**2) + 0.0002 * V[i, j]
 X, Y = np.meshgrid(ix, iy)
 Z = Rho[X, Y]
-ax.set_xlabel('y')
-ax.set_ylabel('x')
-ax.set_zlabel('Rho(x,y)')
-ax.plot_wireframe(X, Y, Z, color='g')
-print("finito")
-p.show()
+
+axs.set_xlabel('y')
+axs.set_ylabel('x')
+axs.set_zlabel('Rho(x,y)')
+axs.plot_wireframe(X, Y, Z, color='g')
+plt.show()
