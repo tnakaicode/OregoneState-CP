@@ -8,20 +8,24 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 from matplotlib.animation import FuncAnimation
 
 Xm = 201
 Ym = 100
 Zm = 100
 ts = 2
-beta = 0.01
+beta = 0.1
 Ex = np.zeros((Xm, ts), float)
 Hy = np.zeros((Xm, ts), float)  # Arrays
 
 fig, axs = plt.subplots()
+time_txt = axs.text(0.05, 0.9, '', transform=axs.transAxes)
 axs.grid()
-eplot, = axs.plot(np.arange(Xm), np.arange(Xm))
-hplot, = axs.plot(np.arange(Xm), np.arange(Xm))
+axs.set_ylim(-200, 200)
+z = np.arange(Xm)
+eplot, = axs.plot(2 * z - Xm, 800 * Ex[z, 0])
+hplot, = axs.plot(2 * z - Xm, 800 * Hy[z, 0])
 
 
 def PlotFields(Ex, Hy):
@@ -31,7 +35,9 @@ def PlotFields(Ex, Hy):
 
 
 def animate(t):
-    print(t)
+    sys.stdout.write("\r {:.2f}".format(t))
+    sys.stdout.flush()
+    time_txt.set_text("t={:.3f}".format(t))
     Ex[1:Xm - 1, 1] = Ex[1:Xm - 1, 0] + beta * (Hy[0:Xm - 2, 0] - Hy[2:Xm, 0])
     Hy[1:Xm - 1, 1] = Hy[1:Xm - 1, 0] + beta * (Ex[0:Xm - 2, 0] - Ex[2:Xm, 0])
     Ex[0, 1] = Ex[0, 0] + beta * (Hy[Xm - 2, 0] - Hy[1, 0])
@@ -54,7 +60,7 @@ def init():
     return
 
 
-ani = FuncAnimation(fig, animate, frames=50,
-                    init_func=init, interval=20, blit=False)
+ani = FuncAnimation(fig, animate, frames=500,
+                    init_func=init, interval=1, blit=False)
 ani.save("./FDTD.gif", writer='pillow')
 plt.show()
