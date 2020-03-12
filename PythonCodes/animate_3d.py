@@ -10,14 +10,15 @@ from matplotlib.animation import FuncAnimation
 from optparse import OptionParser
 
 sys.path.append(os.path.join('../'))
-from base import plot2d, create_tempnum
+from base import plot3d, create_tempnum
 
 
-class Animate2D (plot2d):
+class Animate3D (plot3d):
     def __init__(self):
-        plot2d.__init__(self, aspect="auto")
-        self.axs.set_ylim(-1.1, 1.1)
-        self.axs.set_xlim(0, 10)
+        plot3d.__init__(self)
+        self.axs.set_xlim3d(0, 10)
+        self.axs.set_ylim3d(-1, 1)
+        self.set_axes_equal()
 
         self.init()
         self.ani = FuncAnimation(self.fig, self.run, frames=self.data_gen,
@@ -38,16 +39,16 @@ class Animate2D (plot2d):
         self.xdata.append(t)
         self.ydata.append(y)
         self.zdata.append(y / 2)
+        # NOTE: there is no .set_data() for 3 dim data...
         self.line0.set_data(self.xdata, self.ydata)
-        self.line1.set_data(self.xdata, self.zdata)
+        self.line0.set_3d_properties(self.zdata)
         return
 
     def init(self):
         self.xdata = []
         self.ydata = []
         self.zdata = []
-        self.line0, = self.axs.plot(self.xdata, self.ydata, lw=2)
-        self.line1, = self.axs.plot(self.xdata, self.zdata, lw=2)
+        self.line0, = self.axs.plot(self.xdata, self.ydata, self.zdata)
         return
 
     def SaveGif(self, gifname=None):
@@ -72,9 +73,7 @@ if __name__ == '__main__':
     opt, argc = parser.parse_args(argvs)
     print(opt, argc)
 
-    obj = Animate2D()
+    obj = Animate3D()
     # plt.show()
-    obj.SaveGif_Serial("./temp_20200312000/animate_2d.gif")
     obj.SaveGif()
-    obj.SaveGif("./animate_2d.gif")
     plt.close()
