@@ -25,7 +25,7 @@ for iter in range(Niter):
         for j in range(1, Nmax - 2):
             V[i, j] = 0.25 * (V[i + 1, j] + V[i - 1, j] +
                               V[i, j + 1] + V[i, j - 1])
-    print("iter, V[Nmax/5,Nmax/5]", iter, V[Nmax / 5, Nmax / 5])
+    print("iter, V[Nmax/5,Nmax/5]", iter, V[int(Nmax / 5), int(Nmax / 5)])
 x = range(0, 50, 2)
 y = range(0, 50, 2)
 X, Y = p.meshgrid(x, y)

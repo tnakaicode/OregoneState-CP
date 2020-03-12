@@ -6,26 +6,32 @@
 
 # HOmovMat: Matplot animated soltion t-dependent Sch Eqt for HO
 
-from numpy import *
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
+import sys
+import time
+import os
+from matplotlib.animation import FuncAnimation
+from optparse import OptionParser
+
+sys.path.append(os.path.join('../'))
+from base import plot2d, create_tempnum, create_tempdir
 
 dx = 0.04
 dx2 = dx * dx
-k0 = 5.5 * pi
+k0 = 5.5 * np.pi
 dt = dx2 / 20.0
 xmax = 6.0
 beta = dt / dx2
 nmax = 301
 
-xs = arange(-xmax, xmax + dx / 2, dx)
+xs = np.arange(-xmax, xmax + dx / 2, dx)
 V = np.zeros((nmax), float)
 V = 15.0 * xs**2
-R = zeros((nmax, 2), float)
-I = zeros((nmax, 2), float)
-R[:, 0] = exp(-0.5 * (xs / 0.5)**2) * cos(k0 * xs)       # Re Psi
-I[:, 0] = exp(-0.5 * (xs / 0.5)**2) * sin(k0 * xs)       # Im Pse
+R = np.zeros((nmax, 2), float)
+I = np.zeros((nmax, 2), float)
+R[:, 0] = np.exp(-0.5 * (xs / 0.5)**2) * np.cos(k0 * xs)       # Re Psi
+I[:, 0] = np.exp(-0.5 * (xs / 0.5)**2) * np.sin(k0 * xs)       # Im Pse
 
 fig = plt.figure()
 ax = fig.add_subplot(111, autoscale_on=False,
@@ -46,5 +52,8 @@ def animate(dum):
     return line,
 
 
-ani = animation.FuncAnimation(fig, animate, frames=1000, interval=1)
+ani = FuncAnimation(fig, animate, frames=100, interval=1)
+tmpdir = create_tempdir()
+gifname = create_tempnum("HOmovMatplot.gif", tmpdir, ".gif")
+ani.save(gifname, writer="pillow")
 plt.show()
