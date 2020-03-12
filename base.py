@@ -50,6 +50,13 @@ def create_tempdir(flag=1):
     return tmpdir
 
 
+def create_tempnum(name, tmpdir="./", ext=".tar.gz"):
+    num = len(glob.glob(tmpdir + name + "*" + ext)) + 1
+    filename = '{}{}_{:03}{}'.format(tmpdir, name, num, ext)
+    #print(num, filename)
+    return filename
+
+
 class SetDir (object):
 
     def __init__(self):
