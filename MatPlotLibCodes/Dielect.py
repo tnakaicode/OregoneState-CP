@@ -6,7 +6,6 @@
 
 # Dielect.py; Matplotlib Animated E & B space to dielectric
 
-from numpy import *
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -17,19 +16,20 @@ Zmax = 100
 eps = 4
 dd = 0.5
 Xmax = 401      # Dielectric, stability param
-Ex = zeros((Xmax), float)
-Hy = zeros((Xmax), float)  # Declare E,H
-beta = zeros((Xmax), float)
+Ex = np.zeros((Xmax), float)
+Hy = np.zeros((Xmax), float)  # Declare E,H
+beta = np.zeros((Xmax), float)
 
 for i in range(0, 401):
     if i < 201:
         beta[i] = dd         # Free space stability cond
     else:
         beta[i] = dd / eps                  # In dielectric
-z = arange(201)                       # Initial outside dielectric
+z = np.arange(201)                       # Initial outside dielectric
 xs = np.arange(1, Xmax - 1)
-Ex[:201] = 0.5 * sin(2 * pi * z / 100.)               # Slice entire range
-Hy[:201] = 0.5 * sin(2 * pi * z / 100.)
+# Slice entire range
+Ex[:201] = 0.5 * np.sin(2 * np.pi * z / 100.)
+Hy[:201] = 0.5 * np.sin(2 * np.pi * z / 100.)
 fig = plt.figure()
 ax = fig.add_subplot(111, autoscale_on=False,
                      xlim=(1, Xmax - 1), ylim=(-1.5, 1.5))
