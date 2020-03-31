@@ -6,9 +6,15 @@
 
 # Permute.py accessible states versus energy
 
-import matplotlib.pyplot as plt
 import numpy as np
-from math import *
+import matplotlib.pyplot as plt
+import sys
+import time
+import os
+import math
+
+sys.path.append(os.path.join('../'))
+from base import plot2d
 
 k = 0
 n = 25
@@ -19,17 +25,21 @@ Eo = -mu * B * n
 Energy = [0.] * (13)
 Combo = [0.] * (13)
 for k in range(0, 26):
-    c = factorial(n) / (factorial(n - k) * factorial(k))
+    c = math.factorial(n) / (math.factorial(n - k) * math.factorial(k))
     E = -(n - k) * mu * B + k * mu * B
     print(k, E - Eo, c)
     if k < 13:          # Only plot 1st 1/2 via symmetry
         Energy[i] = E - Eo
         Combo[i] = c
         i += 1
-plt.subplot(121)            # L: accessible states vs E-Eo
-plt.plot(Energy, Combo)
-plt.title('Number vs E-Eo')
-plt.subplot(122)
-plt.loglog(Energy, Combo)
-plt.title('log(Number) vs log(E-Eo)')
-plt.show()
+
+obj = plot2d()
+ax1 = obj.add_axs(1, 2, 1)
+# L: accessible states vs E-Eo
+ax1.plot(Energy, Combo)
+ax1.set_title('Number vs E-Eo')
+
+ax2 = obj.add_axs(1, 2, 2)
+ax2.loglog(Energy, Combo)
+ax2.set_title('log(Number) vs log(E-Eo)')
+obj.SavePng()
