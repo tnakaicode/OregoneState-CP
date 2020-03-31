@@ -6,7 +6,7 @@
 
 # Hyperfine.py: Symbolic Hydrogen hyperfine structure using Sympy
 
-from sympy import *
+from sympy import symbols, Matrix
 import numpy as np
 import matplotlib.pyplot as plt
 

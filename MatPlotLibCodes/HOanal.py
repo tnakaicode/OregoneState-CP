@@ -6,7 +6,7 @@
 
 # HOanal.py: symbolic soltn of HO ODE using sympy
 
-from sympy import *
+from sympy import symbols, Function, Eq, dsolve
 
 f, g = symbols('f g', cls=Function)      # makes f a function
 t, kap, w0 = symbols('t kap w0')
