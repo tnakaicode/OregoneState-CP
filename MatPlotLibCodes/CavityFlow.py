@@ -6,7 +6,7 @@
 
 # CavityFlow.py: solves Navier-Stokes equation for cavity flow
 
-from numpy import *          # needed for zeros
+import numpy as np
 
 Niter = 200
 Nx = 30
@@ -24,8 +24,8 @@ iter = 0
 u0 = 3.
 R = V0 * h / nu
 
-u = zeros((Nx + 1, Ny + 1), float)
-w = zeros((Nx + 1, Ny + 1), float)
+u = np.zeros((Nx + 1, Ny + 1), float)
+w = np.zeros((Nx + 1, Ny + 1), float)
 
 
 def top():

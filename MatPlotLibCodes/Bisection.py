@@ -6,14 +6,14 @@
 
 # Bisection.py: Matplotlib, 0 of f(x) via Bisection algorithm
 
-from numpy import *
+import numpy as np
 eps = 1e-3
 Nmax = 100
 a = 0.0
 b = 7.0     # Precision, [a,b]
 
 
-def f(x): return 2 * math.cos(x) - x           # Your function here
+def f(x): return 2 * np.cos(x) - x           # Your function here
 
 
 def Bisection(Xminus, Xplus, Nmax, eps):          # Do not change
