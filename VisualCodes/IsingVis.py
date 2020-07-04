@@ -17,10 +17,10 @@ import random
 
 # Display for the arrows
 scene = canvas(x=0, y=0, width=700, height=200,
-                range=40, title='Spins')
+               range=40, title='Spins')
 engraph = graph(y=200, width=700, height=300,
-                   title='E of Spin System', xtitle='iteration',
-                   ytitle='E', xmax=500, xmin=0, ymax=5, ymin=-5)
+                title='E of Spin System', xtitle='iteration',
+                ytitle='E', xmax=500, xmin=0, ymax=5, ymin=-5)
 enplot = gcurve(color=color.yellow)
 N = 30
 B = 1.
@@ -62,7 +62,8 @@ def spstate(state):                         # Plots spins
             arrowcol = (1, 1, 1)  # White = down
         else:
             arrowcol = (0.7, 0.8, 0)
-        arrow(pos=vector(i, ypos, 0), axis=vector(0, 5 * state[j], 0), color=arrowcol)
+        arrow(pos=vector(i, ypos, 0),
+              axis=vector(0, 5 * state[j], 0))
         j += 1
 
 
@@ -80,8 +81,8 @@ for j in range(1, 500):
     r = int(N * random.random())   # Flip spin randomly
     test[r] *= -1
     ET = energy(test)
-    p = math.exp((ES - ET) / (k * T))  # Boltzmann test
-    enplot.plot(pos=vector(j, ES))       # Adds segment to curve
+    p = np.exp((ES - ET) / (k * T))  # Boltzmann test
+    enplot.plot(pos=vector(j, ES, 0))       # Adds segment to curve
     if p >= random.random():
         state = test
         spstate(state)
