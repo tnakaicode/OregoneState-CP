@@ -16,8 +16,7 @@ Maxx = 400;  Maxy = 400;  ran = 20; L = 100;  m = 100
 size  = 8;  size2 = size*2;  nex = 0;  n = 100
 M = []; DD = []              # Arrays for polymer & grid
 clicked=True
-graph1 = canvas(width=Maxx, height=Maxy, title='Protein Folding
-	- To begin click in black screen', range=ran)
+graph1 = canvas(width=Maxx, height=Maxy, title='Protein Folding- To begin click in black screen', range=ran)
 positions = points(color=color.cyan,radius = 2)
 
 def selectcol():                    # Select atom's colors
