@@ -19,7 +19,7 @@ vplane= curve(pos=[(-Xmax,Ymax),(Xmax,Ymax),(Xmax,-Ymax),
 zaxis = curve(pos=[(-Xmax,0),(Xmax,0)],color=color.magenta)
 hplane = curve(pos=[(-Xmax,0,Zmax),(Xmax,0,Zmax),(Xmax,0,-Zmax),
                (-Xmax,0,-Zmax),(-Xmax,0,Zmax)],color=color.magenta)
-sep =box(width=180,height=200,length=400,pos=(200,0,0),opacity=0.5)
+sep =box(width=180,height=200,length=400,pos=vector(200,0,0),opacity=0.5)
 eps = 4;   dd = 0.5; Xmax = 401         
 Ex = zeros((Xmax),float); Hy = zeros((Xmax),float) # Declare
 beta = zeros((Xmax),float)

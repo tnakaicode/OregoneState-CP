@@ -31,9 +31,9 @@ def plotIniExac():               # Plot initial & exact solution
     for i in range(0, m):
         x = i * dx
         u0[i] = math.exp(-300. * (x - 0.12)**2)      # Gaussian initial
-        initfn.plot(pos=(0.01 * i, u0[i]))     # Initial function
+        initfn.plot(pos=vector(0.01 * i, u0[i]))     # Initial function
         uf[i] = math.exp(-300. * (x - 0.12 - c * T_final)**2)  # Exact = cyan
-        exactfn.plot(pos=(0.01 * i, uf[i]))
+        exactfn.plot(pos=vector(0.01 * i, uf[i]))
 
 
         # rate(50)
@@ -53,4 +53,4 @@ def numerical():                # Finds Lax Wendroff solution
 numerical()
 for j in range(0, m - 1):
         # rate(50)
-    numfn.plot(pos=(0.01 * j, u[j]))        # Plot numeric soltn
+    numfn.plot(pos=vector(0.01 * j, u[j]))        # Plot numeric soltn

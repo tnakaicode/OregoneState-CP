@@ -122,11 +122,11 @@ def timevolution():
         Pavg = pre/1000.0
         kener = (int)(eKavg*1000)
         eKavg = kener/1000.0
-        Kavegraph.plot(pos=(t,eKavg))
+        Kavegraph.plot(pos=vector(t,eKavg))
         pener = (int)(ePavg*1000)
         ePavg = pener/1000.0
         tempe = (int)(Tavg*1000000)
         Tavg = tempe/1000000.0
-        Tcurve.plot(pos=(t,ePavg),display=sceneT)
+        Tcurve.plot(pos=vector(t,ePavg),display=sceneT)
         
 timevolution()        

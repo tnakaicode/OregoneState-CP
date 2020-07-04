@@ -9,7 +9,7 @@
 from vpython.graph import *
 scene = display(width=600,height=600,  
 	title =  'White Neptune & Black Uranus', range=40)
-sun = sphere(pos=(0,0,0), radius=2, color=color.yellow)
+sun = sphere(pos=vector(0,0,0), radius=2, color=color.yellow)
 escenau = gdisplay(x=600,width=400,height=400, 
 	title='Pertubation of Uranus Angular Position')
 graphu = gcurve(color=color.cyan)
@@ -38,19 +38,19 @@ urvelx = urvel*sin(radur)
 urvely = -urvel*cos(radur)
 # 1690 Neptune at long. 
 radnp = (288.38)*pi/180. # 1690 rad Neptune wrt x-axis
-Uranus = sphere(pos=(urx,ury,0), radius=0.5,color=(.88,1,1), 
+Uranus = sphere(pos=vector(urx,ury,0), radius=0.5,color=(.88,1,1), 
 	make_trail=True)
-urpert = sphere(pos=(urx,ury,0), radius=0.5,color=(.88,1,1), 
+urpert = sphere(pos=vector(urx,ury,0), radius=0.5,color=(.88,1,1), 
 	make_trail=True)
 fnu = arrow(pos=Uranus.pos,color=color.orange,axis=vector(0,4,0))
 npx = dn*cos(radnp)       #init coord x Neptune 1690
 npy = dn*sin(radnp)       #           y
 npvelx = npvel*sin(radnp)
 npvely = -npvel*cos(radnp)
-Neptune = sphere(pos=(npx,npy,0), radius=0.4,color=color.cyan, 
+Neptune = sphere(pos=vector(npx,npy,0), radius=0.4,color=color.cyan, 
 	make_trail=True)
 fun = arrow(pos=Neptune.pos,color=color.orange,axis=vector(0,-4,0))
-nppert = sphere(pos=(npx,npy,0), radius=0.4, color=color.white, 
+nppert = sphere(pos=vector(npx,npy,0), radius=0.4, color=color.white, 
 	make_trail=True)
 velour = vector(urvelx,urvely,0)   #initial vector velocity Uranus
 velnp = vector(npvelx,npvely,0)    #initial vector velocity Neptune
@@ -117,7 +117,7 @@ for i in arange(0,320):# estaba 1240
     npy = dn*sin(radnp)
     rnp = vector(npx,npy,0)       # Neptune position   
     deltaomgs = -omeur+omreal
-    graphu.plot(pos=(i,deltaomgs*180/pi*3600))
+    graphu.plot(pos=vector(i,deltaomgs*180/pi*3600))
     urpert.pos = r
     fnu.pos = urpert.pos            # position of arrow on Uranus
     dnu = mag(rnp-r)                    # distance Neptune-Uranus

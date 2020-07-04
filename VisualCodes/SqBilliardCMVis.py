@@ -13,9 +13,9 @@ r0 = r= vector(Xo,Yo); eps = 0.1;  Tmax = 500; tp = 0
 
 scene = display(width=500, height=500, range=120,\
                 background=color.white, foreground=color.black)
-table = curve(pos=([(-100,-100,0),(100,-100,0),(100,100,0),
+table = curve(pos=vector([(-100,-100,0),(100,-100,0),(100,100,0),
 	(-100,100,0),(-100,-100,0)]))
-ball = sphere(pos=(Xo,Yo,0),color=color.red, radius=3,make_trail=True)
+ball = sphere(pos=vector(Xo,Yo,0),color=color.red, radius=3,make_trail=True)
 
 for t in arange(0,Tmax,dt):
     rate(5000) 

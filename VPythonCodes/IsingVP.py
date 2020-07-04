@@ -60,7 +60,7 @@ for  j in range (1,500):
       test[r] *= -1                  
       ET = energy(test)              
       p = np.exp((ES-ET)/(k*T))   #  Boltzmann test
-      enplot.plot(pos=(j,ES))       # Adds segment to curve
+      enplot.plot(pos=vector(j,ES))       # Adds segment to curve
       if p >= random.random():       
            state = test
            spstate(state)

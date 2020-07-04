@@ -62,4 +62,4 @@ for i in range(1, maxi + 1):
         oldy = hit[r]
         olxc = oldx * 2 - 200                      # TF for plot
         olyc = oldy * 4 - 200
-        pts.append(pos=(olxc, olyc))
+        pts.append(pos=vector(olxc, olyc))

@@ -8,7 +8,7 @@
 
 from vpython import *
 from numpy.linalg import solve
-from vpython.graph import *
+#from vpython.graph import *
 
 scene = display(x=0,y=0,width=500,height=500,
                 title='String and masses configuration')
@@ -38,10 +38,10 @@ def plotconfig():
     by = 400.0                  # same transformation for y
     xap = mx*xa+bx              # to keep aspect ratio
     yap = my*ya+by
-    ball1 = sphere(pos=(xap,yap), color=color.cyan,radius=15) 
+    ball1 = sphere(pos=vector(xap,yap), color=color.cyan,radius=15) 
     xbp = mx*xb+bx
     ybp = my*yb+by
-    ball2 = sphere(pos=(xbp,ybp), color=color.cyan,radius=25) 
+    ball2 = sphere(pos=vector(xbp,ybp), color=color.cyan,radius=25) 
     xcp = mx*xc+bx
     ycp = my*yc+by
     x0 = mx*0+bx

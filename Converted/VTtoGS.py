@@ -30,7 +30,7 @@ symbols = {}
 
 # A left paren was found at location i in the string line;
 # convert (x,y,z) -> vector(x,y,z) and (x,y) -> vector(x,y,0) and return new line and advanced i
-# But don't convert xxx.plot(pos=(x,y)).
+# But don't convert xxx.plot(pos=vector(x,y)).
 
 
 def insert_vector(line, i):
@@ -187,7 +187,7 @@ def firstpass(pname):
         # Replace ' = (x,y,z)' in a constructor with ' = vector(x,y,z)'
         # If it is ' = (x,y)', replace with ' = vector(x,y,0)'
         p = re.compile('\.plot\s*\(')
-        # look for xxx.plot(pos=(x,y)) and don't insert 'vector'
+        # look for xxx.plot(pos=vector(x,y)) and don't insert 'vector'
         m = p.search(line)
         if not m:
             # Could use regex to find '= (' instead of marching through the line one character at a time.

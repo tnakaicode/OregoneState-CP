@@ -14,9 +14,9 @@ grid = zeros((size,size))
 grid[40,40] = 1                         # Particle in center
 graph1 = display(width=Maxx, height=Maxy,
 	title='Diffusion Limited Aggregation')
-ring(pos=(0,0,0),axis=(0,0,1),radius=R,thickness=0.5,
+ring(pos=vector(0,0,0),axis=(0,0,1),radius=R,thickness=0.5,
 	color=color.yellow)
-sphere(pos=(0,0),radius=0.5,color=color.green) # Center
+sphere(pos=vector(0,0),radius=0.5,color=color.green) # Center
 ball = sphere(radius=0.5)   
 
 def gauss_ran():              # Generate 2 Gaussian randoms
@@ -54,7 +54,7 @@ while True:
           grid[x,y] = 1                    
           xc = x - 40                          
           yc = -y + 40                        
-          sphere(pos=(xc,yc),radius=0.5,color=ballcolor)
+          sphere(pos=vector(xc,yc),radius=0.5,color=ballcolor)
         else:
             if ( random.random() < 0.5 ):  x += step
             else:  y += step                     

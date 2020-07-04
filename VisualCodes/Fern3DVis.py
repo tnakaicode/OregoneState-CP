@@ -19,7 +19,7 @@ yn = 0.0
 graph1 = graph(width=500, height=500, forward=(-3, 0, -1),
                  title='Rotatable 3D Fractal Fern', range=10)
 graph1.show_rendertime = True
-pts = points(color=color.green, size=0.01)
+pts = points(color=color.green)
 for i in range(1, imax):
     r = random.random()
     if (r <= 0.1):                    # 10% probability
@@ -44,4 +44,4 @@ for i in range(1, imax):
     xc = 4.0 * x                     # linear TF for plot
     yc = 2.0 * y - 7
     zc = z
-    pts.append(pos=(xc, yc, zc))
+    pts.append(pos=vector(xc, yc, zc))

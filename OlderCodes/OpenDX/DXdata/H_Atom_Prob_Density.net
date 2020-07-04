@@ -934,14 +934,14 @@ main_Image_12_out_3 =
     main_Image_12_in_49
     ) [instance: 12, cache: 1];
     //
-    // decorator Annotate   pos=(399,268) size=183x44 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(399,268) size=183x44 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 45
     // annotation user: Plots a surface of constant
     // annotation user: e- prob. density.
     // annotation user_end: <NULL>
     // page group: CloudSurface
     //
-    // decorator Annotate   pos=(16,252) size=188x76 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(16,252) size=188x76 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 97
     // annotation user: One   slab  slices  the prob.
     // annotation user: density  alon  the xy  plane,

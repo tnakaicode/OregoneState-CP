@@ -25,6 +25,6 @@ for m in arange(m_min, m_max, step):
      oldy=int(1000*y)
       y = m*y*(1 - y)   
       inty = int(1000 * y)                     # Avoid repeats
-      if inty != lasty and count%2==0: pts.plot(pos=(m,y))
+      if inty != lasty and count%2==0: pts.plot(pos=vector(m,y))
       lasty = inty
       count   += 1

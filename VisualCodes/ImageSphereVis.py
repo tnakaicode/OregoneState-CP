@@ -22,8 +22,8 @@ xp = 60;  yp = 40;  zp = 0;  a = 30;  q = 1
 xx = vector(xp, yp, zp)                        # Charge location
 xxp = xx*a**2/(mag(xx))**2                      # Image location
 qp = -q*a/mag(xx)                                 # Image charge
-ball = sphere(pos=(0,0,0),radius=a, opacity=0.5)
-poscharge = sphere(radius=5,color=color.red, pos=(xp,yp,zp))
+ball = sphere(pos=vector(0,0,0),radius=a, opacity=0.5)
+poscharge = sphere(radius=5,color=color.red, pos=vector(xp,yp,zp))
 negcharge = sphere(radius=5,color=color.blue, pos=xxp)
 
 def electricF():

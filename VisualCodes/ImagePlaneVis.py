@@ -9,16 +9,16 @@
 from vpython.graph import *
 scene =  display(width=500, height=500,range=100,
 	title="E of Charge Left of Plane (Red Image)")
-plane = box(pos=(0,0,0),length=2,height=130,width=130,
+plane = box(pos=vector(0,0,0),length=2,height=130,width=130,
 	color=(0.9,0.9,0.9),opacity=0.5)
 gridpts = points(size=4, color=color.cyan)
-PlusCharge = sphere(radius=5,color=color.red, pos=(40,0,0))
-NegCharge  = sphere(radius=5,color=color.green, pos=(-40,0,0))
+PlusCharge = sphere(radius=5,color=color.red, pos=vector(40,0,0))
+NegCharge  = sphere(radius=5,color=color.green, pos=vector(-40,0,0))
 
 def grid3d():
     for z in range(-60,80,20):
         for y in range (-60,80,20):
-            for x in range(-60,80,20): gridpts.append(pos=(x,y,z))
+            for x in range(-60,80,20): gridpts.append(pos=vector(x,y,z))
             
 def electricF():
     for y in range(-60,80,20):

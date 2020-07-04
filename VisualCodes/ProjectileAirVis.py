@@ -32,7 +32,7 @@ def plotNumeric(k):
     vy = vy - g*dt - k*vy*dt
     x = x + vx*dt
     y = y + vy*dt
-    funct.plot(pos=(x,y))
+    funct.plot(pos=vector(x,y))
     print(" %13.10f  %13.10f "%(x,y))
 		
 def plotAnalytic():
@@ -46,7 +46,7 @@ def plotAnalytic():
         t = i*dt
         x = v0x*t
         y = v0y*t -g*t*t/2.
-        funct1.plot(pos=(x,y))
+        funct1.plot(pos=vector(x,y))
         print(" %13.10f  %13.10f"%(x ,y))
         
 plotNumeric(kf)

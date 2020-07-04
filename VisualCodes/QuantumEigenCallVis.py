@@ -95,13 +95,13 @@ for count in range(0,Nmax+1):              # Main program
     if count >3:                            
         rate(4)
         plot(h)
-    elabel = label(pos=(700, 400), text='E=', box=0)
+    elabel = label(pos=vector(700, 400), text='E=', box=0)
     elabel.text = 'E=%13.10f' %E
-    ilabel = label(pos=(700, 600), text='istep=', box=0)
+    ilabel = label(pos=vector(700, 600), text='istep=', box=0)
     ilabel.text = 'istep=%4s' %count
-elabel = label(pos=(700, 400), text='E=', box=0)    # Last
+elabel = label(pos=vector(700, 400), text='E=', box=0)    # Last
 elabel.text = 'E=%13.10f' %E
-ilabel      = label(pos=(700, 600), text='istep=', box=0)
+ilabel      = label(pos=vector(700, 600), text='istep=', box=0)
 ilabel.text = 'istep=%4s' %count   
 print("Final eigenvalue E =", E)
 print("Iterations = ",count,", max = ", Nmax)

@@ -90,7 +90,7 @@ def timevolution():
         Itemp = t1
         t1 = t2
         t2 = Itemp
-        Kavegraph.plot(pos=(t,KE))                # Plot KE
-        PEcurve.plot(pos=(t,PE),display=scenePE)  # Plot PE
+        Kavegraph.plot(pos=vector(t,KE))                # Plot KE
+        PEcurve.plot(pos=vector(t,PE),display=scenePE)  # Plot PE
         t += 1
 timevolution()        

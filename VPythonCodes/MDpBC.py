@@ -82,4 +82,4 @@ for t in range (0,1000):  Nrhs = 0    # begin at zero in ea time
         posi[i]=aa 
      dN[Nrhs] += 1
      inside2.text='%4s'%Nrhs                 # Atoms right side
-     for j in arange(0,16): bars.plot(pos=(j,dN[j]))  
+     for j in arange(0,16): bars.plot(pos=vector(j,dN[j]))  

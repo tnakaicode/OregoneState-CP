@@ -28,5 +28,5 @@ for time in arange(0, time_max + 1):              # Time loop
             soundfile = "C:/Windows/Media/Windows Startup.wav"
             ws.PlaySound(soundfile, ws.SND_FILENAME | ws.SND_ASYNC)
     number = nloop
-    decayfunc.plot(pos=(time, number))
+    decayfunc.plot(pos=vector(time, number))
     rate(30)

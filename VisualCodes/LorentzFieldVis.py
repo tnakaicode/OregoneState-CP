@@ -29,7 +29,7 @@ def plotB():                                     # Plot B as dots
 def plotBp():                                   # Plot B'  as dots
     for i in range(-500,501,8):
         for j in range (-50,60,8):  
-        	points(pos=(i,j,0),size=1,display=scene2)
+        	points(pos=vector(i,j,0),size=1,display=scene2)
 
 def Euler():                   # Euler method, solve Eq Mtn in O'
     V = vector(0.9,0,0);   Vx = V.x  ;   Vy = V.y       # Vo in O

@@ -310,7 +310,7 @@ main_Image_4_out_3 =
     main_Image_4_in_49
     ) [instance: 4, cache: 1];
     //
-    // decorator Annotate   pos=(296,192) size=193x60 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(296,192) size=193x60 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 76
     // annotation user: Converts the input data from
     // annotation user: double to float because DFT
@@ -318,7 +318,7 @@ main_Image_4_out_3 =
     // annotation user_end: <NULL>
     // page group: Simple Plot
     //
-    // decorator Annotate   pos=(307,275) size=207x60 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(307,275) size=207x60 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 87
     // annotation user: Computes the discrete Fourier
     // annotation user: transform     and   outputs  the
@@ -326,14 +326,14 @@ main_Image_4_out_3 =
     // annotation user_end: <NULL>
     // page group: Simple Plot
     //
-    // decorator Annotate   pos=(310,373) size=182x44 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(310,373) size=182x44 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 51
     // annotation user: Takes the absolute values
     // annotation user: of the complex transforms
     // annotation user_end: <NULL>
     // page group: Simple Plot
     //
-    // decorator Annotate   pos=(184,0) size=137x28 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(184,0) size=137x28 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 18
     // annotation user: custom_2d_plot.net
     // annotation user_end: <NULL>

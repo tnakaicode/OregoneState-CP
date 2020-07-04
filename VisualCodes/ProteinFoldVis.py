@@ -53,7 +53,7 @@ def findenergy(length,DD):       # Finds energy of each link
                   if e==1:        # Yellow dot at neighbor
                        xol = 4*(i-0.5)-size2
                        yol = -4*j+size2
-                       points(pos=(xol,yol),color=color.yellow, 
+                       points(pos=vector(xol,yol),color=color.yellow, 
                        	       size=6)
               ima = i+1
               js = j
@@ -63,7 +63,7 @@ def findenergy(length,DD):       # Finds energy of each link
                   if e == 1:     # Yellow dot at neighbor
                        xol = 4*(i+0.5)-size2  
                        yol = -4*j+size2     
-                       points(pos=(xol,yol),color=color.yellow, 
+                       points(pos=vector(xol,yol),color=color.yellow, 
                        	       size=6)
               iss = i
               jma = j+1
@@ -73,7 +73,7 @@ def findenergy(length,DD):       # Finds energy of each link
                   if e == 1:        # Yellow dot at neighbor
                        xol = 4*i-size2       # Start at middle
                        yol = -4*(j+0.5)+size2
-                       points(pos=(xol,yol),color=color.yellow, 
+                       points(pos=vector(xol,yol),color=color.yellow, 
                        	       size=6)
               iss = i
               jmi = j-1
@@ -83,7 +83,7 @@ def findenergy(length,DD):       # Finds energy of each link
                  if e==1:         # Yellow dot at neighbor
                        xol = 4*i-size2    # Start at middle
                        yol = -4*(j-0.5)+size2   
-                       points(pos=(xol,yol),color=color.yellow,
+                       points(pos=vector(xol,yol),color=color.yellow,
                        	       size=6)     
     return energy   
     
@@ -96,7 +96,7 @@ def grid():                                        # Plot grid
 grid()
 length = 0
 while 1:                             
-    pts2 = label(pos=(-5, -18), box=0)   
+    pts2 = label(pos=vector(-5, -18), box=0)   
     length = 0                           
     grid = zeros((size,size))          
     D = zeros((L,m,n))
@@ -107,7 +107,7 @@ while 1:
     yol = -4*j+size2                
     col,c = selectcol()
     grid[i,j] = c                    # Particle in center
-    M = M+[points(pos=(xol,yol),color=col, size=6)] # Red center
+    M = M+[points(pos=vector(xol,yol),color=col, size=6)] # Red center
     print(" start     ")
     DD = DD+[[i,j,c]]   
     while (i>0 and i<size-1 and j>0 and j<size-1 
@@ -131,7 +131,7 @@ while 1:
            xp = 4*i-size2       
            yp = -4*j+size2                   
            curve(pos=[(xol,yol),(xp,yp)])# Connect last to new
-           M = M + [points(pos=(xp,yp), color=col,size=6)]
+           M = M + [points(pos=vector(xp,yp), color=col,size=6)]
            xol = xp                           # Start new line
            yol = yp                          
         while (j == (size-1) and i != 0 and i != (size-1)):
@@ -150,7 +150,7 @@ while 1:
                xp = 4*i - size2                          
                yp = -4*j + size2
                curve(pos=[(xol,yol),(xp,yp)])   
-               M = M +[points(pos=(xp,yp), color=col,size=6)]
+               M = M +[points(pos=vector(xp,yp), color=col,size=6)]
                xol = xp                            
                yol = yp    # Last row; Stop if corner or neighbors
             if (i==0 or i==(size-1)) or (grid[i-1,size-1]!=0
@@ -172,7 +172,7 @@ while 1:
                xp = 4*i - size2
                yp = -4*j + size2
                curve(pos=[(xol,yol),(xp,yp)])
-               M = M + [points(pos=(xp,yp), color=col,size=6)]
+               M = M + [points(pos=vector(xp,yp), color=col,size=6)]
                xol = xp
                yol = yp
             if i==(size-1) or i==0 or (grid[i-1,0]!=0 
@@ -194,7 +194,7 @@ while 1:
                xp = 4*i - size2
                yp = -4*j + size2
                curve(pos=[(xol,yol),(xp,yp)])
-               M = M +[points(pos=(xp,yp), color=col,size=6)]
+               M = M +[points(pos=vector(xp,yp), color=col,size=6)]
                xol = xp
                yol = yp
             if j==(size-1) or j==0 or (grid[0,j+1]!=0 
@@ -217,18 +217,18 @@ while 1:
                xp = 4*i - size2
                yp = -4*j + size2
                curve(pos=[(xol,yol),(xp,yp)])
-               M = M +[points(pos=(xp,yp), color=col,size=6)]
+               M = M +[points(pos=vector(xp,yp), color=col,size=6)]
                xol = xp
                yol = yp
             if j==(size-1) or (grid[size-1,j+1]!=0 
             	    and grid[size-1,j-1]!=0):
                 break
-    label(pos=(-10, -18), text='Length=', box=0)     
-    label(pos=(10,18,0), text='Click for new walk',
+    label(pos=vector(-10, -18), text='Length=', box=0)     
+    label(pos=vector(10,18,0), text='Click for new walk',
     	    color=color.red, display=graph1)
     pts2.text = '%4s' %length       
-    label(pos=(5,-18,0), text='Energy',box=0)
-    evalue=label(pos=(10, -18), box=0) # Energy
+    label(pos=vector(5,-18,0), text='Energy',box=0)
+    evalue=label(pos=vector(10, -18), box=0) # Energy
     evalue.text = '%4s' %findenergy(length,DD)   
     print("energy is ",findenergy(length,DD))
     print("dd") 

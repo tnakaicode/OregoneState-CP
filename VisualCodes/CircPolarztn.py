@@ -26,9 +26,9 @@ arrowcol = color.white
 Earrows = []
 Harrows = []
 for i in range(0, max, 10):
-    Earrows.append(arrow(pos=(0, i - 100, 0), axis=(0, 0, 0),
+    Earrows.append(arrow(pos=vector(0, i - 100, 0), axis=(0, 0, 0),
                          color=arrowcol))
-    Harrows.append(arrow(pos=(0, i - 100, 0), axis=(0, 0, 0),
+    Harrows.append(arrow(pos=vector(0, i - 100, 0), axis=(0, 0, 0),
                          color=color.yellow))
 
 

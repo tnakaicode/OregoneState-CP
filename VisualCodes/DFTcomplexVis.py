@@ -37,7 +37,7 @@ def DFT(Ycomplex):                                      # DFT
           zsum += y[k]*exp(-zexpo)           
       Ycomplex[n] = zsum * sq2pi                                      
       if Ycomplex[n].imag != 0: 
-      	      TransformCurve.plot(pos=(n,Ycomplex[n].imag)) 
+      	      TransformCurve.plot(pos=vector(n,Ycomplex[n].imag)) 
 
 Signal(y)                             # Generate signal 
 DFT(Ycomplex)                         # Transform signal 

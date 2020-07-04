@@ -16,13 +16,13 @@ Lbox=60; Wbox=60; Hbox=60          # Box Dimensions
 # Graphics
 scene=display(width=750, height=500,range=300)
 scene.forward=(0.5,-0.2,-1)  # to change point of view
-support1=cone(pos=(-d,0,0),axis=(0,Hsupport,0),color=color.yellow,
+support1=cone(pos=vector(-d,0,0),axis=(0,Hsupport,0),color=color.yellow,
               radius=20)
-support2=cone(pos=(d,0,0),axis=(0,Hsupport,0),color=color.yellow,
+support2=cone(pos=vector(d,0,0),axis=(0,Hsupport,0),color=color.yellow,
               radius=20)
-beam=box(pos=(0,Hsupport+thickness/2,0),color=color.orange,\\
+beam=box(pos=vector(0,Hsupport+thickness/2,0),color=color.orange,\\
 	length=Lbeam,width=Wbeam,height=thickness,material=materials.wood)
-cube=box(pos=(-d,Hsupport+Hbox/2+thickness,0),length=Lbox,\\
+cube=box(pos=vector(-d,Hsupport+Hbox/2+thickness,0),length=Lbox,\\
 	width=Wbox,height=Hbox,material=materials.marble)
 piso=curve(pos=[(-300,0,0),(300,0,0)],color=color.green, radius=1)
 arrowcube=arrow(color=color.orange,axis=(0,-0.15*Wbox,0)) # scale 
@@ -33,15 +33,15 @@ v=4.0                           # box speed
 x=-d                            # box initial position
 Mg=WeightBox+W                  # weight box+beam
 Fl=(2*Wbox+W)/2.0               
-arrowFl=arrow(color=color.red,pos=(-d,Hsupport+thickness/2,0),
+arrowFl=arrow(color=color.red,pos=vector(-d,Hsupport+thickness/2,0),
 	axis=(0,0.15*Fl,0))
 Fr=Mg-Fl                        # right force
-arrowFr=arrow(color=color.red,pos=(d,Hsupport+thickness/2,0),
+arrowFr=arrow(color=color.red,pos=vector(d,Hsupport+thickness/2,0),
 	axis=(0,0.15*Fr,0))
-anglabel=label(pos=(-100,150,0), text='Fl=',box=0)   
-Ftext1=label(pos=(-50,153,0),box=0)                  
-anglabel2=label(pos=(100,150,0), text='Fr=',box=0)
-Ftext2=label(pos=(150,153,0),box=0)
+anglabel=label(pos=vector(-100,150,0), text='Fl=',box=0)   
+Ftext1=label(pos=vector(-50,153,0),box=0)                  
+anglabel2=label(pos=vector(100,150,0), text='Fr=',box=0)
+Ftext2=label(pos=vector(150,153,0),box=0)
 rate(4)                         # to slow motion
 
 for t in arange(0.0,65.0,0.5):                           

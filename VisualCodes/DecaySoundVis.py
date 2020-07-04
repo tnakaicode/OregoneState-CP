@@ -33,5 +33,5 @@ for time in np.arange(0, time_max + 1):              # Time loop
             nloop = nloop - 1                     # A decay
             winsound.Beep(600, 100)              # Sound beep
     number = nloop
-    decayfunc.plot(pos=(time, number))
+    decayfunc.plot(pos=vector(time, number))
     rate(30)

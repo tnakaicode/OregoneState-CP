@@ -14,10 +14,10 @@ escene = display(width=500, height=500, range=400,
 Rcurve = curve(color=color.red)               # Red intensities 
 Gcurve = curve(color=color.green)           # Green intensities
 Bcurve = curve(color=color.blue)             # Blue intensities
-title=label(pos=(-20,350,0),text='Intensity vs Thickness nA in nm',box=0)
-waves = label(pos=(-30,320,0),text='R, G, & B Intensities',box=0)
-trans  = label(pos=(-280,300,0),text='Transmission',box=0)
-refl   = label(pos=(210,300,0),text='Reflection',box=0)
+title=label(pos=vector(-20,350,0),text='Intensity vs Thickness nA in nm',box=0)
+waves = label(pos=vector(-30,320,0),text='R, G, & B Intensities',box=0)
+trans  = label(pos=vector(-280,300,0),text='Transmission',box=0)
+refl   = label(pos=vector(210,300,0),text='Reflection',box=0)
 lamR   = 572;   lamB = 430; lamG = 540; i = 0 # R,B, G wavelengths
 film = curve(pos=[(-150,-250),(150,-250),(150,250),(-150,250),
 	(-150,-250)])
@@ -42,11 +42,11 @@ ap = -500*nA/1240 +250                            #  Film height
 for nA in range (0,125):    
     col = (intR[nA],intG[nA],intB[nA])           # RGB reflection
     reflesc = -500*nA/125+250                      
-    box(pos=(205,reflesc,0),width=0.1,height=10,length=50,color=col)
+    box(pos=vector(205,reflesc,0),width=0.1,height=10,length=50,color=col)
     colt = (IntRt[nA],IntGt[nA],IntBt[nA]) # Colors by transmission
-    box(pos=(-270,reflesc,0),width=0.1,height=10, length=50, color=colt) 
+    box(pos=vector(-270,reflesc,0),width=0.1,height=10, length=50, color=colt) 
     if (nA%20==0):                      # Labels for vertical axis
         prof = nA*10
         escal = -500*nA/125+250
         print (escal)
-        depth = label(pos=(-200,escal,0),text='%4d'%prof,box=0)
+        depth = label(pos=vector(-200,escal,0),text='%4d'%prof,box=0)

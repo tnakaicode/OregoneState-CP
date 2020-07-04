@@ -522,7 +522,7 @@ main_Image_11_out_3 =
     main_Image_11_in_49
     ) [instance: 11, cache: 1];
     //
-    // decorator Annotate   pos=(206,175) size=212x76 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(206,175) size=212x76 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 107
     // annotation user: Assigns colors at each point in
     // annotation user: the   plane  depending  on   the
@@ -531,7 +531,7 @@ main_Image_11_out_3 =
     // annotation user_end: <NULL>
     // page group: Step1
     //
-    // decorator Annotate   pos=(465,200) size=171x60 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(465,200) size=171x60 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 73
     // annotation user: Allows the user to select
     // annotation user: the range of colors to be
@@ -539,7 +539,7 @@ main_Image_11_out_3 =
     // annotation user_end: <NULL>
     // page group: Step2
     //
-    // decorator Annotate   pos=(21,260) size=179x60 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(21,260) size=179x60 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 84
     // annotation user: Assigns   colors  to  each
     // annotation user: point     in     the  potential
@@ -547,14 +547,14 @@ main_Image_11_out_3 =
     // annotation user_end: <NULL>
     // page group: Step2
     //
-    // decorator Annotate   pos=(31,328) size=158x44 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(31,328) size=158x44 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 49
     // annotation user: Creates a surface from
     // annotation user: the     scalar   potential
     // annotation user_end: <NULL>
     // page group: Step2
     //
-    // decorator Annotate   pos=(31,320) size=119x60 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(31,320) size=119x60 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 46
     // annotation user: Plots vectors
     // annotation user: (glyphs) from the
@@ -563,7 +563,7 @@ main_Image_11_out_3 =
     // resource *decorator.alignment:XmALIGNMENT_BEGINNING
     // page group: Step3
     //
-    // decorator Annotate   pos=(456,152) size=189x76 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(456,152) size=189x76 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 119
     // annotation user: Plots equipotential surfaces
     // annotation user: (lines)   at  a specific  value
@@ -572,7 +572,7 @@ main_Image_11_out_3 =
     // annotation user_end: <NULL>
     // page group: Step3
     //
-    // decorator Annotate   pos=(506,312) size=168x76 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(506,312) size=168x76 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 86
     // annotation user: Assigns a different color
     // annotation user: to   each    equipotential
@@ -581,14 +581,14 @@ main_Image_11_out_3 =
     // annotation user_end: <NULL>
     // page group: Step3
     //
-    // decorator Annotate   pos=(476,288) size=149x44 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(476,288) size=149x44 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 45
     // annotation user: Puts a color "legend"
     // annotation user: on the side of the plot
     // annotation user_end: <NULL>
     // page group: Step2
     //
-    // decorator Annotate   pos=(392,408) size=157x44 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(392,408) size=157x44 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 40
     // annotation user: Collects all the objects
     // annotation user: to be displayed

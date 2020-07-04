@@ -36,7 +36,7 @@ while True:                  # Generates new ball
     y =rad * sin(angle)         
     dist = abs(gauss_ran() )        # Length of walk 
     # print(dist)     # Uncomment to see start point
-    # sphere(pos=(x,y),color=color.magenta) 
+    # sphere(pos=vector(x,y),color=color.magenta) 
     trav = 0
     ballcolor=(color.yellow)
     while( hit==0 and x<40 and x>-40 and y<40 

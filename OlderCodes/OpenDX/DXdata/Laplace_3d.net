@@ -618,21 +618,21 @@ main_Image_15_out_3 =
     main_Image_15_in_49
     ) [instance: 15, cache: 1];
     //
-    // decorator Annotate   pos=(551,193) size=129x44 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(551,193) size=129x44 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 38
     // annotation user: Gives the min and
     // annotation user: max   of   the  data
     // annotation user_end: <NULL>
     // page group: Step 1
     //
-    // decorator Annotate   pos=(47,193) size=157x44 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(47,193) size=157x44 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 34
     // annotation user: Computes the gradient
     // annotation user: of the input
     // annotation user_end: <NULL>
     // page group: Step 1
     //
-    // decorator Annotate   pos=(34,275) size=162x60 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(34,275) size=162x60 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 74
     // annotation user: Shows only the vectors
     // annotation user: that  are normal  to  the
@@ -640,7 +640,7 @@ main_Image_15_out_3 =
     // annotation user_end: <NULL>
     // page group: Step 1
     //
-    // decorator Annotate   pos=(137,17) size=216x76 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(137,17) size=216x76 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 113
     // annotation user: This side plots solid surfaces at
     // annotation user: the  rings and semi-transparent
@@ -649,7 +649,7 @@ main_Image_15_out_3 =
     // annotation user_end: <NULL>
     // page group: Step 2
     //
-    // decorator Annotate   pos=(514,17) size=202x76 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(514,17) size=202x76 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 129
     // annotation user: This side plots the gradient of
     // annotation user: the potential on the surface of
@@ -658,7 +658,7 @@ main_Image_15_out_3 =
     // annotation user_end: <NULL>
     // page group: Step 2
     //
-    // decorator Annotate   pos=(580,215) size=211x60 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(580,215) size=211x60 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 88
     // annotation user: Finds the dimension of the
     // annotation user: plot to place the mapping plane
@@ -666,14 +666,14 @@ main_Image_15_out_3 =
     // annotation user_end: <NULL>
     // page group: Step 2
     //
-    // decorator Annotate   pos=(556,363) size=219x44 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(556,363) size=219x44 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 66
     // annotation user: Creates  the mapping plane at a
     // annotation user: specific position along the x axis
     // annotation user_end: <NULL>
     // page group: Step 2
     //
-    // decorator Annotate   pos=(503,453) size=145x44 style(Label), font=normal, value = <NULL>
+    // decorator Annotate   pos=vector(503,453) size=145x44 style(Label), font=normal, value = <NULL>
     // annotation user_begin: 30
     // annotation user: Maps the gradient to
     // annotation user: the plane

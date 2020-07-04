@@ -26,9 +26,9 @@ vplane= curve(pos=[(-xmax,ymax),(xmax,ymax),(xmax,-ymax),
 zaxis = curve(pos=[(-xmax,0),(xmax,0)],color=color.magenta)
 hplane = curve(pos=[(-xmax,0,zmax),(xmax,0,zmax),(xmax,0,-zmax),
 		(-xmax,0,-zmax),(-xmax,0,zmax)],color=color.magenta)
-ball1 = sphere(pos=(xmax+30,0,0), color=color.black, radius = 2) 
-ba2 = sphere(pos=(xmax-200,0),color=color.cyan,radius=3)
-plate = box(pos=(-100,0,0),height=2*zmax,width=2*ymax,
+ball1 = sphere(pos=vector(xmax+30,0,0), color=color.black, radius = 2) 
+ba2 = sphere(pos=vector(xmax-200,0),color=color.cyan,radius=3)
+plate = box(pos=vector(-100,0,0),height=2*zmax,width=2*ymax,
 	length=0.5*xmax, color=(1.0,0.6,0.0),opacity=0.4)
 Exlabel1 = label( text = 'Ey', pos = (-xmax-10, 50), box = 0 )
 Exlabel2 = label( text = 'Ey', pos = (xmax+10, 50), box = 0 )

@@ -34,8 +34,8 @@ def function(array, max):
     for i in range(0, max):
         f[i] = 1 / (1. - 0.9 * sin(x))          # Function, then noise
         array[i] = (1 / (1 - 0.9 * sin(x))) + 0.5 * (2. * random.random() - 1)
-        funct1.plot(pos=(x, f[i]))
-        funct2.plot(pos=(x, array[i]))
+        funct1.plot(pos=vector(x, f[i]))
+        funct2.plot(pos=vector(x, array[i]))
         x += step
 
 
@@ -61,7 +61,7 @@ def filter():                    # Low-pass windowed sinc filter
         for i in range(0, 100):
             y[j] = y[j] + array[j - i] * h[i]
     for j in range(0, max - 1):
-        funct3.plot(pos=(j * step, y[j]))
+        funct3.plot(pos=vector(j * step, y[j]))
 
 
 function(array, max)

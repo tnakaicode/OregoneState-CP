@@ -15,6 +15,6 @@ y1 = gcurve(color=color.blue)     # curve
 y2 = gvbars(color=color.black)    # vertical bars
 y3 = gdots(color=color.cyan)      # dots
 for x in arange(-5, 5, 0.1):        # arange for  plots
-    y1.plot(pos=(x, sin(x)**2))
-    y2.plot(pos=(x, cos(x) * cos(x) / 3.))
-    y3.plot(pos=(x, sin(x) * cos(x)))
+    y1.plot(pos=vector(x, sin(x)**2))
+    y2.plot(pos=vector(x, cos(x) * cos(x) / 3.))
+    y3.plot(pos=vector(x, sin(x) * cos(x)))

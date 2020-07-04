@@ -35,7 +35,7 @@ def signal(noPtsSig, y):                       # Signal function
             print("In signal(...) : t out of range.")
             sys.exit(1)
         yy = y[i]
-        orsigraph.plot(pos=(t,yy))
+        orsigraph.plot(pos=vector(t,yy))
         t += hs    
 signal(noPtsSig, sig)                            # Form signal
 Yn =  zeros( (noS+1, noTau+1), float)            # Transform
@@ -97,7 +97,7 @@ for rs in range(0, len(recSig) ):
     recSig[rs] = invTransform(t, Yinv)       # Find input signal
     xx=rs/20
     yy=4.6*recSig[rs]
-    invtr.plot(pos=(xx,yy))
+    invtr.plot(pos=vector(xx,yy))
     t += h 
     if kco %24 == 0:
         j += 1
