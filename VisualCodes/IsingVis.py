@@ -62,7 +62,7 @@ def spstate(state):                         # Plots spins
             arrowcol = (1, 1, 1)  # White = down
         else:
             arrowcol = (0.7, 0.8, 0)
-        arrow(pos=vector(i, ypos, 0), axis=(0, 5 * state[j], 0), color=arrowcol)
+        arrow(pos=vector(i, ypos, 0), axis=vector(0, 5 * state[j], 0), color=arrowcol)
         j += 1
 
 

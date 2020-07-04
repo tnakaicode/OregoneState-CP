@@ -14,11 +14,11 @@ Hweight=50;  W = 10   # cylinder height, weight
 scene=display(heigth=600,width=600,range=380)
 alt=curve(pos=[(-300,posy,0),(300,posy,0)])
 divi=curve(pos=[(0,-150,0),(0,posy,0)])
-kilogr=cylinder(pos=vector(0,posy-Lcord,0),radius=20,axis=(0,-Hweight,0),
+kilogr=cylinder(pos=vector(0,posy-Lcord,0),radius=20,axis=vector(0,-Hweight,0),
                 color=color.red) # kg as a cylinder
-cord1=cylinder(pos=vector(0,posy,0),axis=(0,-Lcord,0),color=color.yellow,
+cord1=cylinder(pos=vector(0,posy,0),axis=vector(0,-Lcord,0),color=color.yellow,
                radius=2)
-cord2=cylinder(pos=vector(0,posy,0),axis=(0,-Lcord,0),color=color.yellow,
+cord2=cylinder(pos=vector(0,posy,0),axis=vector(0,-Lcord,0),color=color.yellow,
                radius=2)
 
 arrow1=arrow(pos=vector(0,posy,0), color=color.orange) # Tension cord 1
@@ -44,13 +44,13 @@ for t in arange(0.,100.0,0.2):
     magF=W/(2.*cos(theta))      # Cord tension
     angle=180.*theta/pi     
     cord1.pos=vector(x1,posy,0)       # position cord end 
-    cord1.axis=(-Lcord*sin(theta),-Lcord*cos(theta),0)
+    cord1.axis=vector(-Lcord*sin(theta),-Lcord*cos(theta),0)
     cord2.pos=vector(-x1,posy,0)            # position end cord
-    cord2.axis=(Lcord*sin(theta),-Lcord*cos(theta),0)
+    cord2.axis=vector(Lcord*sin(theta),-Lcord*cos(theta),0)
     arrow1.pos=cord1.pos            # axis arrow 
-    arrow1.axis=(8*magF*sin(theta),8*magF*cos(theta),0) 
+    arrow1.axis=vector(8*magF*sin(theta),8*magF*cos(theta),0) 
     arrow2.pos=cord2.pos
-    arrow2.axis=(-8*magF*sin(theta),8*magF*cos(theta),0) 
+    arrow2.axis=vector(-8*magF*sin(theta),8*magF*cos(theta),0) 
     angultext.text='%4.2f'%angle
     force=magF
     Ftext1.text='%8.2f'%force     # Tension

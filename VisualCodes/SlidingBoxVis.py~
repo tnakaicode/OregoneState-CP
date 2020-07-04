@@ -16,17 +16,17 @@ Lbox=60; Wbox=60; Hbox=60          # Box Dimensions
 # Graphics
 scene=display(width=750, height=500,range=300)
 scene.forward=(0.5,-0.2,-1)  # to change point of view
-support1=cone(pos=vector(-d,0,0),axis=(0,Hsupport,0),color=color.yellow,
+support1=cone(pos=vector(-d,0,0),axis=vector(0,Hsupport,0),color=color.yellow,
               radius=20)
-support2=cone(pos=vector(d,0,0),axis=(0,Hsupport,0),color=color.yellow,
+support2=cone(pos=vector(d,0,0),axis=vector(0,Hsupport,0),color=color.yellow,
               radius=20)
 beam=box(pos=vector(0,Hsupport+thickness/2,0),color=color.orange,\\
 	length=Lbeam,width=Wbeam,height=thickness,material=materials.wood)
 cube=box(pos=vector(-d,Hsupport+Hbox/2+thickness,0),length=Lbox,\\
 	width=Wbox,height=Hbox,material=materials.marble)
 piso=curve(pos=[(-300,0,0),(300,0,0)],color=color.green, radius=1)
-arrowcube=arrow(color=color.orange,axis=(0,-0.15*Wbox,0)) # scale 
-arrowbeam=arrow(color=color.orange,axis=(0,-0.15*W,0))
+arrowcube=arrow(color=color.orange,axis=vector(0,-0.15*Wbox,0)) # scale 
+arrowbeam=arrow(color=color.orange,axis=vector(0,-0.15*W,0))
 arrowbeam.pos=vector(0,Hsupport+thickness/2,0) 
 
 v=4.0                           # box speed
@@ -34,10 +34,10 @@ x=-d                            # box initial position
 Mg=WeightBox+W                  # weight box+beam
 Fl=(2*Wbox+W)/2.0               
 arrowFl=arrow(color=color.red,pos=vector(-d,Hsupport+thickness/2,0),
-	axis=(0,0.15*Fl,0))
+	axis=vector(0,0.15*Fl,0))
 Fr=Mg-Fl                        # right force
 arrowFr=arrow(color=color.red,pos=vector(d,Hsupport+thickness/2,0),
-	axis=(0,0.15*Fr,0))
+	axis=vector(0,0.15*Fr,0))
 anglabel=label(pos=vector(-100,150,0), text='Fl=',box=0)   
 Ftext1=label(pos=vector(-50,153,0),box=0)                  
 anglabel2=label(pos=vector(100,150,0), text='Fr=',box=0)
@@ -60,7 +60,7 @@ for t in arange(0.0,65.0,0.5):
         Ftext2.text='%8.2f'%Fr               # Right force 
     elif Fl==0:                                   
          x=300
-         beam.rotate(angle=-0.2,axis=(0,0,1),
+         beam.rotate(angle=-0.2,axis=vector(0,0,1),
           origin=vector(d,Hsupport+thickness/2,0))
          cube.pos=vector(300,Hsupport,0)
          arrowcube.pos=vector(300,0,0)
@@ -69,7 +69,7 @@ for t in arange(0.0,65.0,0.5):
 rate(5) 
 arrowFl.axis=vector(0,0.15*0.5*(W),0)  # return beam
 arrowFr.axis=arrowFl.axis
-beam.rotate(angle=0.2,axis=(0,0,1)
+beam.rotate(angle=0.2,axis=vector(0,0,1)
 	origin=vector(d,Hsupport+thickness/2,0))
 Fl=100.0
 Ftext1.text='%8.2f'%Fl
