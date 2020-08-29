@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import sys
 import time
 import os
+from vpython import *  
 
 sys.path.append(os.path.join('../'))
 from base import plot2d

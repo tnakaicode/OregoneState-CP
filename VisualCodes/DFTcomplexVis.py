@@ -38,13 +38,13 @@ def Signal(y):                                        # Signal
 
 def DFT(Ycomplex):                                      # DFT
     for n in range(0, N):
-        zsum = complex(0.0, 0.0)
+        zsum = 0+1j*0
         for k in range(0, N):
-            zexpo = complex(0, twopi * k * n / N)   # Complex exponent
-            zsum += y[k] * exp(-zexpo)
+            zexpo = 1j*(twopi * k * n / N)   # Complex exponent
+            zsum += y[k] * np.exp(-zexpo)
         Ycomplex[n] = zsum * sq2pi
-        if Ycomplex[n].imag != 0:
-            TransformCurve.plot(pos=vector(n, Ycomplex[n].imag))
+        #if Ycomplex[n].imag != 0:
+        TransformCurve.plot(pos=vector(n, Ycomplex[n].imag, 0))
 
 
 Signal(y)                             # Generate signal

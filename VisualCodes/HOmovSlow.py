@@ -6,6 +6,7 @@
 
 # HOcharge.py: Quantum particle in HO & E field with Visual
 
+import numpy as np
 from vpython import *
 
 dx = 0.04
@@ -19,12 +20,12 @@ g = canvas(width=500, height=250,
            title='Wave packet,harmonic well plus E field', range=10)
 PlotObj = curve(x=xs, color=color.yellow, radius=0.1)
 g.center = vector(0, 2, 0)
-psr = exp(-0.5 * (xs / 0.5)**2) * cos(k0 * xs)    # Re part Initial psi
-psi = exp(-0.5 * (xs / 0.5)**2) * sin(k0 * xs)    # Im part Initial psi
+psr = np.exp(-0.5 * (xs / 0.5)**2) * np.cos(k0 * xs)    # Re part Initial psi
+psi = np.exp(-0.5 * (xs / 0.5)**2) * np.sin(k0 * xs)    # Im part Initial psi
 V = 25.0 * xs**2 - E * xs                         # Electric potential
 
 while True:   # Solution as time transpires
-    rate(500)
+    #rate(500)
     psr[1:-1] = psr[1:-1] - (dt / dx2) * (psi[2:] + psi[:-2]
                                           - 2 * psi[1:-1]) + dt * V[1:-1] * psi[1:-1]
     psi[1:-1] = psi[1:-1] + (dt / dx2) * (psr[2:] + psr[:-2]

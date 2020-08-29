@@ -12,6 +12,7 @@ import random
 import sys
 import time
 import os
+from vpython import *  
 
 sys.path.append(os.path.join('../'))
 from base import plot2d
@@ -29,9 +30,9 @@ pp = 0.0
 prob = 0.0
 hit = np.zeros((200), int)
 
-graph1 = display(width=500, height=500, range=250,
+graph1 = graph(width=500, height=500, range=250,
                  title='Correlated Ballistic Deposition')
-pts = points(color=color.green, size=2)
+pts = points()
 
 for i in range(0, npoints):
     hit[i] = 0      # Clear array
@@ -39,7 +40,7 @@ oldx = 100
 oldy = 0
 
 for i in range(1, maxi + 1):
-    r = int(npoints * random.random())
+    r = int(npoints * np.random.random())
     x = r - oldx
     y = hit[r] - oldy
     dist = x * x + y * y
@@ -47,7 +48,7 @@ for i in range(1, maxi + 1):
         prob = 1.0  # Sticking prob depends  x
     else:
         prob = 9.0 / dist
-    pp = random.random()
+    pp = np.random.random()
     if (pp < prob):
         if(r > 0 and r < (npoints - 1)):
             if((hit[r] >= hit[r - 1])
@@ -62,4 +63,4 @@ for i in range(1, maxi + 1):
         oldy = hit[r]
         olxc = oldx * 2 - 200                      # TF for plot
         olyc = oldy * 4 - 200
-        pts.append(pos=vector(olxc, olyc))
+        pts.append(pos=vector(olxc, olyc, 0))

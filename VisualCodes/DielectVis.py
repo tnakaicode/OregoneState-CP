@@ -17,11 +17,12 @@ Hplot = curve(x=list(range(0, Xmax)), color=color.cyan, radius=1.5,
               display=scene)
 Eplot = curve(x=list(range(0, Xmax)), color=color.yellow, radius=1.5,
               display=scene)
-vplane = curve(pos=[(-Xmax, Ymax), (Xmax, Ymax), (Xmax, -Ymax),
-                    (-Xmax, -Ymax), (-Xmax, Ymax)], color=color.cyan)
-zaxis = curve(pos=[(-Xmax, 0), (Xmax, 0)], color=color.magenta)
-hplane = curve(pos=[(-Xmax, 0, Zmax), (Xmax, 0, Zmax), (Xmax, 0, -Zmax),
-                    (-Xmax, 0, -Zmax), (-Xmax, 0, Zmax)], color=color.magenta)
+#vplane = curve(pos=[(-Xmax, Ymax), (Xmax, Ymax), (Xmax, -Ymax),(-Xmax, -Ymax), (-Xmax, Ymax)], color=color.cyan)
+vplane = curve(pos=[(-Xmax, 0, Ymax), (Xmax, 0, Ymax)], color=color.cyan)
+zaxis = curve(pos=[(-Xmax, 0, 0), (Xmax, 0, 0)], color=color.magenta)
+# hplane = curve(pos=[(-Xmax, 0, Zmax), (Xmax, 0, Zmax), (Xmax, 0, -Zmax),
+#                    (-Xmax, 0, -Zmax), (-Xmax, 0, Zmax)], color=color.magenta)
+hplane = curve(pos=[(-Xmax, 0, Zmax), (Xmax, 0, Zmax)], color=color.magenta)
 sep = box(width=180, height=200, length=400,
           pos=vector(200, 0, 0), opacity=0.5)
 eps = 4
@@ -31,16 +32,16 @@ Ex = np.zeros((Xmax), float)
 Hy = np.zeros((Xmax), float)  # Declare
 beta = np.zeros((Xmax), float)
 z = arange(201)
-Ex[:201] = 0.5 * sin(2 * pi * z / 100)
-Hy[:201] = 0.5 * sin(2 * pi * z / 100)
+Ex[:201] = 0.5 * np.sin(2 * pi * z / 100)
+Hy[:201] = 0.5 * np.sin(2 * pi * z / 100)
 for i in range(0, 401):
     if i < 201:
         beta[i] = dd                           # Free space
     else:
         beta[i] = dd / eps                             # Dielectric
-Hylabel1 = label(text='Ex', pos=(-Xmax - 10, 120), box=0)
-Exlabel = label(text='Hy', pos=(-Xmax - 10, 0, 50), box=0)
-zlabel = label(text='Z', pos=(Xmax + 10, 0), box=0)       # Shifts fig
+Hylabel1 = label(text='Ex', pos=vector(-Xmax - 10, 120, 0), box=0)
+Exlabel = label(text='Hy', pos=vector(-Xmax - 10, 0, 50), box=0)
+zlabel = label(text='Z', pos=vector(Xmax + 10, 0, 0), box=0)       # Shifts fig
 polfield = arrow(display=scene)
 polfield2 = arrow(display=scene)
 
