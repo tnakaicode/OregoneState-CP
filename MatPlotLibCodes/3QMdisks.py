@@ -95,7 +95,7 @@ if __name__ == '__main__':
             axs.set_ylabel('x')
             axs.set_zlabel('Rho(x,y)')
             axs.plot_wireframe(X, Y, Z, color='g')
-            fig.savefig("../img/3QMdisks_3D_{:03d}.png".format(t))
+            fig.savefig("3QMdisks_3D_{:03d}.png".format(t))
 
             fig, axs = plt.subplots()
             axs.set_aspect("equal")
@@ -103,5 +103,5 @@ if __name__ == '__main__':
             axs.set_ylabel('x')
             axs.grid()
             axs.contourf(X, Y, Z, cmap="jet")
-            fig.savefig("../img/3QMdisks_2D_{:03d}.png".format(t))
+            fig.savefig("3QMdisks_2D_{:03d}.png".format(t))
             plt.close()
