@@ -6,40 +6,42 @@
 
 # MatPlot2figs.py: plot of 2 subplots on 1 fig, 2 separate figs
 
-from pylab import *                          # Load matplotlib
+import numpy as np
+import matplotlib.pyplot as plt
 
 Xmin = -5.0
 Xmax = 5.0
 Npoints = 500
 DelX = (Xmax - Xmin) / Npoints                             # Delta x
-x1 = arange(Xmin, Xmax, DelX)                        # x1 range
-x2 = arange(Xmin, Xmax, DelX / 20)           # Different x2 range
-y1 = -sin(x1) * cos(x1 * x1)                          # Function 1
-y2 = exp(-x2 / 4.) * sin(x2)                         # Function 2
+x1 = np.arange(Xmin, Xmax, DelX)                        # x1 range
+x2 = np.arange(Xmin, Xmax, DelX / 20)           # Different x2 range
+y1 = -np.sin(x1) * np.cos(x1 * x1)                          # Function 1
+y2 = np.exp(-x2 / 4.) * np.sin(x2)                         # Function 2
 print("\n Now plotting, look for Figures 1 & 2 on desktop")
-figure(1)         # Fig 1
-subplot(2, 1, 1)                     # 1st subplot in first figure
-plot(x1, y1, 'r', lw=2)
-xlabel('x')
-ylabel('f(x)')
-title('$-\sin(x)*\cos(x^2)$')
-grid(True)                                          # Form grid
-subplot(2, 1, 2)                     # 2nd subplot in first figure
-plot(x2, y2, '-', lw=2)
-xlabel('x')                                       # Axes labels
-ylabel('f(x)')
-title('exp(-x/4)*sin(x)')
-figure(2)  # Fig 2
-subplot(2, 1, 1)                       # 1st subplot in 2nd figure
-plot(x1, y1 * y1, 'r', lw=2)
-xlabel('x')
-ylabel('f(x)')
-# form grid
-title('$\sin^2(x)*\cos^2(x^2)$')
-subplot(2, 1, 2)                       # 2nd subplot in 2nd figure
-plot(x2, y2 * y2, '-', lw=2)
-xlabel('x')
-ylabel('f(x)')
-title('$\exp(-x/2)*\sin^2(x)$')
-grid(True)
-show()
+
+plt.figure(1)         # Fig 1
+plt.subplot(2, 1, 1)                     # 1st subplot in first figure
+plt.plot(x1, y1, 'r', lw=2)
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.title('$-\sin(x)*\cos(x^2)$')
+plt.grid(True)                                          # Form grid
+plt.subplot(2, 1, 2)                     # 2nd subplot in first figure
+plt.plot(x2, y2, '-', lw=2)
+plt.xlabel('x')                                       # Axes labels
+plt.ylabel('f(x)')
+plt.title('exp(-x/4)*sin(x)')
+
+plt.figure(2)  # Fig 2
+plt.subplot(2, 1, 1)                       # 1st subplot in 2nd figure
+plt.plot(x1, y1 * y1, 'r', lw=2)
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.title('$\sin^2(x)*\cos^2(x^2)$')
+plt.subplot(2, 1, 2)                       # 2nd subplot in 2nd figure
+plt.plot(x2, y2 * y2, '-', lw=2)
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.title('$\exp(-x/2)*\sin^2(x)$')
+plt.grid(True)
+plt.show()

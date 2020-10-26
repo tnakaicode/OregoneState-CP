@@ -12,12 +12,12 @@ import numpy as np
 import random
 
 scene = canvas(x=0, y=0, width=350, height=350,
-                title='Molecular Dynamics', range=10)
+               title='Molecular Dynamics', range=10)
 sceneK = graph(x=0, y=350, width=600, height=150, title='Average KE',
-                  ymin=0.0, ymax=5.0, xmin=0, xmax=500, xtitle='time', ytitle='KE avg')
+               ymin=0.0, ymax=5.0, xmin=0, xmax=500, xtitle='time', ytitle='KE avg')
 Kavegraph = gcurve(color=color.red)
 sceneT = graph(x=0, y=500, width=600, height=150, title='Average PE',
-                  ymin=-60, ymax=0., xmin=0, xmax=500, xtitle='time', ytitle='PE avg')
+               ymin=-60, ymax=0., xmin=0, xmax=500, xtitle='time', ytitle='PE avg')
 Tcurve = gcurve(color=color.cyan)
 Natom = 25
 Nmax = 25
@@ -55,7 +55,7 @@ def initialposvel():                            # Initialize
     for j in range(0, Natom):
         xc = 2 * x[j] - 4
         yc = 2 * y[j] - 4
-        #atoms.append(sphere(pos=vector(xc, yc), radius=0.5,
+        # atoms.append(sphere(pos=vector(xc, yc), radius=0.5,
         #                    color=color.red))
 
 
@@ -118,7 +118,7 @@ def timevolution():  # initial KE & PE via Forces
         PE = Forces(t1, w, PE, 1)
     time = 1
     while 1:
-        rate(100)
+        rate(1)
         for i in range(0, Natom):
             PE = Forces(t1, w, PE, 1)
             x[i] = x[i] + h * (vx[i] + hover2 * fx[i][t1])
@@ -162,12 +162,12 @@ def timevolution():  # initial KE & PE via Forces
         Pavg = pre / 1000.0
         kener = (int)(eKavg * 1000)
         eKavg = kener / 1000.0
-        Kavegraph.plot(pos=vector(t, eKavg))
+        Kavegraph.plot(pos=vector(t, eKavg, 0))
         pener = (int)(ePavg * 1000)
         ePavg = pener / 1000.0
         tempe = (int)(Tavg * 1000000)
         Tavg = tempe / 1000000.0
-        Tcurve.plot(pos=vector(t, ePavg), display=sceneT)
+        Tcurve.plot(pos=vector(t, ePavg, 0), display=sceneT)
 
 
 timevolution()

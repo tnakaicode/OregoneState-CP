@@ -18,11 +18,11 @@ dt = 1e-6
 scene = canvas(width=500, height=500, range=(1.3))
 ndist = graph(x=500, ymax=200,
               width=500, height=500, xtitle='Nrhs', ytitle='N')
-inside = label(pos=np.array([0.4, 1.1]), text='Particles here=', box=0)
-inside2 = label(pos=np.array([0.8, 1.1]), box=0)
+inside = label(pos=vector(0.4, 1.1, 0), text='Particles here=', box=0)
+inside2 = label(pos=vector(0.8, 1.1, 0), box=0)
 
-border = curve(pos=[(-L, -L), (L, -L), (L, L), (-L, L), (-L, -L)])
-half = curve(pos=[(0, -L), (0, L)], color=color.yellow)  # middle
+#border = curve(pos=[(-L, -L), (L, -L), (L, L), (-L, L), (-L, -L)])
+# half = curve(pos=[(0, -L), (0, L)], color=color.yellow)  # middle
 positions = []                       # position of atoms
 vel = []                                  # vel of atoms
 Atom = []                         # will contain spheres

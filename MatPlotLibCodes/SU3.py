@@ -6,6 +6,7 @@
 
 # SU3.py: SU3 matrix manipulations
 
+import numpy as np
 from numpy import *
 from numpy.linalg import *
 
@@ -16,7 +17,7 @@ L4 = array([[0, 0, 1], [0, 0, 0], [1, 0, 0]])
 L5 = array([[0, 0, -1j], [0, 0, 0], [1j, 0, 0]])
 L6 = array([[0, 0, 0], [0, 0, 1], [0, 1, 0]])
 L7 = array([[0, 0, 0], [0, 0, -1j], [0, 1j, 0]])
-L8 = array([[1, 0, 0], [0, 1, 0], [0, 0, -2]]) * 1 / sqrt(3)
+L8 = array([[1, 0, 0], [0, 1, 0], [0, 0, -2]]) * 1 / np.sqrt(3)
 u = array([1, 0, 0])                                   # Up quark
 d = array([0, 1, 0])                                 # Down quark
 s = array([0, 0, 1])                              # Strange quark
